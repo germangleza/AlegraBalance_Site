@@ -327,9 +327,19 @@ strong {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 249, 246, 0.92);
-  backdrop-filter: saturate(1.4) blur(10px);
+  background: rgba(250, 249, 246, 0.97);
   border-bottom: 1px solid var(--line);
+}
+/* El desenfoque sólo se aplica cuando el navegador lo soporta y NO hay un
+   menú móvil abierto: backdrop-filter en el header convierte al menú
+   position:fixed en hijo posicionado respecto al header (bug del menú). */
+@supports (backdrop-filter: blur(10px)) {
+  @media (min-width: 1021px) {
+    .header {
+      background: rgba(250, 249, 246, 0.85);
+      backdrop-filter: saturate(1.4) blur(10px);
+    }
+  }
 }
 .header__inner {
   display: flex;
