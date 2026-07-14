@@ -142,8 +142,8 @@ function header(active) {
       </button>
     </div>
   </div>
-</header>
-<div class="scrim" aria-hidden="true"></div>`;
+  <div class="scrim" aria-hidden="true"></div>
+</header>`;
 }
 
 /* ------------------------- Barra inferior móvil ---------------------- */

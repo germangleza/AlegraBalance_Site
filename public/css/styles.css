@@ -399,6 +399,10 @@ strong {
   border: 1px solid var(--line);
   border-radius: 12px;
   cursor: pointer;
+  /* Debe quedar por encima del panel del menú (z-index 60) para que el
+     ícono, que se transforma en "X", siga siendo tocable y lo cierre. */
+  position: relative;
+  z-index: 65;
 }
 .nav-toggle span {
   width: 22px;
