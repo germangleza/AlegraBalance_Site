@@ -83,9 +83,9 @@ const body = `
     <div class="hero__grid">
       <div class="hero__content">
         <span class="eyebrow">Alergia · Asma · Inmunología</span>
-        <h1>Clínica de Alergia e Inmunología en Roma Norte, CDMX</h1>
-        <p>Atención especializada para niños y adultos con rinitis, asma, dermatitis, urticaria, alergias alimentarias y otros padecimientos alérgicos.</p>
-        <p>En Alergia Balance Center combinamos evaluación clínica, pruebas diagnósticas, tratamientos personalizados y acompañamiento cercano para ayudarte a comprender y controlar tus síntomas.</p>
+        <h1>Clínica Integral de Alergia e Inmunología</h1>
+        <p>Atención especializada para niños y adultos con enfermedades alérgicas respiratorias y dermatológicas.</p>
+        <p>En Alergia Balance Center combinamos evaluación clínica, pruebas diagnósticas, tratamientos personalizados y acompañamiento cercano para mejorar tu calidad de vida.</p>
         <div class="hero__cta btn-row">
           ${C.scheduleBtn({ lg: true, loc: "hero" })}
           ${C.whatsappBtn({ lg: true, secondary: true, loc: "hero" })}
@@ -109,7 +109,7 @@ const body = `
     <div class="section-head center">
       <span class="eyebrow">¿Cómo podemos ayudarte?</span>
       <h2>¿Presentas alguno de estos síntomas?</h2>
-      <p>Los síntomas alérgicos pueden afectar la respiración, la piel, el descanso y las actividades diarias. Una valoración especializada ayuda a identificar posibles desencadenantes y definir el manejo adecuado para cada paciente.</p>
+      <p>Una valoración especializada ayuda a identificar posibles desencadenantes y definir el manejo adecuado para cada paciente.</p>
     </div>
     <div class="grid grid-4" style="margin-top:2.5rem">
       ${symptomCards.map(card).join("")}
@@ -128,7 +128,7 @@ const body = `
       <div class="reveal">
         <span class="eyebrow">Atención integral</span>
         <h2>De la evaluación al seguimiento</h2>
-        <p>Cada paciente requiere una valoración individual. Nuestro proceso integra historia clínica, exploración, pruebas cuando están indicadas y un plan de tratamiento adaptado a sus necesidades.</p>
+        <p>Nuestro proceso integra historia clínica, exploración, pruebas cuando están indicadas y un plan de tratamiento adaptado a sus necesidades.</p>
         <div class="steps cols-3" style="margin:1.5rem 0">
           <div class="step"><span class="step__num"></span><h3>Evaluación especializada</h3><p>Revisamos síntomas, antecedentes, posibles desencadenantes y el impacto en la vida diaria.</p></div>
           <div class="step"><span class="step__num"></span><h3>Pruebas y diagnóstico</h3><p>Cuando son necesarias, realizamos estudios para orientar el diagnóstico con precisión.</p></div>
@@ -161,8 +161,9 @@ const body = `
     <div class="section-head" style="margin-bottom:2.5rem">
       <span class="eyebrow">Experiencia, confianza y acompañamiento</span>
       <h2>Atención médica especializada en un entorno cercano y profesional</h2>
-      <p>En Alergia Balance Center combinamos la experiencia de la Dra. María de Jesús Vázquez García con un espacio pensado para brindar atención segura, clara y personalizada. El objetivo no es únicamente controlar síntomas, sino ayudar a cada paciente y a su familia a comprender el padecimiento y tomar decisiones informadas sobre su salud.</p>
+      <p>En Alergia Balance Center nuestro objetivo es ayudar a cada paciente y a su familia a comprender el padecimiento y tomar decisiones informadas sobre su salud mejorando su calidad de vida de cada paciente.</p>
     </div>
+    <div class="wide-media reveal">${C.media("Dra. María de Jesús Vázquez García en Alergia Balance Center", "ph")}</div>
     <div class="split">
       <article class="card card--purple reveal">
         <div class="card__icon">${C.icon("home")}</div>
