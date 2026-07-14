@@ -5,10 +5,11 @@ const bc = [
   { label: "Pruebas y diagnóstico", href: "/pruebas-y-diagnostico/" },
 ];
 
-function testBlock(id, icon, h, rows, cta) {
+function testBlock(id, icon, h, rows, cta, detailHref) {
   const dl = rows
     .map((r) => `<h3>${r.q}</h3><p>${r.a}</p>`)
     .join("");
+  const detail = detailHref ? C.ghostLink(detailHref, "Ver detalle completo") : "";
   return `<section class="section bg-white" id="${id}">
     <div class="container">
       <div class="feature">
@@ -16,7 +17,7 @@ function testBlock(id, icon, h, rows, cta) {
           <div class="card__icon">${C.icon(icon)}</div>
           <h2>${h}</h2>
           <div class="article" style="margin:1rem 0 0">${dl}</div>
-          <div style="margin-top:1.4rem">${C.scheduleBtn({ label: cta, loc: id })}</div>
+          <div class="btn-row" style="margin-top:1.4rem">${C.scheduleBtn({ label: cta, loc: id })}${detail}</div>
         </div>
         <div class="feature__media reveal">${C.media(h, "ph")}</div>
       </div>
@@ -70,7 +71,8 @@ ${testBlock(
     { q: "¿Cómo se realizan?", a: "Se colocan pequeñas cantidades de los alérgenos seleccionados en la piel y se observa la respuesta bajo supervisión médica." },
     { q: "¿Requieren preparación?", a: "Algunos medicamentos pueden modificar los resultados. El equipo debe proporcionar instrucciones antes de la prueba. No suspendas medicamentos sin indicación médica." },
   ],
-  "Consultar disponibilidad"
+  "Consultar disponibilidad",
+  "/pruebas-y-diagnostico/pruebas-cutaneas/"
 )}
 
 ${testBlock(

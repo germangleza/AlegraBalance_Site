@@ -6,8 +6,11 @@ const bc = [
   { label: "Padecimientos", href: "/padecimientos/" },
 ];
 
-function defBlock(h, p) {
-  return `<div class="def-block reveal"><h3>${h}</h3><p>${p}</p></div>`;
+function defBlock(h, p, href) {
+  const link = href
+    ? ` <a href="${href}" class="btn btn--ghost" style="font-size:.9rem;padding-top:.4rem">Ver detalle</a>`
+    : "";
+  return `<div class="def-block reveal"><h3>${h}</h3><p>${p}</p>${link}</div>`;
 }
 
 const body = `
@@ -29,10 +32,10 @@ const body = `
   <div class="container">
     <div class="section-head"><h2>Alergias respiratorias</h2><p>Los síntomas respiratorios pueden relacionarse con alérgenos ambientales, irritantes, infecciones u otras condiciones. Una valoración especializada permite estudiar el contexto completo de cada paciente.</p></div>
     <div style="margin-top:2rem;max-width:820px">
-      ${defBlock("Rinitis alérgica", "Puede causar estornudos, congestión, escurrimiento nasal, comezón y molestias oculares. Los síntomas pueden presentarse por temporadas o durante todo el año.")}
+      ${defBlock("Rinitis alérgica", "Puede causar estornudos, congestión, escurrimiento nasal, comezón y molestias oculares. Los síntomas pueden presentarse por temporadas o durante todo el año.", "/padecimientos/rinitis-alergica/")}
       ${defBlock("Rinosinusitis", "Puede generar congestión persistente, presión facial, secreción nasal, dolor de cabeza y alteraciones del olfato.")}
       ${defBlock("Tos crónica", "Una tos que se mantiene durante varias semanas puede requerir evaluación para investigar causas respiratorias, alérgicas u otras condiciones.")}
-      ${defBlock("Asma bronquial", "Puede manifestarse con tos, silbidos, presión en el pecho y dificultad para respirar. El diagnóstico y seguimiento adecuados son importantes para mejorar el control.")}
+      ${defBlock("Asma bronquial", "Puede manifestarse con tos, silbidos, presión en el pecho y dificultad para respirar. El diagnóstico y seguimiento adecuados son importantes para mejorar el control.", "/padecimientos/asma/")}
     </div>
     <div style="margin-top:1.5rem">${C.scheduleBtn({ label: "Solicitar valoración respiratoria", loc: "respiratorias" })}</div>
   </div>
@@ -42,9 +45,9 @@ const body = `
   <div class="container">
     <div class="section-head"><h2>Alergias y enfermedades inflamatorias de la piel</h2><p>La comezón, la irritación y las lesiones recurrentes pueden afectar el sueño, la concentración y la calidad de vida.</p></div>
     <div style="margin-top:2rem;max-width:820px">
-      ${defBlock("Dermatitis atópica", "Enfermedad inflamatoria que suele causar piel seca, comezón y brotes recurrentes. Puede presentarse desde la infancia y requiere un manejo adaptado a cada etapa.")}
+      ${defBlock("Dermatitis atópica", "Enfermedad inflamatoria que suele causar piel seca, comezón y brotes recurrentes. Puede presentarse desde la infancia y requiere un manejo adaptado a cada etapa.", "/padecimientos/dermatitis-atopica/")}
       ${defBlock("Dermatitis de contacto", "Aparece cuando la piel reacciona a determinadas sustancias o materiales. Las pruebas de parche pueden ser útiles en algunos casos.")}
-      ${defBlock("Urticaria", "Produce ronchas elevadas, comezón y, en ocasiones, inflamación. La evaluación depende de la duración, frecuencia y características de los episodios.")}
+      ${defBlock("Urticaria", "Produce ronchas elevadas, comezón y, en ocasiones, inflamación. La evaluación depende de la duración, frecuencia y características de los episodios.", "/padecimientos/urticaria/")}
     </div>
     <div style="margin-top:1.5rem">${C.scheduleBtn({ label: "Solicitar valoración de piel", loc: "piel" })}</div>
   </div>
@@ -54,7 +57,7 @@ const body = `
   <div class="container">
     <div class="section-head"><h2>Alergias alimentarias y padecimientos digestivos relacionados</h2><p>Las reacciones relacionadas con alimentos pueden presentarse de distintas formas. Es importante diferenciarlas de intolerancias y otras enfermedades digestivas.</p></div>
     <div style="margin-top:2rem;max-width:820px">
-      ${defBlock("Alergias alimentarias", "La valoración considera el alimento sospechoso, el tiempo en que aparecieron los síntomas, la cantidad consumida y los antecedentes del paciente.")}
+      ${defBlock("Alergias alimentarias", "La valoración considera el alimento sospechoso, el tiempo en que aparecieron los síntomas, la cantidad consumida y los antecedentes del paciente.", "/padecimientos/alergias-alimentarias/")}
       ${defBlock("Esofagitis eosinofílica", "Es una enfermedad inflamatoria del esófago que puede causar dificultad al tragar, sensación de alimento atorado y otros síntomas digestivos. Requiere evaluación y seguimiento especializados.")}
     </div>
     <div class="notice" style="margin-top:1.5rem;max-width:820px">${C.icon("alert")}<div>No elimines alimentos esenciales ni realices dietas restrictivas sin orientación médica, especialmente en niños.</div></div>
@@ -65,14 +68,14 @@ const body = `
 <section class="section bg-purple">
   <div class="container">
     <div class="duo">
-      <div class="panel reveal" style="background:#fff">
+      <div class="panel reveal" id="medicamentos" style="background:#fff">
         <div class="card__icon">${C.icon("pill")}</div>
         <h2 style="font-size:var(--heading-3)">Reacciones a medicamentos</h2>
         <p>Haber presentado una reacción no siempre significa que exista una alergia confirmada. La valoración médica revisa qué medicamento se utilizó, qué síntomas aparecieron, cuánto tiempo pasó y qué otros factores estaban presentes.</p>
         <p>El objetivo es reducir riesgos y orientar alternativas seguras cuando sea posible.</p>
-        ${C.scheduleBtn({ label: "Agendar evaluación", loc: "medicamentos" })}
+        <div class="btn-row">${C.scheduleBtn({ label: "Agendar evaluación", loc: "medicamentos" })}${C.ghostLink("/padecimientos/alergias-a-medicamentos/", "Ver detalle")}</div>
       </div>
-      <div class="panel reveal" style="background:#fff">
+      <div class="panel reveal" id="oculares" style="background:#fff">
         <div class="card__icon">${C.icon("eye")}</div>
         <h2 style="font-size:var(--heading-3)">Alergias oculares</h2>
         <p>La comezón, el lagrimeo, el enrojecimiento y la irritación ocular pueden relacionarse con alergias ambientales o de contacto.</p>

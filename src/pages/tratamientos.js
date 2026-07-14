@@ -54,7 +54,7 @@ const body = `
         <ul class="check-list"><li>Mejorar el control a largo plazo</li><li>Favorecer una mejor calidad de vida</li></ul>
       </div>
       <p class="text-muted" style="margin-top:1rem">Los resultados y la duración varían entre pacientes.</p>
-      <div style="margin-top:1rem">${C.scheduleBtn({ label: "Conocer si soy candidato", loc: "inmunoterapia" })}</div>
+      <div class="btn-row" style="margin-top:1rem">${C.scheduleBtn({ label: "Conocer si soy candidato", loc: "inmunoterapia" })}${C.ghostLink("/tratamientos/inmunoterapia/", "Ver detalle completo")}</div>
     </div>
   </div>
 </section>

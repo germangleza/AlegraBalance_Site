@@ -33,14 +33,14 @@ const symptomCards = [
 ];
 
 const conditions = [
-  { icon: "nose", h: "Rinitis alérgica", p: "Congestión, estornudos, comezón y secreción nasal que pueden presentarse por temporadas o durante todo el año." },
-  { icon: "lungs", h: "Asma y alergias respiratorias", p: "Valoración de tos crónica, silbidos, falta de aire y otros síntomas respiratorios." },
-  { icon: "skin", h: "Dermatitis", p: "Atención de dermatitis atópica, dermatitis de contacto, irritación y comezón persistente." },
-  { icon: "heart", h: "Urticaria y ronchas", p: "Evaluación de ronchas, inflamación y episodios recurrentes en la piel." },
-  { icon: "food", h: "Alergias alimentarias", p: "Valoración de posibles reacciones relacionadas con alimentos y enfermedades digestivas asociadas." },
-  { icon: "pill", h: "Alergias a medicamentos", p: "Evaluación de reacciones previas para orientar el manejo y reducir riesgos futuros." },
-  { icon: "eye", h: "Alergias oculares", p: "Atención de comezón, lagrimeo, enrojecimiento e irritación ocular relacionados con alergias." },
-  { icon: "ear", h: "Rinosinusitis y tos crónica", p: "Estudio de síntomas persistentes de nariz, senos paranasales y vías respiratorias." },
+  { icon: "nose", h: "Rinitis alérgica", p: "Congestión, estornudos, comezón y secreción nasal que pueden presentarse por temporadas o durante todo el año.", href: "/padecimientos/rinitis-alergica/" },
+  { icon: "lungs", h: "Asma y alergias respiratorias", p: "Valoración de tos crónica, silbidos, falta de aire y otros síntomas respiratorios.", href: "/padecimientos/asma/" },
+  { icon: "skin", h: "Dermatitis", p: "Atención de dermatitis atópica, dermatitis de contacto, irritación y comezón persistente.", href: "/padecimientos/dermatitis-atopica/" },
+  { icon: "heart", h: "Urticaria y ronchas", p: "Evaluación de ronchas, inflamación y episodios recurrentes en la piel.", href: "/padecimientos/urticaria/" },
+  { icon: "food", h: "Alergias alimentarias", p: "Valoración de posibles reacciones relacionadas con alimentos y enfermedades digestivas asociadas.", href: "/padecimientos/alergias-alimentarias/" },
+  { icon: "pill", h: "Alergias a medicamentos", p: "Evaluación de reacciones previas para orientar el manejo y reducir riesgos futuros.", href: "/padecimientos/alergias-a-medicamentos/" },
+  { icon: "eye", h: "Alergias oculares", p: "Atención de comezón, lagrimeo, enrojecimiento e irritación ocular relacionados con alergias.", href: "/padecimientos/#oculares" },
+  { icon: "ear", h: "Rinosinusitis y tos crónica", p: "Estudio de síntomas persistentes de nariz, senos paranasales y vías respiratorias.", href: "/padecimientos/#respiratorias" },
 ];
 
 const tests = [
@@ -69,10 +69,12 @@ function card(c) {
   </article>`;
 }
 function miniCard(c) {
-  return `<article class="mini-card reveal">
+  const tag = c.href ? "a" : "article";
+  const attrs = c.href ? ` href="${c.href}" style="display:block;color:inherit"` : "";
+  return `<${tag} class="mini-card reveal"${attrs}>
     <h3>${C.icon(c.icon)}${c.h}</h3>
     <p>${c.p}</p>
-  </article>`;
+  </${tag}>`;
 }
 
 const body = `
