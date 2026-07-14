@@ -1,0 +1,12 @@
+{
+  "name": "alergia-balance-site",
+  "version": "1.0.0",
+  "description": "Sitio web de Alergia Balance Center — clínica de alergia e inmunología en Roma Norte, CDMX.",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "serve": "node scripts/serve.js",
+    "dev": "node build.js && node scripts/serve.js"
+  },
+  "license": "UNLICENSED"
+}
