@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node build.js",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "framework": null,
+  "redirects": [
+    { "source": "/nosotros", "destination": "/clinica-y-doctora/", "permanent": true },
+    { "source": "/servicios", "destination": "/padecimientos/", "permanent": true },
+    { "source": "/author/:path*", "destination": "/blog/", "permanent": true },
+    { "source": "/category/uncategorized", "destination": "/blog/", "permanent": true }
+  ]
+}
