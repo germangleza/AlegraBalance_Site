@@ -81,25 +81,25 @@ const body = `
 <section class="hero">
   <div class="container">
     <div class="hero__grid">
-      <div class="hero__content">
+      <div class="hero__text">
         <span class="eyebrow">Alergia · Asma · Inmunología</span>
         <h1>Clínica Integral de Alergia e Inmunología</h1>
         <p>Atención especializada para niños y adultos con enfermedades alérgicas respiratorias y dermatológicas.</p>
         <p>En Alergia Balance Center combinamos evaluación clínica, pruebas diagnósticas, tratamientos personalizados y acompañamiento cercano para mejorar tu calidad de vida.</p>
-        <div class="hero__cta btn-row">
-          ${C.scheduleBtn({ lg: true, loc: "hero" })}
-          ${C.whatsappBtn({ lg: true, secondary: true, loc: "hero" })}
-        </div>
-        <ul class="trust-badges">
-          <li>${C.icon("award")} Más de 20 años de experiencia</li>
-          <li>${C.icon("child")} Atención para niños y adultos</li>
-          <li>${C.icon("shield")} Certificación CONICA</li>
-          <li>${C.icon("stethoscope")} Diagnóstico y tratamiento personalizado</li>
-        </ul>
+      </div>
+      <div class="hero__cta btn-row">
+        ${C.scheduleBtn({ lg: true, loc: "hero" })}
+        ${C.whatsappBtn({ lg: true, secondary: true, loc: "hero" })}
       </div>
       <div class="hero__media reveal">
         ${C.media("Fotografía profesional de la Dra. María de Jesús Vázquez García en el consultorio")}
       </div>
+      <ul class="trust-badges">
+        <li>${C.icon("award")} Más de 20 años de experiencia</li>
+        <li>${C.icon("child")} Atención para niños y adultos</li>
+        <li>${C.icon("shield")} Certificación CONICA</li>
+        <li>${C.icon("stethoscope")} Diagnóstico y tratamiento personalizado</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -163,10 +163,9 @@ const body = `
       <h2>Atención médica especializada en un entorno cercano y profesional</h2>
       <p>En Alergia Balance Center nuestro objetivo es ayudar a cada paciente y a su familia a comprender el padecimiento y tomar decisiones informadas sobre su salud mejorando su calidad de vida de cada paciente.</p>
     </div>
-    <div class="wide-media reveal">${C.media("Dra. María de Jesús Vázquez García en Alergia Balance Center", "ph")}</div>
     <div class="split">
-      <article class="card card--purple reveal">
-        <div class="card__icon">${C.icon("home")}</div>
+      <article class="card reveal">
+        <div class="card__media">${C.media("Alergia Balance Center — consultorio", "ph")}</div>
         <h3>Alergia Balance Center</h3>
         <p>Un espacio profesional y confiable para la evaluación, diagnóstico y tratamiento de enfermedades alérgicas.</p>
         <ul class="check-list">
@@ -177,8 +176,8 @@ const body = `
           <li>Acompañamiento para pacientes y familias</li>
         </ul>
       </article>
-      <article class="card card--purple reveal">
-        <div class="card__icon">${C.icon("stethoscope")}</div>
+      <article class="card reveal">
+        <div class="card__media">${C.media("Dra. María de Jesús Vázquez García", "ph")}</div>
         <h3>Dra. María de Jesús Vázquez García</h3>
         <p>Alergóloga e inmunóloga pediatra, académica y asesora médico-científica con más de 20 años de experiencia.</p>
         <ul class="check-list">

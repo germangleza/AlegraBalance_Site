@@ -482,24 +482,33 @@ strong {
 .hero__grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-areas:
+    "text  media"
+    "cta   media"
+    "trust media";
+  column-gap: clamp(2rem, 5vw, 4rem);
+  row-gap: 1.4rem;
   align-items: center;
   padding-block: clamp(3rem, 6vw, 5.5rem);
 }
-.hero__content h1 {
+.hero__text {
+  grid-area: text;
+}
+.hero__text h1 {
   font-size: var(--display-lg);
   margin-bottom: 1.1rem;
 }
-.hero__content p {
+.hero__text p {
   color: var(--gray);
   font-size: var(--body-lg);
   max-width: 44ch;
   margin-bottom: 1rem;
 }
 .hero__cta {
-  margin-top: 1.6rem;
+  grid-area: cta;
 }
 .hero__media {
+  grid-area: media;
   position: relative;
 }
 .hero__media .media-frame {
@@ -525,7 +534,6 @@ strong {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem 1.4rem;
-  margin-top: 1.8rem;
   padding-top: 1.6rem;
   border-top: 1px solid var(--line);
 }
@@ -625,6 +633,16 @@ strong {
   background: var(--bg-turq);
   color: var(--turquoise-600);
   margin-bottom: 1rem;
+}
+/* Imagen que sangra hasta el borde superior redondeado de la tarjeta */
+.card__media {
+  aspect-ratio: 16 / 10;
+  margin: -1.6rem -1.6rem 1.3rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+}
+.split .card__media {
+  margin: -1.9rem -1.9rem 1.3rem;
 }
 .card__icon .icon {
   width: 26px;
@@ -1530,14 +1548,15 @@ strong {
   transform: none;
 }
 
-/* Hero stacking on mobile */
+/* Hero stacking on mobile: texto → botones de cita → imagen → indicadores */
 @media (max-width: 860px) {
   .hero__grid {
     grid-template-columns: 1fr;
-  }
-  .hero__media {
-    order: -1;
-    max-width: 440px;
+    grid-template-areas:
+      "text"
+      "cta"
+      "media"
+      "trust";
   }
   .hero__media .media-frame {
     aspect-ratio: 16 / 11;
@@ -1596,20 +1615,6 @@ strong {
   overflow: hidden;
   aspect-ratio: 4 / 3;
   box-shadow: var(--shadow);
-}
-
-/* Espacio de imagen panorámico (más ancho que alto) */
-.wide-media {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 21 / 9;
-  box-shadow: var(--shadow);
-  margin-bottom: 2.5rem;
-}
-@media (max-width: 700px) {
-  .wide-media {
-    aspect-ratio: 16 / 9;
-  }
 }
 
 /* Definition-style condition blocks */
