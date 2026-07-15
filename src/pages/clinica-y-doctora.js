@@ -86,7 +86,7 @@ const body = `
 <section class="section bg-papel">
   <div class="container">
     <div class="feature">
-      <div class="feature__media reveal">${C.media("Retrato profesional de la doctora", "ph")}</div>
+      <div class="feature__media reveal">${C.media("Retrato profesional de la Dra. María de Jesús Vázquez García", null, "/assets/images/doctora/dra-maria-vazquez.jpg")}</div>
       <div class="reveal">
         <span class="eyebrow">Trayectoria médica</span>
         <h2>Dra. María de Jesús Vázquez García</h2>

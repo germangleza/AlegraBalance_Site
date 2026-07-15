@@ -179,7 +179,7 @@ const body = `
         </ul>
       </article>
       <article class="card reveal">
-        <div class="card__media">${C.media("Dra. María de Jesús Vázquez García", "ph")}</div>
+        <div class="card__media">${C.media("Dra. María de Jesús Vázquez García", null, "/assets/images/doctora/dra-maria-vazquez.jpg")}</div>
         <h3>Dra. María de Jesús Vázquez García</h3>
         <p>Alergóloga e inmunóloga pediatra, académica y asesora médico-científica con más de 20 años de experiencia.</p>
         <ul class="check-list">
