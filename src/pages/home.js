@@ -83,7 +83,7 @@ const body = `
     <div class="hero__grid">
       <div class="hero__text">
         <span class="eyebrow">Alergia · Asma · Inmunología</span>
-        <h1>Clínica Integral de Alergia e Inmunología</h1>
+        <h1><span class="h1-lead">Clínica Integral de</span>Alergia e Inmunología</h1>
         <p>Atención especializada para niños y adultos con enfermedades alérgicas respiratorias y dermatológicas.</p>
         <p>En Alergia Balance Center combinamos evaluación clínica, pruebas diagnósticas, tratamientos personalizados y acompañamiento cercano para mejorar tu calidad de vida.</p>
       </div>

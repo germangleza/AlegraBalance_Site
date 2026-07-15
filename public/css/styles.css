@@ -475,15 +475,63 @@ strong {
 /* --------------------------- Hero ----------------------------------- */
 .hero {
   position: relative;
-  background: radial-gradient(
-      1100px 500px at 85% -10%,
-      var(--bg-turq),
-      transparent 60%
-    ),
-    var(--bg-warm);
+  background: var(--bg-warm);
   overflow: hidden;
 }
+/* Formas orgánicas discretas de marca, en vez de un degradado plano */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  filter: blur(60px);
+  pointer-events: none;
+}
+.hero::before {
+  width: 640px;
+  height: 640px;
+  top: -260px;
+  right: -180px;
+  background: radial-gradient(circle at 35% 35%, var(--bg-turq), transparent 72%);
+  border-radius: 44% 56% 65% 35% / 45% 40% 60% 55%;
+  opacity: 0.9;
+}
+.hero::after {
+  width: 380px;
+  height: 380px;
+  bottom: -170px;
+  left: -130px;
+  background: radial-gradient(circle at 60% 40%, rgba(180, 119, 31, 0.16), transparent 72%);
+  border-radius: 60% 40% 35% 65% / 55% 65% 35% 45%;
+  opacity: 0.9;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero::before {
+    animation: hero-drift-a 22s ease-in-out infinite alternate;
+  }
+  .hero::after {
+    animation: hero-drift-b 26s ease-in-out infinite alternate;
+  }
+}
+@keyframes hero-drift-a {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-18px, 22px) scale(1.05);
+  }
+}
+@keyframes hero-drift-b {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(16px, -16px) scale(1.04);
+  }
+}
 .hero__grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   grid-template-areas:
@@ -500,7 +548,17 @@ strong {
 }
 .hero__text h1 {
   font-size: var(--display-lg);
+  font-weight: 800;
   margin-bottom: 1.1rem;
+}
+.hero__text h1 .h1-lead {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.56em;
+  color: var(--gray);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
 }
 .hero__text p {
   color: var(--gray);
