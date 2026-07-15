@@ -150,10 +150,9 @@ const body = `
         <p>Nuestro proceso integra historia clínica, exploración, pruebas diagnósticas y un plan de tratamiento adaptado a sus necesidades.</p>
         <div class="steps cols-3" style="margin:1.5rem 0">
           <div class="step"><span class="step__num"></span><h3>Evaluación especializada</h3><p>Revisamos síntomas, antecedentes, posibles desencadenantes y el impacto en la vida diaria.</p></div>
-          <div class="step"><span class="step__num"></span><h3>Pruebas y diagnóstico</h3><p>Cuando son necesarias, realizamos estudios para orientar el diagnóstico con precisión.</p></div>
-          <div class="step"><span class="step__num"></span><h3>Tratamiento personalizado</h3><p>Diseñamos un plan para controlar síntomas, reducir riesgos y facilitar tu día a día.</p></div>
+          <div class="step"><span class="step__num"></span><h3>Pruebas y diagnóstico</h3><p>Cuando son necesarias, realizamos estudios para orientar el diagnóstico con precisión.</p>${C.ghostLink("/pruebas-y-diagnostico/", "Conocer nuestras pruebas")}</div>
+          <div class="step"><span class="step__num"></span><h3>Tratamiento personalizado</h3><p>Diseñamos un plan para controlar síntomas, reducir riesgos y facilitar tu día a día.</p>${C.ghostLink("/tratamientos/", "Conocer nuestros tratamientos")}</div>
         </div>
-        ${C.ghostLink("/tratamientos/", "Conocer nuestros servicios")}
       </div>
     </div>
   </div>

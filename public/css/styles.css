@@ -870,6 +870,10 @@ strong {
   color: var(--tinta-70);
   font-size: 0.92rem;
 }
+.step .btn--ghost {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+}
 
 /* Línea de progreso de la secuencia de pasos */
 .steps-track {
