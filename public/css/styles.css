@@ -421,13 +421,14 @@ strong {
   align-items: center;
   gap: var(--s1);
 }
-.logo svg {
-  height: 20px;
+.logo img {
+  height: 34px;
   width: auto;
+  display: block;
   transition: height var(--d-medio) var(--ease-suave);
 }
-.header.is-condensed .logo svg {
-  height: 17px;
+.header.is-condensed .logo img {
+  height: 28px;
 }
 .nav {
   display: flex;
@@ -1575,8 +1576,10 @@ strong {
   max-width: 30ch;
   color: #93a0c8;
 }
-.footer__logo svg {
-  height: 18px;
+.footer__logo img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 .footer__bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.14);
