@@ -600,6 +600,11 @@ strong {
   aspect-ratio: 4 / 5;
   background: var(--linea);
 }
+/* La escena de consulta es horizontal: encuadre hacia la doctora para que
+   quede completa en el marco vertical del hero, conservando a mamá e hijo. */
+.hero__media .media-img {
+  object-position: 62% 50%;
+}
 .trust-badges {
   grid-area: trust;
   display: flex;
