@@ -71,18 +71,12 @@ function icon(name, cls) {
 }
 
 /* ------------------------------- Logo -------------------------------- */
+/* logo.png: versión a color para fondos claros. logo-reversed.png: marca y
+   wordmark en blanco (fondo oscuro), conserva el terracota en "CENTER". */
 function logo(variant) {
   const light = variant === "light";
-  const tinta = light ? "#ffffff" : "#071E55";
-  const polen = "#C57312";
-  return `<svg viewBox="0 0 214 26" role="img" aria-label="Alergia Balance Center" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" stroke-width="1.8" stroke-linecap="round">
-    <path d="M6 18c2-6 6-10 8-10s2 1.5 2 4-2 6-2 6" stroke="${tinta}"/>
-    <path d="M20 8c-2 6-6 10-8 10s-2-1.5-2-4 2-6 2-6" stroke="${tinta}" opacity="0.45"/>
-    <circle cx="13" cy="13" r="1.6" fill="${polen}" stroke="none"/>
-  </g>
-  <text x="30" y="17" font-family="Karla, sans-serif" font-weight="700" font-size="15" letter-spacing="-0.01em" fill="${tinta}">Alergia<tspan fill="${polen}">Balance</tspan></text>
-</svg>`;
+  const src = light ? "/assets/logo-reversed.png" : "/assets/logo.png";
+  return `<img src="${src}" alt="Alergia Balance Center" width="197" height="51" loading="eager" decoding="async">`;
 }
 
 /* --------------------------- Botones cita ---------------------------- */
