@@ -1,6 +1,9 @@
-/* Alergia Balance Center — interacciones ligeras y accesibles */
+/* Alergia Balance Center — interacciones ligeras y accesibles.
+   Sin dependencias. FAQ es <details>/<summary> nativo (cero JS). */
 (function () {
   "use strict";
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Envío de eventos de conversión (spec §22). Compatible con GA4 si existe.
   function track(name, params) {
@@ -45,40 +48,78 @@
       });
     }
 
-    /* ---------------- Acordeón FAQ ---------------- */
-    document.querySelectorAll(".faq__q").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var expanded = btn.getAttribute("aria-expanded") === "true";
-        var panel = document.getElementById(btn.getAttribute("aria-controls"));
-        btn.setAttribute("aria-expanded", String(!expanded));
-        if (panel) {
-          panel.style.maxHeight = expanded ? "0px" : panel.scrollHeight + "px";
-        }
-      });
-    });
+    /* ---------------- Header: condensar al pasar 80px ---------------- */
+    var header = document.querySelector(".header");
+    var topbar = document.querySelector(".topbar");
+    var sentinel = document.querySelector(".scroll-sentinel");
+    if (header && sentinel && "IntersectionObserver" in window) {
+      var headerIo = new IntersectionObserver(
+        function (entries) {
+          var condensed = !entries[0].isIntersecting;
+          header.classList.toggle("is-condensed", condensed);
+          if (topbar) topbar.classList.toggle("is-collapsed", condensed);
+        },
+        { rootMargin: "-80px 0px 0px 0px", threshold: 0 }
+      );
+      headerIo.observe(sentinel);
+    }
 
-    /* ---------------- Animaciones de aparición ---------------- */
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    /* ---------------- Reveals por scroll ---------------- */
     var reveals = document.querySelectorAll(".reveal");
     if (reduce || !("IntersectionObserver" in window)) {
       reveals.forEach(function (el) {
-        el.classList.add("in");
+        el.classList.add("is-in");
       });
     } else {
-      var io = new IntersectionObserver(
+      var revealIo = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              entry.target.classList.add("in");
-              io.unobserve(entry.target);
+              entry.target.classList.add("is-in");
+              revealIo.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
       );
       reveals.forEach(function (el) {
-        io.observe(el);
+        revealIo.observe(el);
       });
+    }
+
+    /* ---------------- Línea de progreso: 4 pasos ---------------- */
+    var tracks = document.querySelectorAll(".steps-track");
+    if (tracks.length && "IntersectionObserver" in window) {
+      var trackIo = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var fill = entry.target.querySelector(".steps-track__fill");
+              if (fill) fill.classList.add("is-filled");
+              trackIo.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      tracks.forEach(function (el) {
+        trackIo.observe(el);
+      });
+    }
+
+    /* ---------------- Barra CTA móvil: aparece tras el hero ---------------- */
+    var hero = document.querySelector(".hero, .page-hero");
+    var mobileCta = document.querySelector(".mobile-cta");
+    if (hero && mobileCta && "IntersectionObserver" in window) {
+      var ctaIo = new IntersectionObserver(
+        function (entries) {
+          var e = entries[0];
+          var pastHero = !e.isIntersecting && e.boundingClientRect.top < 0;
+          mobileCta.classList.toggle("is-visible", pastHero);
+        },
+        { threshold: 0 }
+      );
+      ctaIo.observe(hero);
     }
 
     /* ---------------- Eventos de conversión ---------------- */

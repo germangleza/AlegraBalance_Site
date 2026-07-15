@@ -111,23 +111,25 @@ ${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robo
 <meta name="twitter:description" content="${description}">
 <meta name="twitter:image" content="${ogImage}">
 <meta name="theme-color" content="#071E55">
-<script>document.documentElement.classList.add('js');</script>
+<script>document.documentElement.classList.add('js','intro-play');</script>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="/css/styles.css">
 ${jsonLdScript}
 </head>
 <body>
 <a href="#main" class="skip-link">Saltar al contenido</a>
+<div class="scroll-sentinel" aria-hidden="true"></div>
 ${C.header(active)}
 <main id="main">
 ${bcNav}
 ${body}
 </main>
 ${C.footer()}
+${C.mobileCta()}
 <script src="/js/main.js" defer></script>
 </body>
 </html>`;

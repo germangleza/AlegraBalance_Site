@@ -28,7 +28,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="contact-grid" style="margin-bottom:2.5rem">
       <div class="contact-option reveal">
@@ -44,7 +44,7 @@ const body = `
     <div class="feature" style="align-items:start">
       <form class="form reveal" id="appointment-form" novalidate>
         <div class="section-head" style="margin-bottom:1.4rem">
-          <h2 style="font-size:var(--heading-3)">Solicita una cita</h2>
+          <h2 style="font-size:var(--t-h3)">Solicita una cita</h2>
           <p style="font-size:1rem">Completa el formulario y nos pondremos en contacto contigo.</p>
         </div>
         <div class="form__status" role="status" aria-live="polite"></div>
@@ -104,7 +104,7 @@ const body = `
 
       <div class="reveal">
         <div class="card" style="margin-bottom:1.4rem">
-          <h2 style="font-size:var(--heading-3);margin-bottom:1rem">Alergia Balance Center</h2>
+          <h2 style="font-size:var(--t-h3);margin-bottom:1rem">Alergia Balance Center</h2>
           <ul class="info-list">
             <li>${C.icon("pin")}<div><strong>${site.contact.address.street}</strong><br>${site.contact.address.neighborhood}<br>${site.contact.address.postal}</div></li>
             <li>${C.icon("phone")}<a href="${site.contact.phoneHref}">${site.contact.phoneDisplay}</a></li>
@@ -128,7 +128,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-warm">
+<section class="section bg-gasa">
   <div class="container">
     <div class="section-head center"><h2>Información importante</h2><p>WhatsApp, teléfono y formulario se utilizan para citas y orientación administrativa.</p></div>
     <div style="max-width:820px;margin:1.6rem auto 0">

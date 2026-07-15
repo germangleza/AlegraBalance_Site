@@ -10,7 +10,7 @@ function articlePage(a) {
 
   const body = `
 <article>
-  <header class="section section--tight bg-white">
+  <header class="section section--tight bg-papel">
     <div class="container">
       <div class="article">
         <span class="tag">${a.category}</span>
@@ -24,7 +24,7 @@ function articlePage(a) {
     </div>
   </header>
 
-  <div class="section section--tight bg-white" style="padding-top:0">
+  <div class="section section--tight bg-papel" style="padding-top:0">
     <div class="container">
       <div class="article">
         ${a.body}
@@ -235,7 +235,7 @@ const article2 = articlePage({
     <p>Solicita una valoración cuando los síntomas duran varias semanas, la congestión afecta el sueño, los síntomas aparecen durante gran parte del año, los medicamentos de venta libre no ofrecen control, existe tos persistente o dificultad para respirar, un niño respira por la boca de forma frecuente, o se sospecha relación con mascotas, polvo, humedad o temporadas de polen.</p>
 
     <h2>Preguntas frecuentes</h2>
-    ${C.faq(article2FAQ, "rinitis-faq")}
+    ${C.faq(article2FAQ)}
 
     <h2>Conclusión</h2>
     <p>La rinitis puede parecer un problema menor, pero sus efectos en el sueño y las actividades diarias pueden ser importantes. Una evaluación especializada permite identificar el tipo de rinitis, investigar posibles desencadenantes y definir un tratamiento adecuado.</p>

@@ -38,7 +38,7 @@ function renderCondition(d) {
         <h1>${d.title}</h1>
         <p>${d.summary}</p>
         <div class="btn-row">
-          ${C.scheduleBtn({ label: d.ctaLabel || "Agendar valoración", loc: "detalle-" + d.id })}
+          ${C.scheduleBtn({ loc: "detalle-" + d.id })}
           ${d.article ? C.ghostLink(d.article, "Leer artículo relacionado") : ""}
         </div>
       </div>
@@ -47,13 +47,13 @@ function renderCondition(d) {
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="answer-block reveal" style="max-width:820px">${d.answer || d.summary}</div>
   </div>
 </section>
 
-<section class="section bg-white" style="padding-top:0">
+<section class="section bg-papel" style="padding-top:0">
   <div class="container">
     <div class="feature" style="align-items:start">
       <div class="reveal">
@@ -71,14 +71,14 @@ function renderCondition(d) {
   </div>
 </section>
 
-<section class="section bg-turq">
+<section class="section bg-gasa">
   <div class="container">
     <div class="section-head"><span class="eyebrow">Evaluación</span><h2>Cómo se estudia</h2><p>${d.diagnosis}</p></div>
     ${d.diagnosisNote ? `<div style="max-width:820px;margin-top:1.4rem">${C.emergencyNotice(d.diagnosisNote)}</div>` : ""}
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="section-head"><span class="eyebrow">Atención integral</span><h2>Pruebas y tratamientos relacionados</h2><p>Relacionamos cada padecimiento con los estudios y opciones de manejo que pueden ser útiles, siempre de acuerdo con la valoración médica.</p></div>
     <div style="margin-top:2rem">${relatedCards(d.related)}</div>
@@ -87,16 +87,16 @@ function renderCondition(d) {
 
 ${
   d.faq && d.faq.length
-    ? `<section class="section bg-warm">
+    ? `<section class="section bg-gasa">
   <div class="container">
     <div class="section-head center"><h2>Preguntas frecuentes</h2></div>
-    <div style="margin-top:2rem">${C.faq(d.faq, d.id + "-faq")}</div>
+    <div style="margin-top:2rem">${C.faq(d.faq)}</div>
   </div>
 </section>`
     : ""
 }
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div style="max-width:820px;margin-inline:auto">${C.reviewer()}</div>
   </div>
@@ -167,20 +167,20 @@ function renderTest(d) {
         <span class="eyebrow">Evaluación especializada</span>
         <h1>${d.title}</h1>
         <p>${d.summary}</p>
-        ${C.scheduleBtn({ label: "Consultar disponibilidad", loc: "detalle-" + d.id })}
+        ${C.scheduleBtn({ loc: "detalle-" + d.id })}
       </div>
       <div class="page-hero__media">${C.media(d.image || d.title, "ph")}</div>
     </div>
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="answer-block reveal" style="max-width:820px">${d.answer || d.summary}</div>
   </div>
 </section>
 
-<section class="section bg-white" style="padding-top:0">
+<section class="section bg-papel" style="padding-top:0">
   <div class="container">
     <div class="feature" style="align-items:start">
       ${block("¿Qué es?", "En qué consiste", `<p class="text-muted">${d.whatIsIt}</p>`)}
@@ -189,7 +189,7 @@ function renderTest(d) {
   </div>
 </section>
 
-<section class="section bg-turq">
+<section class="section bg-gasa">
   <div class="container">
     <div class="feature" style="align-items:start">
       ${block("¿Cómo se realiza?", "El procedimiento", `<p class="text-muted">${d.howItIsDone}</p>`)}
@@ -203,7 +203,7 @@ function renderTest(d) {
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="section-head"><span class="eyebrow">Atención integral</span><h2>Padecimientos relacionados</h2><p>Esta prueba se indica de acuerdo con la sospecha clínica. Puede formar parte del estudio de:</p></div>
     <div style="margin-top:2rem">${relatedCards(d.related)}</div>
@@ -212,11 +212,11 @@ function renderTest(d) {
 
 ${
   d.faq && d.faq.length
-    ? `<section class="section bg-warm"><div class="container"><div class="section-head center"><h2>Preguntas frecuentes</h2></div><div style="margin-top:2rem">${C.faq(d.faq, d.id + "-faq")}</div></div></section>`
+    ? `<section class="section bg-gasa"><div class="container"><div class="section-head center"><h2>Preguntas frecuentes</h2></div><div style="margin-top:2rem">${C.faq(d.faq)}</div></div></section>`
     : ""
 }
 
-<section class="section bg-white"><div class="container"><div style="max-width:820px;margin-inline:auto">${C.reviewer()}</div></div></section>
+<section class="section bg-papel"><div class="container"><div style="max-width:820px;margin-inline:auto">${C.reviewer()}</div></div></section>
 
 ${C.ctaBand(
   "La prueba correcta depende de una valoración adecuada",
@@ -275,20 +275,20 @@ function renderTreatment(d) {
         <span class="eyebrow">Manejo individualizado</span>
         <h1>${d.title}</h1>
         <p>${d.summary}</p>
-        ${C.scheduleBtn({ label: d.ctaLabel || "Conocer si soy candidato", loc: "detalle-" + d.id })}
+        ${C.scheduleBtn({ loc: "detalle-" + d.id })}
       </div>
       <div class="page-hero__media">${C.media(d.image || d.title, "ph")}</div>
     </div>
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="answer-block reveal" style="max-width:820px">${d.answer || d.summary}</div>
   </div>
 </section>
 
-<section class="section bg-white" style="padding-top:0">
+<section class="section bg-papel" style="padding-top:0">
   <div class="container">
     <div class="feature" style="align-items:start">
       <div class="reveal">
@@ -305,7 +305,7 @@ function renderTreatment(d) {
   </div>
 </section>
 
-<section class="section bg-turq">
+<section class="section bg-gasa">
   <div class="container">
     <div class="feature" style="align-items:start">
       <div class="reveal">
@@ -324,7 +324,7 @@ function renderTreatment(d) {
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="section-head"><span class="eyebrow">Atención integral</span><h2>Padecimientos relacionados</h2><p>Este tratamiento se considera para pacientes seleccionados con:</p></div>
     <div style="margin-top:2rem">${relatedCards(d.related)}</div>
@@ -333,11 +333,11 @@ function renderTreatment(d) {
 
 ${
   d.faq && d.faq.length
-    ? `<section class="section bg-warm"><div class="container"><div class="section-head center"><h2>Preguntas frecuentes</h2></div><div style="margin-top:2rem">${C.faq(d.faq, d.id + "-faq")}</div></div></section>`
+    ? `<section class="section bg-gasa"><div class="container"><div class="section-head center"><h2>Preguntas frecuentes</h2></div><div style="margin-top:2rem">${C.faq(d.faq)}</div></div></section>`
     : ""
 }
 
-<section class="section bg-white"><div class="container"><div style="max-width:820px;margin-inline:auto">${C.reviewer()}</div></div></section>
+<section class="section bg-papel"><div class="container"><div style="max-width:820px;margin-inline:auto">${C.reviewer()}</div></div></section>
 
 ${C.ctaBand(
   d.ctaH || "Diseñemos un plan de tratamiento para tu caso",

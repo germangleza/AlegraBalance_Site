@@ -63,7 +63,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="answer-block reveal" style="max-width:820px;margin-bottom:2.5rem">Alergia Balance Center es una clínica de alergia e inmunología en Roma Norte, CDMX, que atiende a niños y adultos con rinitis, asma, dermatitis, urticaria, alergias alimentarias y otros padecimientos alérgicos.</div>
     <div class="section-head"><h2>Una clínica enfocada en el bienestar de cada paciente</h2><p>Alergia Balance Center es un espacio dedicado a la evaluación, diagnóstico, tratamiento y seguimiento de enfermedades alérgicas e inmunológicas. La atención combina experiencia clínica, herramientas diagnósticas, tratamientos personalizados y comunicación clara.</p></div>
@@ -73,7 +73,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-navy">
+<section class="section bg-tinta">
   <div class="container">
     <div class="section-head center" style="margin-inline:auto">
       <span class="eyebrow">Nuestra misión</span>
@@ -83,7 +83,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="feature">
       <div class="feature__media reveal">${C.media("Retrato profesional de la doctora", "ph")}</div>
@@ -99,7 +99,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-warm">
+<section class="section bg-gasa">
   <div class="container">
     <div class="section-head"><h2>Formación y experiencia</h2></div>
     <ul class="check-list reveal" style="margin-top:1.6rem;max-width:820px">
@@ -109,7 +109,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="section-head center"><h2>Áreas de atención</h2></div>
     <div class="grid grid-4" style="margin-top:2rem">
@@ -118,7 +118,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-turq">
+<section class="section bg-gasa">
   <div class="container">
     <div class="section-head center"><span class="eyebrow">Modelo de atención</span><h2>Un proceso centrado en la persona</h2></div>
     <div class="steps cols-5" style="margin-top:2.5rem">
@@ -127,7 +127,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="section-head center"><h2>Conoce Alergia Balance Center</h2></div>
     <div class="grid grid-3" style="margin-top:2.5rem">

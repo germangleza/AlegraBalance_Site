@@ -73,18 +73,15 @@ function icon(name, cls) {
 /* ------------------------------- Logo -------------------------------- */
 function logo(variant) {
   const light = variant === "light";
-  const navy = light ? "#ffffff" : "#071E55";
-  const turq = light ? "#7FD3D9" : "#137E88";
-  const gold = "#B4771F";
-  return `<svg viewBox="0 0 240 52" role="img" aria-label="Alergia Balance Center" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" stroke-width="3.4" stroke-linecap="round">
-    <circle cx="26" cy="26" r="18" stroke="${turq}" opacity="0.35"/>
-    <path d="M14 30c4-9 10-13 12-13s3 2 3 6-3 8-3 8" stroke="${turq}"/>
-    <path d="M38 22c-4 9-10 13-12 13s-3-2-3-6 3-8 3-8" stroke="${navy}"/>
-    <circle cx="26" cy="26" r="3" fill="${gold}" stroke="none"/>
+  const tinta = light ? "#ffffff" : "#071E55";
+  const polen = "#E8B33C";
+  return `<svg viewBox="0 0 214 26" role="img" aria-label="Alergia Balance Center" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke-width="1.8" stroke-linecap="round">
+    <path d="M6 18c2-6 6-10 8-10s2 1.5 2 4-2 6-2 6" stroke="${tinta}"/>
+    <path d="M20 8c-2 6-6 10-8 10s-2-1.5-2-4 2-6 2-6" stroke="${tinta}" opacity="0.45"/>
+    <circle cx="13" cy="13" r="1.6" fill="${polen}" stroke="none"/>
   </g>
-  <text x="54" y="24" font-family="Manrope, sans-serif" font-weight="800" font-size="19" fill="${navy}">Alergia<tspan fill="${turq}">Balance</tspan></text>
-  <text x="54" y="41" font-family="Inter, sans-serif" font-weight="600" font-size="9.5" letter-spacing="2.6" fill="${gold}">CENTER · CDMX</text>
+  <text x="30" y="17" font-family="Karla, sans-serif" font-weight="700" font-size="15" letter-spacing="-0.01em" fill="${tinta}">Alergia<tspan fill="${polen}">Balance</tspan></text>
 </svg>`;
 }
 
@@ -142,8 +139,18 @@ function header(active) {
       </button>
     </div>
   </div>
+  <div class="header__hairline" aria-hidden="true"></div>
   <div class="scrim" aria-hidden="true"></div>
 </header>`;
+}
+
+/* ------------------------- Barra CTA móvil ---------------------------- */
+/* Oculta hasta que el hero sale del viewport (ver main.js). Dos acciones. */
+function mobileCta() {
+  return `<nav class="mobile-cta" aria-label="Acciones rápidas">
+    <a href="${site.contact.whatsapp}" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-loc="mobile-cta">${icon("whatsapp")}<span>WhatsApp</span></a>
+    <a href="/contacto/" class="primary" data-track="click_schedule" data-track-loc="mobile-cta">${icon("calendar")}<span>Agendar consulta</span></a>
+  </nav>`;
 }
 
 /* ------------------------------ Footer ------------------------------- */
@@ -219,20 +226,20 @@ function breadcrumbs(trail) {
 }
 
 /* -------------------------------- FAQ -------------------------------- */
-function faq(items, idPrefix) {
-  const pre = idPrefix || "faq";
+/* <details>/<summary> nativo: accesible por teclado sin JS, con el truco
+   de grid-template-rows para animar la altura (ver .faq-cuerpo). */
+function faq(items) {
   const body = items
-    .map((it, i) => {
-      const id = `${pre}-${i}`;
-      return `<div class="faq__item">
-      <button class="faq__q" id="${id}-q" aria-expanded="false" aria-controls="${id}-a">
+    .map(
+      (it) => `<details class="faq__item">
+      <summary>
         <span>${it.q}</span><span class="plus" aria-hidden="true"></span>
-      </button>
-      <div class="faq__a" id="${id}-a" role="region" aria-labelledby="${id}-q">
+      </summary>
+      <div class="faq-cuerpo"><div>
         <div class="faq__a-inner">${it.a}</div>
-      </div>
-    </div>`;
-    })
+      </div></div>
+    </details>`
+    )
     .join("");
   return `<div class="faq">${body}</div>`;
 }
@@ -264,6 +271,7 @@ module.exports = {
   ghostLink,
   header,
   footer,
+  mobileCta,
   emergencyNotice,
   reviewer,
   breadcrumbs,

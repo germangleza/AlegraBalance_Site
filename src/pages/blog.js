@@ -40,7 +40,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="grid grid-2">
       ${posts

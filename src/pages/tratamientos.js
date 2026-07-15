@@ -14,14 +14,14 @@ const body = `
         <h1>Tratamientos personalizados para alergias</h1>
         <p>El tratamiento depende del padecimiento, la intensidad de los síntomas, los desencadenantes, la edad y las necesidades de cada paciente.</p>
         <p class="text-muted">En Alergia Balance Center el plan se define después de una valoración médica y puede incluir medidas de prevención, tratamiento farmacológico, inmunoterapia, terapias de alta especialidad y seguimiento.</p>
-        ${C.scheduleBtn({ label: "Agendar valoración", loc: "tratamientos-hero" })}
+        ${C.scheduleBtn({ loc: "tratamientos-hero" })}
       </div>
       <div class="page-hero__media">${C.media("Plan de tratamiento personalizado", "ph")}</div>
     </div>
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="feature">
       <div class="reveal">
@@ -29,7 +29,7 @@ const body = `
         <h2>Control de síntomas y prevención</h2>
         <p>El primer objetivo es disminuir el impacto de los síntomas y reducir la exposición a desencadenantes relevantes sin imponer restricciones innecesarias.</p>
       </div>
-      <ul class="check-list reveal" style="background:var(--bg-turq);padding:1.8rem;border-radius:var(--radius-lg)">
+      <ul class="check-list reveal" style="background:var(--gasa);padding:1.8rem;border-radius:var(--radius)">
         <li>Orientación sobre el entorno</li>
         <li>Medidas de cuidado en casa o escuela</li>
         <li>Uso adecuado de medicamentos indicados</li>
@@ -40,7 +40,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-turq" id="inmunoterapia">
+<section class="section bg-gasa" id="inmunoterapia">
   <div class="container">
     <div class="section-head"><span class="eyebrow">Tratamiento de fondo</span><h2>Inmunoterapia para alergias</h2><p>La inmunoterapia administra cantidades controladas de determinados alérgenos para modificar progresivamente la respuesta del sistema inmunológico. No está indicada para todas las personas ni para todos los tipos de alergia. La decisión depende del diagnóstico, los síntomas y la valoración médica.</p></div>
     <div class="grid grid-2" style="margin-top:2rem">
@@ -54,12 +54,12 @@ const body = `
         <ul class="check-list"><li>Mejorar el control a largo plazo</li><li>Favorecer una mejor calidad de vida</li></ul>
       </div>
       <p class="text-muted" style="margin-top:1rem">Los resultados y la duración varían entre pacientes.</p>
-      <div class="btn-row" style="margin-top:1rem">${C.scheduleBtn({ label: "Conocer si soy candidato", loc: "inmunoterapia" })}${C.ghostLink("/tratamientos/inmunoterapia/", "Ver detalle completo")}</div>
+      <div class="btn-row" style="margin-top:1rem">${C.scheduleBtn({ loc: "inmunoterapia" })}${C.ghostLink("/tratamientos/inmunoterapia/", "Ver detalle completo")}</div>
     </div>
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="feature reverse">
       <div class="feature__media reveal">${C.media("Terapias biotecnológicas de alta especialidad", "ph")}</div>
@@ -70,17 +70,17 @@ const body = `
         <p>Alergia Balance Center ofrece valoración y seguimiento para pacientes que pueden ser candidatos a:</p>
         <ul class="check-list" style="margin:.8rem 0"><li>Biotecnológicos</li><li>Anticuerpos monoclonales</li><li>Inmunoglobulinas</li></ul>
         <p class="text-muted">Estos tratamientos se indican únicamente cuando existe una justificación clínica y requieren seguimiento especializado.</p>
-        <div style="margin-top:1rem">${C.scheduleBtn({ label: "Solicitar evaluación", loc: "biotecnologicas" })}</div>
+        <div style="margin-top:1rem">${C.scheduleBtn({ loc: "biotecnologicas" })}</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section bg-purple">
+<section class="section bg-gasa">
   <div class="container">
     <div class="section-head"><h2>Segunda opinión médica</h2><p>Una segunda opinión puede aportar claridad y nuevas alternativas de manejo.</p></div>
     <div class="grid grid-2" style="margin-top:2rem">
-      <ul class="check-list" style="background:#fff;padding:1.8rem;border-radius:var(--radius-lg)">
+      <ul class="check-list" style="background:var(--papel);padding:1.8rem;border-radius:var(--radius)">
         <li>El diagnóstico no es claro.</li>
         <li>Los síntomas no están controlados.</li>
         <li>Se ha propuesto un tratamiento de alta especialidad.</li>
@@ -88,24 +88,24 @@ const body = `
         <li>Se desea revisar alternativas de manejo.</li>
       </ul>
       <div class="card reveal">
-        <div class="card__icon card--purple">${C.icon("stethoscope")}</div>
+        <div class="card__icon">${C.icon("stethoscope")}</div>
         <p>La consulta incluye revisión de antecedentes, estudios, tratamientos previos y objetivos del paciente.</p>
-        <div style="margin-top:1rem">${C.scheduleBtn({ label: "Agendar segunda opinión", loc: "segunda-opinion" })}</div>
+        <div style="margin-top:1rem">${C.scheduleBtn({ loc: "segunda-opinion" })}</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="duo">
-      <div class="panel turq reveal">
+      <div class="panel reveal">
         <div class="card__icon">${C.icon("heart")}</div>
         <h3>Orientación para pacientes y familias</h3>
         <p>Las enfermedades alérgicas pueden afectar la rutina de toda la familia. El acompañamiento incluye información práctica para reconocer síntomas, reducir riesgos y facilitar el manejo en casa, la escuela y las actividades cotidianas.</p>
         <p class="text-muted">Nuestro objetivo es que cada paciente y cuidador comprenda el plan y se sienta acompañado durante el proceso.</p>
       </div>
-      <div class="panel reveal" style="background:var(--bg-warm)">
+      <div class="panel reveal" style="background:var(--gasa)">
         <div class="card__icon">${C.icon("route")}</div>
         <h3>El tratamiento continúa con seguimiento</h3>
         <p>El control de una enfermedad alérgica puede requerir ajustes con el tiempo. En las consultas de seguimiento se revisa:</p>

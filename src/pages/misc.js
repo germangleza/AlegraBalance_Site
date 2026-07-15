@@ -10,9 +10,9 @@ const gracias = {
   description:
     "Gracias por contactar a Alergia Balance Center. Nuestro equipo se pondrá en contacto contigo para confirmar disponibilidad.",
   body: `
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container center" style="max-width:640px">
-    <div class="card__icon" style="margin:0 auto 1.4rem;width:72px;height:72px;background:var(--bg-turq)">${C.icon("check")}</div>
+    <div class="card__icon" style="margin:0 auto 1.4rem;width:72px;height:72px;background:var(--gasa)">${C.icon("check")}</div>
     <h1 style="margin-bottom:1rem">Recibimos tu solicitud</h1>
     <p class="lead">Gracias por contactar a Alergia Balance Center. Nuestro equipo revisará tu información y se pondrá en contacto contigo para confirmar disponibilidad.</p>
     <div class="btn-row" style="justify-content:center;margin-top:2rem">
@@ -31,7 +31,7 @@ const notFound = {
   title: "Página no encontrada | Alergia Balance Center",
   description: "No encontramos esta página.",
   body: `
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container center" style="max-width:640px">
     <p class="eyebrow">Error 404</p>
     <h1 style="margin-bottom:1rem">No encontramos esta página</h1>
@@ -57,7 +57,7 @@ const privacidad = {
     { label: "Aviso de privacidad", href: "/aviso-de-privacidad/" },
   ],
   body: `
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="article">
       <h1 style="margin-bottom:1.4rem">Aviso de privacidad</h1>

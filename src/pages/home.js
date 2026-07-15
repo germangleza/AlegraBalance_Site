@@ -32,15 +32,17 @@ const symptomCards = [
   },
 ];
 
-const conditions = [
-  { icon: "nose", h: "Rinitis alérgica", p: "Congestión, estornudos, comezón y secreción nasal que pueden presentarse por temporadas o durante todo el año.", href: "/padecimientos/rinitis-alergica/" },
-  { icon: "lungs", h: "Asma y alergias respiratorias", p: "Valoración de tos crónica, silbidos, falta de aire y otros síntomas respiratorios.", href: "/padecimientos/asma/" },
-  { icon: "skin", h: "Dermatitis", p: "Atención de dermatitis atópica, dermatitis de contacto, irritación y comezón persistente.", href: "/padecimientos/dermatitis-atopica/" },
-  { icon: "heart", h: "Urticaria y ronchas", p: "Evaluación de ronchas, inflamación y episodios recurrentes en la piel.", href: "/padecimientos/urticaria/" },
-  { icon: "food", h: "Alergias alimentarias", p: "Valoración de posibles reacciones relacionadas con alimentos y enfermedades digestivas asociadas.", href: "/padecimientos/alergias-alimentarias/" },
-  { icon: "pill", h: "Alergias a medicamentos", p: "Evaluación de reacciones previas para orientar el manejo y reducir riesgos futuros.", href: "/padecimientos/alergias-a-medicamentos/" },
-  { icon: "eye", h: "Alergias oculares", p: "Atención de comezón, lagrimeo, enrojecimiento e irritación ocular relacionados con alergias.", href: "/padecimientos/#oculares" },
-  { icon: "ear", h: "Rinosinusitis y tos crónica", p: "Estudio de síntomas persistentes de nariz, senos paranasales y vías respiratorias.", href: "/padecimientos/#respiratorias" },
+/* Índice de padecimientos: reemplaza la segunda cuadrícula de tarjetas
+   (duplicaba la sección de síntomas) por una lista compacta. */
+const conditionsIndex = [
+  { h: "Rinitis alérgica", href: "/padecimientos/rinitis-alergica/" },
+  { h: "Asma y alergias respiratorias", href: "/padecimientos/asma/" },
+  { h: "Dermatitis", href: "/padecimientos/dermatitis-atopica/" },
+  { h: "Urticaria y ronchas", href: "/padecimientos/urticaria/" },
+  { h: "Alergias alimentarias", href: "/padecimientos/alergias-alimentarias/" },
+  { h: "Alergias a medicamentos", href: "/padecimientos/alergias-a-medicamentos/" },
+  { h: "Alergias oculares", href: "/padecimientos/#oculares" },
+  { h: "Rinosinusitis y tos crónica", href: "/padecimientos/#respiratorias" },
 ];
 
 const tests = [
@@ -60,21 +62,46 @@ const faqs = [
   { q: "¿Cómo puedo agendar?", a: "Puedes solicitar una cita por WhatsApp, teléfono o mediante el formulario del sitio." },
 ];
 
-function card(c) {
-  return `<article class="card reveal">
+/* Panel de pruebas cutáneas: la firma visual del hero. Ocho alérgenos
+   comunes, tres con reacción positiva, cada uno enlaza a su padecimiento. */
+const prickPoints = [
+  { label: "Ácaros", href: "/padecimientos/rinitis-alergica/", positive: true },
+  { label: "Fresno", href: "/padecimientos/rinitis-alergica/" },
+  { label: "Encino", href: "/padecimientos/rinitis-alergica/" },
+  { label: "Gato", href: "/padecimientos/asma/", positive: true },
+  { label: "Perro", href: "/padecimientos/asma/" },
+  { label: "Pastos", href: "/padecimientos/rinitis-alergica/", positive: true },
+  { label: "Cucaracha", href: "/padecimientos/asma/" },
+  { label: "Polvo", href: "/padecimientos/rinitis-alergica/" },
+];
+const prickPositiveCount = prickPoints.filter((p) => p.positive).length;
+
+function card(c, i) {
+  return `<article class="card reveal" style="--i:${i}">
     <div class="card__icon">${C.icon(c.icon)}</div>
     <h3>${c.h}</h3>
     <ul>${c.items.map((i) => `<li>${i}</li>`).join("")}</ul>
     <a href="${c.href}" class="btn btn--ghost">${c.cta}</a>
   </article>`;
 }
-function miniCard(c) {
-  const tag = c.href ? "a" : "article";
-  const attrs = c.href ? ` href="${c.href}" style="display:block;color:inherit"` : "";
-  return `<${tag} class="mini-card reveal"${attrs}>
-    <h3>${C.icon(c.icon)}${c.h}</h3>
-    <p>${c.p}</p>
-  </${tag}>`;
+
+function prickPanel() {
+  const points = prickPoints
+    .map(
+      (p, i) => `<a class="prick-point${p.positive ? " is-positive" : ""}" href="${p.href}" style="--i:${i}">
+        <span class="prick-point__dot"><span class="prick-point__habon"></span></span>
+        <span class="prick-point__label">${p.label}</span>
+      </a>`
+    )
+    .join("");
+  return `<div class="prick-panel">
+    <div class="prick-panel__head">
+      <span>Panel 01 · Lectura a 15 min</span>
+    </div>
+    <div class="prick-panel__grid">${points}</div>
+    <hr class="prick-panel__divider">
+    <p class="prick-panel__count">Positivo: <strong>${prickPositiveCount} de ${prickPoints.length}</strong></p>
+  </div>`;
 }
 
 const body = `
@@ -82,29 +109,34 @@ const body = `
   <div class="container">
     <div class="hero__grid">
       <div class="hero__text">
-        <span class="eyebrow">Alergia · Asma · Inmunología</span>
-        <h1>Clínica Integral de Alergia e Inmunología</h1>
-        <p>Atención especializada para niños y adultos con enfermedades alérgicas respiratorias y dermatológicas.</p>
-        <p>En Alergia Balance Center combinamos evaluación clínica, pruebas diagnósticas, tratamientos personalizados y acompañamiento cercano para mejorar tu calidad de vida.</p>
+        <span class="eyebrow hero__eyebrow intro-hide">Alergia · Asma · Inmunología</span>
+        <h1>
+          <span class="line"><span style="--i:0">Encontrar la causa</span></span>
+          <span class="line"><span style="--i:1">es la mitad del tratamiento</span></span>
+        </h1>
+        <p>Atención especializada para niños y adultos con enfermedades alérgicas respiratorias y dermatológicas. Combinamos evaluación clínica, pruebas diagnósticas y tratamiento personalizado.</p>
       </div>
-      <div class="hero__cta btn-row">
+      <div class="hero__panel">
+        ${prickPanel()}
+      </div>
+      <div class="hero__cta btn-row intro-hide">
         ${C.scheduleBtn({ lg: true, loc: "hero" })}
         ${C.whatsappBtn({ lg: true, secondary: true, loc: "hero" })}
       </div>
-      <div class="hero__media reveal">
+      <div class="hero__media intro-hide">
         ${C.media("Fotografía profesional de la Dra. María de Jesús Vázquez García en el consultorio")}
       </div>
-      <ul class="trust-badges">
-        <li>${C.icon("award")} Más de 20 años de experiencia</li>
-        <li>${C.icon("child")} Atención para niños y adultos</li>
-        <li>${C.icon("shield")} Certificación CONICA</li>
-        <li>${C.icon("stethoscope")} Diagnóstico y tratamiento personalizado</li>
+      <ul class="trust-badges intro-hide">
+        <li>Más de 20 años de experiencia</li>
+        <li>Atención para niños y adultos</li>
+        <li>Certificación CONICA</li>
+        <li>Diagnóstico y tratamiento personalizado</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">¿Cómo podemos ayudarte?</span>
@@ -116,7 +148,7 @@ const body = `
     </div>
     <div class="callout reveal" style="margin-top:2rem">
       <p>No necesitas saber qué tipo de alergia tienes para solicitar una valoración.</p>
-      ${C.scheduleBtn({ label: "Agendar valoración", loc: "sintomas" })}
+      ${C.scheduleBtn({ loc: "sintomas" })}
     </div>
   </div>
 </section>
@@ -132,7 +164,7 @@ const body = `
         <div class="steps cols-3" style="margin:1.5rem 0">
           <div class="step"><span class="step__num"></span><h3>Evaluación especializada</h3><p>Revisamos síntomas, antecedentes, posibles desencadenantes y el impacto en la vida diaria.</p></div>
           <div class="step"><span class="step__num"></span><h3>Pruebas y diagnóstico</h3><p>Cuando son necesarias, realizamos estudios para orientar el diagnóstico con precisión.</p></div>
-          <div class="step"><span class="step__num"></span><h3>Tratamiento personalizado</h3><p>Diseñamos un plan para controlar síntomas, reducir riesgos y mejorar la calidad de vida.</p></div>
+          <div class="step"><span class="step__num"></span><h3>Tratamiento personalizado</h3><p>Diseñamos un plan para controlar síntomas, reducir riesgos y facilitar tu día a día.</p></div>
         </div>
         ${C.ghostLink("/tratamientos/", "Conocer nuestros servicios")}
       </div>
@@ -140,28 +172,35 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-turq">
+<section class="section bg-gasa">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">Padecimientos que atendemos</span>
-      <h2>Atención especializada para distintos tipos de alergia</h2>
+      <h2>Índice de padecimientos</h2>
       <p>Atendemos enfermedades alérgicas respiratorias, cutáneas, digestivas, oculares y relacionadas con medicamentos en pacientes pediátricos y adultos.</p>
     </div>
-    <div class="grid grid-4" style="margin-top:2.5rem">
-      ${conditions.map(miniCard).join("")}
-    </div>
+    <ul class="index-list reveal" style="margin-top:2.5rem;max-width:760px;margin-inline:auto">
+      ${conditionsIndex
+        .map(
+          (c, i) => `<li><a href="${c.href}">
+        <span><span class="num">0${i + 1}</span> <span class="label">${c.h}</span></span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a></li>`
+        )
+        .join("")}
+    </ul>
     <div class="center" style="margin-top:2rem">
-      ${C.scheduleBtn({ label: "Ver todos los padecimientos", secondary: true, loc: "padecimientos" })}
+      ${C.ghostLink("/padecimientos/", "Ver todos los padecimientos")}
     </div>
   </div>
 </section>
 
-<section class="section bg-navy">
+<section class="section bg-tinta">
   <div class="container">
     <div class="section-head" style="margin-bottom:2.5rem">
       <span class="eyebrow">Experiencia, confianza y acompañamiento</span>
       <h2>Atención médica especializada en un entorno cercano y profesional</h2>
-      <p>En Alergia Balance Center nuestro objetivo es ayudar a cada paciente y a su familia a comprender el padecimiento y tomar decisiones informadas sobre su salud, mejorando su calidad de vida de cada paciente.</p>
+      <p>En Alergia Balance Center nuestro objetivo es ayudar a cada paciente y a su familia a comprender el padecimiento y tomar decisiones informadas sobre su salud.</p>
     </div>
     <div class="split">
       <article class="card reveal">
@@ -190,7 +229,7 @@ const body = `
       </article>
     </div>
     <div style="margin-top:2rem;text-align:center">
-      <p style="color:#c3cef0;max-width:60ch;margin:0 auto 1.4rem">Medicina especializada con un trato humano, cercano y orientado a mejorar tu calidad de vida.</p>
+      <p style="color:#b7c1e0;max-width:60ch;margin:0 auto 1.4rem">Medicina especializada con un trato humano, cercano y orientado a mejorar tu calidad de vida.</p>
       <a href="/clinica-y-doctora/" class="btn btn--secondary btn--lg">Conocer la clínica y a la doctora</a>
     </div>
   </div>
@@ -202,14 +241,14 @@ const body = `
       <h2>Atención especializada en cada etapa de la vida</h2>
     </div>
     <div class="duo" style="margin-top:2.5rem">
-      <div class="panel turq reveal">
+      <div class="panel reveal">
         <div class="card__icon">${C.icon("child")}</div>
         <h3>Alergología pediátrica</h3>
         <p>Atención cercana para bebés, niños y adolescentes con enfermedades alérgicas respiratorias, alimentarias y cutáneas.</p>
         <p>El acompañamiento incluye orientación para madres, padres y cuidadores, con recomendaciones adaptadas a la vida en casa, la escuela y las actividades cotidianas.</p>
       </div>
-      <div class="panel purple reveal">
-        <div class="card__icon" style="background:#e8f3f4;color:#137e88">${C.icon("stethoscope")}</div>
+      <div class="panel reveal">
+        <div class="card__icon">${C.icon("stethoscope")}</div>
         <h3>Alergología para adultos</h3>
         <p>Evaluación y tratamiento de alergias que afectan la respiración, la piel, la alimentación, el descanso y las actividades diarias.</p>
         <p>Cada plan se define de acuerdo con la historia clínica, los síntomas y las necesidades de la persona.</p>
@@ -218,7 +257,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">Diagnóstico y manejo personalizado</span>
@@ -227,7 +266,7 @@ const body = `
     <div class="grid grid-4" style="margin-top:2.5rem">
       ${tests
         .map(
-          (t) => `<article class="card reveal">
+          (t, i) => `<article class="card reveal" style="--i:${i}">
         <div class="card__icon">${C.icon(t.icon)}</div>
         <h3>${t.h}</h3><p>${t.p}</p>
       </article>`
@@ -240,19 +279,22 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-warm">
+<section class="section bg-gasa">
   <div class="container">
     <div class="section-head center"><h2>Tu atención en cuatro pasos</h2></div>
-    <div class="steps cols-4" style="margin-top:2.5rem">
-      <div class="step reveal"><span class="step__num"></span><h3>Agenda tu consulta</h3></div>
-      <div class="step reveal"><span class="step__num"></span><h3>Valoración especializada</h3></div>
-      <div class="step reveal"><span class="step__num"></span><h3>Estudios de diagnóstico</h3></div>
-      <div class="step reveal"><span class="step__num"></span><h3>Tratamiento y seguimiento</h3></div>
+    <div class="steps-track reveal" style="margin-top:2.5rem">
+      <div class="steps-track__rail"><div class="steps-track__fill"></div></div>
+    </div>
+    <div class="steps cols-4">
+      <div class="step reveal" style="--i:0"><span class="step__num"></span><h3>Agenda tu consulta</h3></div>
+      <div class="step reveal" style="--i:1"><span class="step__num"></span><h3>Valoración especializada</h3></div>
+      <div class="step reveal" style="--i:2"><span class="step__num"></span><h3>Estudios de diagnóstico</h3></div>
+      <div class="step reveal" style="--i:3"><span class="step__num"></span><h3>Tratamiento y seguimiento</h3></div>
     </div>
   </div>
 </section>
 
-<section class="section bg-turq">
+<section class="section bg-papel">
   <div class="container">
     <div class="feature reverse">
       <div class="feature__media reveal">${C.media("Fachada del edificio en Sinaloa 106, Roma Norte", "ph")}</div>
@@ -276,7 +318,7 @@ const body = `
 <section class="section">
   <div class="container">
     <div class="section-head center"><h2>Preguntas frecuentes antes de tu consulta</h2></div>
-    <div style="margin-top:2rem">${C.faq(faqs, "home-faq")}</div>
+    <div style="margin-top:2rem">${C.faq(faqs)}</div>
   </div>
 </section>
 
@@ -286,7 +328,7 @@ ${C.ctaBand(
   { loc: "home-final" }
 )}
 
-<section class="section bg-white">
+<section class="section bg-papel">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">Información para cuidar tu salud</span>

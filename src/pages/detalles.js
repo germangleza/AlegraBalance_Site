@@ -340,7 +340,6 @@ const treatments = [
       { q: "¿Sublingual o subcutánea?", a: "La vía se elige según el caso, el tipo de alérgeno y las preferencias, siempre con criterio médico." },
       { q: "¿Es para cualquier alergia?", a: "No. Está indicada para pacientes seleccionados y determinados alérgenos, de acuerdo con el diagnóstico y la valoración." },
     ],
-    ctaLabel: "Conocer si soy candidato",
     seoTitle: "Inmunoterapia para alergias en CDMX | Alergia Balance",
     seoDescription:
       "Inmunoterapia sublingual y subcutánea para alergias en Roma Norte, CDMX. Candidatos, objetivos y seguimiento, según indicación médica.",

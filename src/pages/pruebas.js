@@ -5,19 +5,19 @@ const bc = [
   { label: "Pruebas y diagnóstico", href: "/pruebas-y-diagnostico/" },
 ];
 
-function testBlock(id, icon, h, rows, cta, detailHref) {
+function testBlock(id, icon, h, rows, detailHref) {
   const dl = rows
     .map((r) => `<h3>${r.q}</h3><p>${r.a}</p>`)
     .join("");
   const detail = detailHref ? C.ghostLink(detailHref, "Ver detalle completo") : "";
-  return `<section class="section bg-white" id="${id}">
+  return `<section class="section bg-papel" id="${id}">
     <div class="container">
       <div class="feature">
         <div class="reveal">
           <div class="card__icon">${C.icon(icon)}</div>
           <h2>${h}</h2>
           <div class="article" style="margin:1rem 0 0">${dl}</div>
-          <div class="btn-row" style="margin-top:1.4rem">${C.scheduleBtn({ label: cta, loc: id })}${detail}</div>
+          <div class="btn-row" style="margin-top:1.4rem">${C.scheduleBtn({ loc: id })}${detail}</div>
         </div>
         <div class="feature__media reveal">${C.media(h, "ph")}</div>
       </div>
@@ -34,14 +34,14 @@ const body = `
         <h1>Pruebas y diagnóstico de alergias</h1>
         <p>No todos los pacientes necesitan las mismas pruebas. La selección de estudios depende de los síntomas, antecedentes, edad, tratamientos actuales y hallazgos de la valoración médica.</p>
         <p class="text-muted">Las pruebas deben interpretarse junto con la historia clínica; un resultado positivo no siempre significa que una sustancia sea la causa de los síntomas.</p>
-        ${C.scheduleBtn({ label: "Agendar valoración", loc: "pruebas-hero" })}
+        ${C.scheduleBtn({ loc: "pruebas-hero" })}
       </div>
       <div class="page-hero__media">${C.media("Área de pruebas de alergia", "ph")}</div>
     </div>
   </div>
 </section>
 
-<section class="section bg-turq">
+<section class="section bg-gasa">
   <div class="container">
     <div class="feature">
       <div class="reveal">
@@ -49,7 +49,7 @@ const body = `
         <h2>El diagnóstico comienza con una valoración completa</h2>
         <p>Durante la consulta se revisan distintos aspectos para determinar si una prueba puede aportar datos relevantes.</p>
       </div>
-      <ul class="check-list reveal" style="background:#fff;padding:1.8rem;border-radius:var(--radius-lg)">
+      <ul class="check-list reveal" style="background:var(--papel);padding:1.8rem;border-radius:var(--radius)">
         <li>Síntomas y duración</li>
         <li>Momentos o lugares en que aparecen</li>
         <li>Alimentos, medicamentos o sustancias sospechosas</li>
@@ -71,7 +71,6 @@ ${testBlock(
     { q: "¿Cómo se realizan?", a: "Se colocan pequeñas cantidades de los alérgenos seleccionados en la piel y se observa la respuesta bajo supervisión médica." },
     { q: "¿Requieren preparación?", a: "Algunos medicamentos pueden modificar los resultados. El equipo debe proporcionar instrucciones antes de la prueba. No suspendas medicamentos sin indicación médica." },
   ],
-  "Consultar disponibilidad",
   "/pruebas-y-diagnostico/pruebas-cutaneas/"
 )}
 
@@ -83,8 +82,7 @@ ${testBlock(
     { q: "¿Qué son?", a: "Son estudios que ayudan a evaluar reacciones tardías de la piel frente a sustancias que pueden causar dermatitis de contacto." },
     { q: "¿Cuándo pueden indicarse?", a: "Cuando existe irritación, comezón o lesiones recurrentes relacionadas con metales, cosméticos, fragancias, productos de cuidado personal, materiales u otras sustancias." },
     { q: "¿Cómo se realizan?", a: "Los materiales se colocan sobre la espalda durante un periodo indicado y se realizan lecturas posteriores para evaluar la respuesta." },
-  ],
-  "Agendar evaluación de dermatitis"
+  ]
 )}
 
 ${testBlock(
@@ -94,8 +92,7 @@ ${testBlock(
   [
     { q: "¿Qué evalúa?", a: "Mide diferentes aspectos de la función pulmonar y puede aportar información en pacientes con tos, silbidos, falta de aire o sospecha de asma." },
     { q: "¿Cómo se realiza?", a: "El paciente respira a través de un equipo siguiendo instrucciones específicas. La prueba requiere colaboración y puede repetirse para asegurar resultados confiables." },
-  ],
-  "Consultar disponibilidad"
+  ]
 )}
 
 ${testBlock(
@@ -105,11 +102,10 @@ ${testBlock(
   [
     { q: "¿Para qué sirve?", a: "Evalúa si la función respiratoria cambia después de utilizar un medicamento broncodilatador." },
     { q: "¿Cuándo se utiliza?", a: "Puede formar parte del estudio de asma u obstrucción de las vías respiratorias cuando está clínicamente indicada." },
-  ],
-  "Solicitar valoración respiratoria"
+  ]
 )}
 
-<section class="section bg-warm">
+<section class="section bg-gasa">
   <div class="container">
     <div class="section-head center"><h2>Antes de tu estudio</h2></div>
     <div class="grid grid-2" style="margin-top:2rem;max-width:900px">
