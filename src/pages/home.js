@@ -32,19 +32,6 @@ const symptomCards = [
   },
 ];
 
-/* Índice de padecimientos: reemplaza la segunda cuadrícula de tarjetas
-   (duplicaba la sección de síntomas) por una lista compacta. */
-const conditionsIndex = [
-  { h: "Rinitis alérgica", href: "/padecimientos/rinitis-alergica/" },
-  { h: "Asma y alergias respiratorias", href: "/padecimientos/asma/" },
-  { h: "Dermatitis", href: "/padecimientos/dermatitis-atopica/" },
-  { h: "Urticaria y ronchas", href: "/padecimientos/urticaria/" },
-  { h: "Alergias alimentarias", href: "/padecimientos/alergias-alimentarias/" },
-  { h: "Alergias a medicamentos", href: "/padecimientos/alergias-a-medicamentos/" },
-  { h: "Alergias oculares", href: "/padecimientos/#oculares" },
-  { h: "Rinosinusitis y tos crónica", href: "/padecimientos/#respiratorias" },
-];
-
 const tests = [
   { icon: "test", h: "Pruebas cutáneas", p: "Ayudan a evaluar la sensibilidad frente a diferentes alérgenos y se interpretan junto con los síntomas y antecedentes del paciente." },
   { icon: "patch", h: "Pruebas de parche", p: "Se utilizan para investigar posibles causas de dermatitis de contacto y reacciones tardías en la piel." },
@@ -168,29 +155,6 @@ const body = `
         </div>
         ${C.ghostLink("/tratamientos/", "Conocer nuestros servicios")}
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-gasa">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow">Padecimientos que atendemos</span>
-      <h2>Índice de padecimientos</h2>
-      <p>Atendemos enfermedades alérgicas respiratorias, cutáneas, digestivas, oculares y relacionadas con medicamentos en pacientes pediátricos y adultos.</p>
-    </div>
-    <ul class="index-list reveal" style="margin-top:2.5rem;max-width:760px;margin-inline:auto">
-      ${conditionsIndex
-        .map(
-          (c, i) => `<li><a href="${c.href}">
-        <span><span class="num">0${i + 1}</span> <span class="label">${c.h}</span></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a></li>`
-        )
-        .join("")}
-    </ul>
-    <div class="center" style="margin-top:2rem">
-      ${C.ghostLink("/padecimientos/", "Ver todos los padecimientos")}
     </div>
   </div>
 </section>
