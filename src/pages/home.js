@@ -109,7 +109,7 @@ const body = `
     <div class="section-head center">
       <span class="eyebrow">¿Cómo podemos ayudarte?</span>
       <h2>¿Presentas alguno de estos síntomas?</h2>
-      <p>Una valoración especializada ayuda a identificar posibles desencadenantes y definir el manejo adecuado para cada paciente.</p>
+      <p>Una valoración especializada ayuda a identificar lo que desencadena la alergia y definir el manejo adecuado para cada paciente.</p>
     </div>
     <div class="grid grid-4" style="margin-top:2.5rem">
       ${symptomCards.map(card).join("")}
@@ -128,7 +128,7 @@ const body = `
       <div class="reveal">
         <span class="eyebrow">Atención integral</span>
         <h2>De la evaluación al seguimiento</h2>
-        <p>Nuestro proceso integra historia clínica, exploración, pruebas cuando están indicadas y un plan de tratamiento adaptado a sus necesidades.</p>
+        <p>Nuestro proceso integra historia clínica, exploración, pruebas diagnósticas y un plan de tratamiento adaptado a sus necesidades.</p>
         <div class="steps cols-3" style="margin:1.5rem 0">
           <div class="step"><span class="step__num"></span><h3>Evaluación especializada</h3><p>Revisamos síntomas, antecedentes, posibles desencadenantes y el impacto en la vida diaria.</p></div>
           <div class="step"><span class="step__num"></span><h3>Pruebas y diagnóstico</h3><p>Cuando son necesarias, realizamos estudios para orientar el diagnóstico con precisión.</p></div>
@@ -161,7 +161,7 @@ const body = `
     <div class="section-head" style="margin-bottom:2.5rem">
       <span class="eyebrow">Experiencia, confianza y acompañamiento</span>
       <h2>Atención médica especializada en un entorno cercano y profesional</h2>
-      <p>En Alergia Balance Center nuestro objetivo es ayudar a cada paciente y a su familia a comprender el padecimiento y tomar decisiones informadas sobre su salud mejorando su calidad de vida de cada paciente.</p>
+      <p>En Alergia Balance Center nuestro objetivo es ayudar a cada paciente y a su familia a comprender el padecimiento y tomar decisiones informadas sobre su salud, mejorando su calidad de vida de cada paciente.</p>
     </div>
     <div class="split">
       <article class="card reveal">
@@ -207,14 +207,12 @@ const body = `
         <h3>Alergología pediátrica</h3>
         <p>Atención cercana para bebés, niños y adolescentes con enfermedades alérgicas respiratorias, alimentarias y cutáneas.</p>
         <p>El acompañamiento incluye orientación para madres, padres y cuidadores, con recomendaciones adaptadas a la vida en casa, la escuela y las actividades cotidianas.</p>
-        ${C.ghostLink("/padecimientos/#pediatrica", "Conocer atención pediátrica")}
       </div>
       <div class="panel purple reveal">
         <div class="card__icon" style="background:#e8f3f4;color:#137e88">${C.icon("stethoscope")}</div>
         <h3>Alergología para adultos</h3>
         <p>Evaluación y tratamiento de alergias que afectan la respiración, la piel, la alimentación, el descanso y las actividades diarias.</p>
         <p>Cada plan se define de acuerdo con la historia clínica, los síntomas y las necesidades de la persona.</p>
-        ${C.ghostLink("/padecimientos/", "Conocer atención para adultos")}
       </div>
     </div>
   </div>
@@ -246,10 +244,10 @@ const body = `
   <div class="container">
     <div class="section-head center"><h2>Tu atención en cuatro pasos</h2></div>
     <div class="steps cols-4" style="margin-top:2.5rem">
-      <div class="step reveal"><span class="step__num"></span><h3>Agenda tu consulta</h3><p>Elige la opción de contacto que prefieras y solicita una fecha disponible.</p></div>
-      <div class="step reveal"><span class="step__num"></span><h3>Valoración especializada</h3><p>Revisamos síntomas, antecedentes, tratamientos previos y posibles desencadenantes.</p></div>
-      <div class="step reveal"><span class="step__num"></span><h3>Estudios cuando sean necesarios</h3><p>La doctora determina qué pruebas pueden aportar información útil para tu caso.</p></div>
-      <div class="step reveal"><span class="step__num"></span><h3>Tratamiento y seguimiento</h3><p>Recibes un plan personalizado y acompañamiento para evaluar tu evolución.</p></div>
+      <div class="step reveal"><span class="step__num"></span><h3>Agenda tu consulta</h3></div>
+      <div class="step reveal"><span class="step__num"></span><h3>Valoración especializada</h3></div>
+      <div class="step reveal"><span class="step__num"></span><h3>Estudios de diagnóstico</h3></div>
+      <div class="step reveal"><span class="step__num"></span><h3>Tratamiento y seguimiento</h3></div>
     </div>
   </div>
 </section>
@@ -261,7 +259,6 @@ const body = `
       <div class="reveal">
         <span class="eyebrow">Visítanos</span>
         <h2>Consulta en Roma Norte, CDMX</h2>
-        <p>Estamos ubicados en una zona de fácil acceso para brindar atención especializada a niños y adultos.</p>
         <ul class="info-list" style="margin:1.2rem 0">
           <li>${C.icon("pin")}<div><strong>${site.contact.address.street}</strong><br>${site.contact.address.neighborhood}<br>${site.contact.address.postal}</div></li>
           <li>${C.icon("clock")}<div>Martes a viernes 12:00–19:00 · Sábado 11:00–14:00 · Domingo cerrado</div></li>
