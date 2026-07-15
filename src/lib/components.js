@@ -146,15 +146,6 @@ function header(active) {
 </header>`;
 }
 
-/* ------------------------- Barra inferior móvil ---------------------- */
-function mobileActions() {
-  return `<nav class="mobile-actions" aria-label="Acciones rápidas">
-    <a href="${site.contact.whatsapp}" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-loc="mobile-bar">${icon("whatsapp")}<span>WhatsApp</span></a>
-    <a href="${site.contact.phoneHref}" data-track="click_call" data-track-loc="mobile-bar">${icon("phone")}<span>Llamar</span></a>
-    <a href="/contacto/" class="primary" data-track="click_schedule" data-track-loc="mobile-bar">${icon("calendar")}<span>Agendar</span></a>
-  </nav>`;
-}
-
 /* ------------------------------ Footer ------------------------------- */
 function footer() {
   const explore = site.nav
@@ -273,7 +264,6 @@ module.exports = {
   ghostLink,
   header,
   footer,
-  mobileActions,
   emergencyNotice,
   reviewer,
   breadcrumbs,

@@ -1405,54 +1405,6 @@ strong {
   color: var(--turquoise-600);
 }
 
-/* ------------------------- Mobile bottom bar ------------------------ */
-.mobile-actions {
-  display: none;
-}
-@media (max-width: 780px) {
-  .mobile-actions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 45;
-    background: var(--white);
-    border-top: 1px solid var(--line);
-    box-shadow: 0 -4px 20px rgba(7, 30, 85, 0.08);
-    padding: 0.4rem 0.4rem calc(0.4rem + env(safe-area-inset-bottom));
-  }
-  .mobile-actions a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.2rem;
-    padding: 0.5rem 0.2rem;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--navy);
-    border-radius: 12px;
-  }
-  .mobile-actions a .icon {
-    width: 22px;
-    height: 22px;
-    color: var(--turquoise);
-  }
-  .mobile-actions a.primary {
-    background: var(--turquoise);
-    color: #fff;
-    margin: 0.1rem;
-  }
-  .mobile-actions a.primary .icon {
-    color: #fff;
-  }
-  body {
-    padding-bottom: 72px;
-  }
-}
-
 /* ------------------------------ Footer ------------------------------ */
 .footer {
   background: var(--navy);

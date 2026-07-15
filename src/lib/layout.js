@@ -128,7 +128,6 @@ ${bcNav}
 ${body}
 </main>
 ${C.footer()}
-${C.mobileActions()}
 <script src="/js/main.js" defer></script>
 </body>
 </html>`;
