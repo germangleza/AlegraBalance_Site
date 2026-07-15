@@ -74,7 +74,7 @@ function icon(name, cls) {
 function logo(variant) {
   const light = variant === "light";
   const tinta = light ? "#ffffff" : "#071E55";
-  const polen = "#E8B33C";
+  const polen = "#C57312";
   return `<svg viewBox="0 0 214 26" role="img" aria-label="Alergia Balance Center" xmlns="http://www.w3.org/2000/svg">
   <g fill="none" stroke-width="1.8" stroke-linecap="round">
     <path d="M6 18c2-6 6-10 8-10s2 1.5 2 4-2 6-2 6" stroke="${tinta}"/>

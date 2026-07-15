@@ -4,30 +4,27 @@ const path = require("path");
 
 const OUT = path.join(__dirname, "..", "public", "assets", "og-default.png");
 const html = `<!doctype html><html><head><meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Manrope:wght@700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Karla:wght@500;700&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
 *{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;font-family:Manrope,sans-serif;
-  background:linear-gradient(135deg,#071E55 0%,#0c2f6e 55%,#137E88 140%);
+body{width:1200px;height:630px;font-family:Karla,sans-serif;
+  background:#071E55;
   color:#fff;padding:80px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-.blob{position:absolute;width:520px;height:520px;border-radius:50%;
-  background:radial-gradient(circle,rgba(19,126,136,.55),transparent 70%);top:-160px;right:-120px}
-.mark{display:flex;align-items:center;gap:18px;z-index:2}
-.mark svg{width:64px;height:64px}
-.brand{font-weight:800;font-size:30px}
-.brand span{color:#7FD3D9}
-h1{font-size:62px;font-weight:800;line-height:1.08;max-width:15ch;z-index:2;letter-spacing:-.02em}
-.eyebrow{font-family:Inter;font-weight:600;letter-spacing:.18em;color:#7FD3D9;font-size:20px;margin-bottom:20px;text-transform:uppercase}
-.foot{font-family:Inter;font-weight:500;font-size:24px;color:#c3cef0;z-index:2;display:flex;gap:16px;align-items:center}
-.dot{color:#B4771F}
-.gold-line{position:absolute;bottom:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#137E88,#B4771F)}
+.mark{display:flex;align-items:center;gap:14px;z-index:2}
+.mark svg{width:40px;height:40px}
+.brand{font-weight:700;font-size:26px;letter-spacing:-.01em}
+.brand span{color:#C57312}
+h1{font-family:Newsreader;font-optical-sizing:auto;font-weight:500;font-size:60px;line-height:1.05;max-width:16ch;z-index:2;letter-spacing:-.01em}
+.eyebrow{font-family:"IBM Plex Mono";font-weight:500;letter-spacing:.1em;color:#C57312;font-size:16px;margin-bottom:22px;text-transform:uppercase}
+.foot{font-family:"IBM Plex Mono";font-weight:500;font-size:17px;color:#b7c1e0;z-index:2;display:flex;gap:14px;align-items:center;letter-spacing:.01em}
+.dot{color:#C57312}
+.line{position:absolute;bottom:0;left:0;right:0;height:6px;background:#C57312}
 </style></head><body>
-<div class="blob"></div>
 <div class="mark">
-  <svg viewBox="0 0 52 52" fill="none" stroke-width="3.6" stroke-linecap="round">
-    <path d="M15 31c4-9 10-13 12-13s3 2 3 6-3 8-3 8" stroke="#7FD3D9"/>
-    <path d="M37 23c-4 9-10 13-12 13s-3-2-3-6 3-8 3-8" stroke="#ffffff"/>
-    <circle cx="26" cy="27" r="3" fill="#B4771F"/>
+  <svg viewBox="0 0 26 26" fill="none" stroke-width="1.8" stroke-linecap="round">
+    <path d="M6 18c2-6 6-10 8-10s2 1.5 2 4-2 6-2 6" stroke="#ffffff"/>
+    <path d="M20 8c-2 6-6 10-8 10s-2-1.5-2-4 2-6 2-6" stroke="#ffffff" opacity="0.45"/>
+    <circle cx="13" cy="13" r="1.6" fill="#C57312"/>
   </svg>
   <div class="brand">Alergia<span>Balance</span> Center</div>
 </div>
@@ -36,7 +33,7 @@ h1{font-size:62px;font-weight:800;line-height:1.08;max-width:15ch;z-index:2;lett
   <h1>Clínica de alergia e inmunología en CDMX</h1>
 </div>
 <div class="foot">Roma Norte, CDMX <span class="dot">·</span> Niños y adultos <span class="dot">·</span> Más de 20 años de experiencia</div>
-<div class="gold-line"></div>
+<div class="line"></div>
 </body></html>`;
 
 (async () => {
