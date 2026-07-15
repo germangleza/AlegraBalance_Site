@@ -899,6 +899,15 @@ strong {
 .steps-track__fill.is-filled {
   transform: scaleX(1);
 }
+.bg-tinta .steps-track__rail {
+  background: rgba(255, 255, 255, 0.2);
+}
+.bg-tinta .steps-track__fill {
+  background: var(--polen);
+}
+.bg-tinta .step__num {
+  color: var(--polen);
+}
 @media (max-width: 900px) {
   .steps-track__rail {
     width: 1px;

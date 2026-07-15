@@ -242,7 +242,7 @@ const body = `
   </div>
 </section>
 
-<section class="section bg-gasa">
+<section class="section bg-tinta">
   <div class="container">
     <div class="section-head center"><h2>Tu atención en cuatro pasos</h2></div>
     <div class="steps-track reveal" style="margin-top:2.5rem">
