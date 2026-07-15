@@ -549,17 +549,22 @@ strong {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   grid-template-areas:
-    "text  media"
-    "panel media"
-    "cta   media"
-    "trust media";
+    "text  aside"
+    "panel aside"
+    "cta   aside";
   column-gap: clamp(2rem, 5vw, 4rem);
   row-gap: var(--s3);
   align-items: start;
   padding-block: clamp(2.5rem, 6vw, 5rem);
 }
-.hero__grid > .hero__media {
-  align-self: center;
+/* Columna derecha: imagen arriba (a la altura del texto) y los badges
+   debajo de la imagen. En móvil se apila igual que antes. */
+.hero__aside {
+  grid-area: aside;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
 }
 .hero__text {
   grid-area: text;
@@ -591,7 +596,6 @@ strong {
   grid-area: cta;
 }
 .hero__media {
-  grid-area: media;
   position: relative;
 }
 .hero__media .media-frame {
@@ -606,7 +610,6 @@ strong {
   object-position: 62% 50%;
 }
 .trust-badges {
-  grid-area: trust;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.4rem;
@@ -1952,8 +1955,7 @@ strong {
       "text"
       "panel"
       "cta"
-      "media"
-      "trust";
+      "aside";
   }
   .hero__media .media-frame {
     aspect-ratio: 16 / 11;

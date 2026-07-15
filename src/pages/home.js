@@ -110,15 +110,17 @@ const body = `
         ${C.scheduleBtn({ lg: true, loc: "hero" })}
         ${C.whatsappBtn({ lg: true, secondary: true, loc: "hero" })}
       </div>
-      <div class="hero__media intro-hide">
-        ${C.media("Dra. María de Jesús Vázquez García en consulta con una paciente y su hijo", null, "/assets/images/doctora/dra-consulta.jpg")}
+      <div class="hero__aside">
+        <div class="hero__media intro-hide">
+          ${C.media("Dra. María de Jesús Vázquez García en consulta con una paciente y su hijo", null, "/assets/images/doctora/dra-consulta.jpg")}
+        </div>
+        <ul class="trust-badges intro-hide">
+          <li>Más de 20 años de experiencia</li>
+          <li>Atención para niños y adultos</li>
+          <li>Certificación CONICA</li>
+          <li>Diagnóstico y tratamiento personalizado</li>
+        </ul>
       </div>
-      <ul class="trust-badges intro-hide">
-        <li>Más de 20 años de experiencia</li>
-        <li>Atención para niños y adultos</li>
-        <li>Certificación CONICA</li>
-        <li>Diagnóstico y tratamiento personalizado</li>
-      </ul>
     </div>
   </div>
 </section>
