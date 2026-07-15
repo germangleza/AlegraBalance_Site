@@ -245,14 +245,11 @@ const body = `
 <section class="section bg-tinta">
   <div class="container">
     <div class="section-head center"><h2>Tu atención en cuatro pasos</h2></div>
-    <div class="steps-track reveal" style="margin-top:2.5rem">
-      <div class="steps-track__rail"><div class="steps-track__fill"></div></div>
-    </div>
-    <div class="steps cols-4">
-      <div class="step reveal" style="--i:0"><span class="step__num"></span><h3>Agenda tu consulta</h3></div>
-      <div class="step reveal" style="--i:1"><span class="step__num"></span><h3>Valoración especializada</h3></div>
-      <div class="step reveal" style="--i:2"><span class="step__num"></span><h3>Estudios de diagnóstico</h3></div>
-      <div class="step reveal" style="--i:3"><span class="step__num"></span><h3>Tratamiento y seguimiento</h3></div>
+    <div class="steps cols-4 steps--pasos" style="margin-top:var(--s5)">
+      <div class="step reveal reveal-left" style="--i:0"><span class="step__num"></span><h3>Agenda tu consulta</h3></div>
+      <div class="step reveal reveal-left" style="--i:1"><span class="step__num"></span><h3>Valoración especializada</h3></div>
+      <div class="step reveal reveal-left" style="--i:2"><span class="step__num"></span><h3>Estudios de diagnóstico</h3></div>
+      <div class="step reveal reveal-left" style="--i:3"><span class="step__num"></span><h3>Tratamiento y seguimiento</h3></div>
     </div>
   </div>
 </section>
