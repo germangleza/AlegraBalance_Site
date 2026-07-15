@@ -111,7 +111,7 @@ const body = `
         ${C.whatsappBtn({ lg: true, secondary: true, loc: "hero" })}
       </div>
       <div class="hero__media intro-hide">
-        ${C.media("Fotografía profesional de la Dra. María de Jesús Vázquez García en el consultorio")}
+        ${C.media("Dra. María de Jesús Vázquez García en el consultorio de Alergia Balance Center", null, "/assets/images/doctora/dra-maria-vazquez.jpg")}
       </div>
       <ul class="trust-badges intro-hide">
         <li>Más de 20 años de experiencia</li>

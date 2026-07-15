@@ -278,8 +278,12 @@ function ctaBand(h2, text, opts = {}) {
 }
 
 /* --------------------------- Media placeholder ----------------------- */
-function media(label, cls) {
-  return `<div class="${cls || "media-frame"}"><div class="ph"><span>${label}</span></div></div>`;
+function media(label, cls, src) {
+  const frame = cls || "media-frame";
+  if (src) {
+    return `<div class="${frame}"><img src="${src}" alt="${label}" class="media-img" loading="lazy" decoding="async"></div>`;
+  }
+  return `<div class="${frame}"><div class="ph"><span>${label}</span></div></div>`;
 }
 
 module.exports = {

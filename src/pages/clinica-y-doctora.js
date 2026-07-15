@@ -58,7 +58,7 @@ const body = `
         <p>Una clínica especializada en alergia e inmunología para niños y adultos, liderada por una médica con más de 20 años de experiencia en atención clínica, docencia y asesoría médico-científica.</p>
         ${C.scheduleBtn({ loc: "clinica-hero" })}
       </div>
-      <div class="page-hero__media">${C.media("Dra. María de Jesús Vázquez García en Alergia Balance Center", "ph")}</div>
+      <div class="page-hero__media">${C.media("Dra. María de Jesús Vázquez García en Alergia Balance Center", null, "/assets/images/doctora/dra-maria-vazquez.jpg")}</div>
     </div>
   </div>
 </section>
