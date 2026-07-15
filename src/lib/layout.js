@@ -5,7 +5,20 @@
 const { site } = require("../../site.config.js");
 const C = require("./components.js");
 
+function postalAddress(loc) {
+  const pa = {
+    "@type": "PostalAddress",
+    streetAddress: loc.street,
+    addressLocality: loc.locality,
+    addressRegion: loc.region,
+    addressCountry: "MX",
+  };
+  if (loc.postalCode) pa.postalCode = loc.postalCode;
+  return pa;
+}
+
 function jsonLdBase() {
+  const locs = site.contact.locations;
   const org = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
@@ -14,14 +27,13 @@ function jsonLdBase() {
     telephone: "+" + site.contact.phoneDigits,
     email: site.contact.email,
     image: site.baseUrl + "/assets/og-default.png",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: site.contact.address.street,
-      addressLocality: site.contact.address.locality,
-      addressRegion: site.contact.address.region,
-      postalCode: site.contact.address.postalCode,
-      addressCountry: "MX",
-    },
+    // La sede principal (CDMX) va como address; Guadalajara es atención por
+    // visitas, se declara como areaServed para no simular una sede permanente.
+    address: postalAddress(site.contact.address),
+    areaServed: locs.map((l) => ({
+      "@type": "City",
+      name: l.locality,
+    })),
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

@@ -172,7 +172,13 @@ function footer() {
         <ul>
           <li><a href="${site.contact.phoneHref}" data-track="click_call" data-track-loc="footer">${site.contact.phoneDisplay}</a></li>
           <li><a href="mailto:${site.contact.email}">${site.contact.email}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sedes</h4>
+        <ul>
           <li>${a.street}, Roma Norte, CDMX</li>
+          <li>Guadalajara, Jalisco <span style="white-space:nowrap">· con cita previa</span></li>
         </ul>
       </div>
       <div>
@@ -188,6 +194,27 @@ function footer() {
     </div>
   </div>
 </footer>`;
+}
+
+/* ---------------------------- Sede / ubicación ----------------------- */
+/* Tarjeta de sede. CDMX es consultorio permanente (con horario); en
+   Guadalajara la doctora atiende por visitas, con cita previa. */
+function locationCard(loc, opts = {}) {
+  const lourl = opts.loc || "";
+  const hoursHtml = loc.hours && loc.hours.length
+    ? `<li>${icon("clock")}<div>${loc.hours
+        .map((h) => `${h.days} ${h.time}`)
+        .join(" · ")}</div></li>`
+    : `<li>${icon("calendar")}<div><strong>Con cita previa.</strong> La doctora atiende en fechas programadas; confirma disponibilidad por WhatsApp o teléfono.</div></li>`;
+  return `<article class="card location-card reveal">
+    <span class="tag">${loc.byAppointment ? "Con cita previa" : "Consultorio permanente"}</span>
+    <h3>${loc.city}</h3>
+    <ul class="info-list" style="margin:1rem 0 1.4rem">
+      <li>${icon("pin")}<div><strong>${loc.street}</strong><br>${loc.neighborhood}<br>${loc.postal}</div></li>
+      ${hoursHtml}
+    </ul>
+    <a href="${loc.maps}" target="_blank" rel="noopener" class="btn btn--secondary" data-track="click_directions" data-track-loc="${lourl}">${icon("route")}<span>Cómo llegar</span></a>
+  </article>`;
 }
 
 /* --------------------------- Aviso urgencias ------------------------- */
@@ -266,6 +293,7 @@ module.exports = {
   header,
   footer,
   mobileCta,
+  locationCard,
   emergencyNotice,
   reviewer,
   breadcrumbs,

@@ -1281,6 +1281,18 @@ strong {
   font-weight: 500;
 }
 
+/* --------------------------- Tarjeta de sede ------------------------ */
+.location-card .tag {
+  margin-bottom: 0.5rem;
+}
+.location-card h3 {
+  font-size: var(--t-h3);
+}
+.location-card .btn--secondary {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
 /* ------------------------------ Blog cards -------------------------- */
 .blog-card {
   display: flex;
@@ -1533,7 +1545,7 @@ strong {
 }
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1.3fr 1.1fr;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr 1fr;
   gap: var(--s3);
 }
 @media (max-width: 900px) {
