@@ -259,21 +259,17 @@ const body = `
 
 <section class="section bg-papel">
   <div class="container">
-    <div class="feature reverse">
-      <div class="feature__media reveal">${C.media("Fachada del edificio en Sinaloa 106, Roma Norte", "ph")}</div>
-      <div class="reveal">
-        <span class="eyebrow">Visítanos</span>
-        <h2>Consulta en Roma Norte, CDMX</h2>
-        <ul class="info-list" style="margin:1.2rem 0">
-          <li>${C.icon("pin")}<div><strong>${site.contact.address.street}</strong><br>${site.contact.address.neighborhood}<br>${site.contact.address.postal}</div></li>
-          <li>${C.icon("clock")}<div>Martes a viernes 12:00–19:00 · Sábado 11:00–14:00 · Domingo cerrado</div></li>
-        </ul>
-        <div class="btn-row">
-          <a href="${site.contact.address.maps}" target="_blank" rel="noopener" class="btn btn--secondary" data-track="click_directions" data-track-loc="home-ubicacion">${C.icon("route")}<span>Cómo llegar</span></a>
-          ${C.scheduleBtn({ loc: "home-ubicacion" })}
-          ${C.callBtn({ loc: "home-ubicacion" })}
-        </div>
-      </div>
+    <div class="section-head reveal">
+      <span class="eyebrow">Visítanos</span>
+      <h2>Dónde te atendemos</h2>
+      <p>La doctora atiende en su consultorio de la Ciudad de México y viaja periódicamente a Guadalajara para atender pacientes con cita previa.</p>
+    </div>
+    <div class="grid grid-2" style="margin:2.5rem 0">
+      ${site.contact.locations.map((l) => C.locationCard(l, { loc: "home-ubicacion" })).join("")}
+    </div>
+    <div class="btn-row reveal">
+      ${C.scheduleBtn({ loc: "home-ubicacion" })}
+      ${C.callBtn({ loc: "home-ubicacion" })}
     </div>
   </div>
 </section>
