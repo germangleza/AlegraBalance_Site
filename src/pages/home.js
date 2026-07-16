@@ -169,7 +169,7 @@ const body = `
     </div>
     <div class="split">
       <article class="card reveal">
-        <div class="card__media">${C.media("Alergia Balance Center — consultorio", "ph")}</div>
+        <div class="card__media">${C.media("Sala de atención en Alergia Balance Center", null, "/assets/images/clinica/consultorio-sala.jpg")}</div>
         <h3>Alergia Balance Center</h3>
         <p>Un espacio profesional y confiable para la evaluación, diagnóstico y tratamiento de enfermedades alérgicas.</p>
         <ul class="check-list">

@@ -40,12 +40,10 @@ const modelSteps = [
 ];
 
 const gallery = [
-  "Retrato profesional de la doctora",
-  "Doctora atendiendo en consultorio",
-  "Recepción de la clínica",
-  "Consultorio",
-  "Área de pruebas",
-  "Exterior del edificio",
+  { label: "Recepción de la clínica", src: "/assets/images/clinica/recepcion.jpg" },
+  { label: "Sala de espera", src: "/assets/images/clinica/sala-espera.jpg" },
+  { label: "Pasillo de acceso", src: "/assets/images/clinica/pasillo-acceso.jpg" },
+  { label: "Área de pruebas y procedimientos", src: "/assets/images/clinica/area-pruebas.jpg" },
 ];
 
 const body = `
@@ -130,8 +128,8 @@ const body = `
 <section class="section bg-papel">
   <div class="container">
     <div class="section-head center"><h2>Conoce Alergia Balance Center</h2></div>
-    <div class="grid grid-3" style="margin-top:2.5rem">
-      ${gallery.map((g) => `<div class="feature__media reveal" style="aspect-ratio:4/3;box-shadow:var(--shadow-sm)">${C.media(g, "ph")}</div>`).join("")}
+    <div class="grid grid-2" style="margin-top:2.5rem">
+      ${gallery.map((g) => `<div class="feature__media reveal" style="aspect-ratio:4/3;box-shadow:var(--shadow-sm)">${C.media(g.label, null, g.src)}</div>`).join("")}
     </div>
   </div>
 </section>
