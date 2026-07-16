@@ -963,6 +963,11 @@ strong {
   font-size: 1.25rem;
   margin: 0 0 0.35rem;
 }
+/* Variante con números a la mitad de tamaño */
+.steps--num-sm .step__num {
+  font-size: clamp(1.375rem, 3.5vw, 2.125rem);
+  -webkit-text-stroke-width: 1.2px;
+}
 .steps--pasos .step p {
   margin: 0;
 }
