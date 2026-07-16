@@ -620,7 +620,7 @@ strong {
 .trust-badges li {
   list-style: none;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.825rem;
   letter-spacing: 0.02em;
   color: var(--tinta-70);
   position: relative;
@@ -1223,6 +1223,20 @@ strong {
 }
 .cta-band .btn-row {
   justify-content: center;
+}
+/* La banda es siempre navy: botones con contorno blanco para que contrasten. */
+.cta-band .btn--primary,
+.cta-band .btn--secondary,
+.cta-band .btn--whatsapp {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+.cta-band .btn--primary:hover,
+.cta-band .btn--secondary:hover,
+.cta-band .btn--whatsapp:hover {
+  background: #fff;
+  color: var(--tinta);
 }
 
 /* --------------------------- Emergency notice ----------------------- */
