@@ -5,7 +5,7 @@ const bc = [
   { label: "Pruebas y diagnóstico", href: "/pruebas-y-diagnostico/" },
 ];
 
-function testBlock(id, icon, h, rows, detailHref) {
+function testBlock(id, icon, h, rows, detailHref, img) {
   const dl = rows
     .map((r) => `<h3>${r.q}</h3><p>${r.a}</p>`)
     .join("");
@@ -19,7 +19,7 @@ function testBlock(id, icon, h, rows, detailHref) {
           <div class="article" style="margin:1rem 0 0">${dl}</div>
           <div class="btn-row" style="margin-top:1.4rem">${C.scheduleBtn({ loc: id })}${detail}</div>
         </div>
-        <div class="feature__media reveal">${C.media(h, "ph")}</div>
+        <div class="feature__media reveal">${C.media(h, null, img)}</div>
       </div>
     </div>
   </section>`;
@@ -36,7 +36,7 @@ const body = `
         <p class="text-muted">Las pruebas deben interpretarse junto con la historia clínica; un resultado positivo no siempre significa que una sustancia sea la causa de los síntomas.</p>
         ${C.scheduleBtn({ loc: "pruebas-hero" })}
       </div>
-      <div class="page-hero__media">${C.media("Área de pruebas de alergia", "ph")}</div>
+      <div class="page-hero__media">${C.media("Área de pruebas de alergia", null, "/assets/images/clinica/area-pruebas.jpg")}</div>
     </div>
   </div>
 </section>
@@ -71,7 +71,8 @@ ${testBlock(
     { q: "¿Cómo se realizan?", a: "Se colocan pequeñas cantidades de los alérgenos seleccionados en la piel y se observa la respuesta bajo supervisión médica." },
     { q: "¿Requieren preparación?", a: "Algunos medicamentos pueden modificar los resultados. El equipo debe proporcionar instrucciones antes de la prueba. No suspendas medicamentos sin indicación médica." },
   ],
-  "/pruebas-y-diagnostico/pruebas-cutaneas/"
+  "/pruebas-y-diagnostico/pruebas-cutaneas/",
+  "/assets/images/pruebas/prick-cutaneas.jpg"
 )}
 
 ${testBlock(
@@ -82,7 +83,9 @@ ${testBlock(
     { q: "¿Qué son?", a: "Son estudios que ayudan a evaluar reacciones tardías de la piel frente a sustancias que pueden causar dermatitis de contacto." },
     { q: "¿Cuándo pueden indicarse?", a: "Cuando existe irritación, comezón o lesiones recurrentes relacionadas con metales, cosméticos, fragancias, productos de cuidado personal, materiales u otras sustancias." },
     { q: "¿Cómo se realizan?", a: "Los materiales se colocan sobre la espalda durante un periodo indicado y se realizan lecturas posteriores para evaluar la respuesta." },
-  ]
+  ],
+  undefined,
+  "/assets/images/pruebas/pruebas-parche.jpg"
 )}
 
 ${testBlock(
@@ -92,7 +95,9 @@ ${testBlock(
   [
     { q: "¿Qué evalúa?", a: "Mide diferentes aspectos de la función pulmonar y puede aportar información en pacientes con tos, silbidos, falta de aire o sospecha de asma." },
     { q: "¿Cómo se realiza?", a: "El paciente respira a través de un equipo siguiendo instrucciones específicas. La prueba requiere colaboración y puede repetirse para asegurar resultados confiables." },
-  ]
+  ],
+  undefined,
+  "/assets/images/pruebas/espirometria.jpg"
 )}
 
 ${testBlock(
@@ -102,7 +107,9 @@ ${testBlock(
   [
     { q: "¿Para qué sirve?", a: "Evalúa si la función respiratoria cambia después de utilizar un medicamento broncodilatador." },
     { q: "¿Cuándo se utiliza?", a: "Puede formar parte del estudio de asma u obstrucción de las vías respiratorias cuando está clínicamente indicada." },
-  ]
+  ],
+  undefined,
+  "/assets/images/pruebas/broncodilatacion.jpg"
 )}
 
 <section class="section bg-gasa">

@@ -42,7 +42,7 @@ function renderCondition(d) {
           ${d.article ? C.ghostLink(d.article, "Leer artículo relacionado") : ""}
         </div>
       </div>
-      <div class="page-hero__media">${C.media(d.image || d.title, "ph")}</div>
+      <div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>
     </div>
   </div>
 </section>
@@ -169,7 +169,7 @@ function renderTest(d) {
         <p>${d.summary}</p>
         ${C.scheduleBtn({ loc: "detalle-" + d.id })}
       </div>
-      <div class="page-hero__media">${C.media(d.image || d.title, "ph")}</div>
+      <div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>
     </div>
   </div>
 </section>
@@ -277,7 +277,7 @@ function renderTreatment(d) {
         <p>${d.summary}</p>
         ${C.scheduleBtn({ loc: "detalle-" + d.id })}
       </div>
-      <div class="page-hero__media">${C.media(d.image || d.title, "ph")}</div>
+      <div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>
     </div>
   </div>
 </section>

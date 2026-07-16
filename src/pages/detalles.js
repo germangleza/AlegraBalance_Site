@@ -271,6 +271,7 @@ const tests = [
     crumb: "Pruebas cutáneas",
     title: "Pruebas cutáneas Prick",
     image: "Pruebas cutáneas de alergia",
+    img: "/assets/images/pruebas/prick-cutaneas.jpg",
     summary:
       "Las pruebas cutáneas Prick evalúan la respuesta de la piel frente a distintos alérgenos. Se interpretan siempre junto con los síntomas y antecedentes del paciente.",
     answer:
