@@ -238,8 +238,9 @@ const body = `
         )
         .join("")}
     </div>
-    <div class="center" style="margin-top:2rem">
-      ${C.ghostLink("/pruebas-y-diagnostico/", "Ver pruebas y tratamientos")}
+    <div class="btn-row" style="margin-top:2rem;justify-content:center">
+      ${C.ghostLink("/pruebas-y-diagnostico/", "Ver pruebas")}
+      ${C.ghostLink("/tratamientos/", "Ver tratamientos")}
     </div>
   </div>
 </section>
