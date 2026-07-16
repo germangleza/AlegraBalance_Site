@@ -49,6 +49,33 @@ const faqs = [
   { q: "¿Cómo puedo agendar?", a: "Puedes solicitar una cita por WhatsApp, teléfono o mediante el formulario del sitio." },
 ];
 
+/* Opiniones reales de pacientes (Doctoralia). */
+const reviews = [
+  { name: "FM", initials: "FM", text: "Me encantó el trato tan humano y la delicadeza de la doctora para escuchar y explicar el diagnóstico y tratamiento." },
+  { name: "Danae", initials: "D", text: "Muy buena doctora. Se tomó el tiempo de explicarme y contestar detalladamente todas las dudas que tenía sobre mi bebé." },
+  { name: "Ruth Paola Rodríguez Jiménez", initials: "RR", text: "Todo excelente: puntualidad y tratamiento efectivo. Me sentí mucho mejor." },
+  { name: "Valentina Esparza", initials: "VE", text: "Extraordinario trato, conocimientos y alta eficacia. Amable, cordial, atenta y atinada." },
+  { name: "Noe García", initials: "NG", text: "Excelente atención, explica a detalle. Recomiendo totalmente." },
+];
+
+const starSvg =
+  '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.2l2.9 5.95 6.55.95-4.74 4.62 1.12 6.53L12 18.5l-5.86 3.08 1.12-6.53L2.52 10.1l6.56-.95z"/></svg>';
+const stars5 = `<span class="review-stars" role="img" aria-label="5 de 5 estrellas">${starSvg.repeat(5)}</span>`;
+
+function reviewCard(r, i) {
+  return `<article class="review-card reveal" style="--i:${i}">
+    <div class="review-card__head">
+      ${stars5}
+      <span class="review-verified">${C.icon("check")}<span>Opinión verificada</span></span>
+    </div>
+    <p class="review-card__text">${r.text}</p>
+    <div class="review-card__author">
+      <span class="review-card__avatar" aria-hidden="true">${r.initials}</span>
+      <span class="review-card__name">${r.name}</span>
+    </div>
+  </article>`;
+}
+
 /* Panel de pruebas cutáneas: la firma visual del hero. Ocho alérgenos
    comunes, tres con reacción positiva, cada uno enlaza a su padecimiento. */
 const prickPoints = [
@@ -270,6 +297,23 @@ const body = `
     <div class="btn-row reveal">
       ${C.scheduleBtn({ loc: "home-ubicacion" })}
       ${C.callBtn({ loc: "home-ubicacion" })}
+    </div>
+  </div>
+</section>
+
+<section class="section bg-tinta">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-inline:auto">
+      <span class="eyebrow">Opiniones de pacientes</span>
+      <h2>Lo que dicen quienes ya se atendieron</h2>
+      <div class="reviews-summary">
+        ${stars5}
+        <strong>5.0</strong>
+        <span>Opiniones verificadas en Doctoralia</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      ${reviews.map(reviewCard).join("")}
     </div>
   </div>
 </section>

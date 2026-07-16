@@ -1397,6 +1397,112 @@ strong {
   margin-top: auto;
 }
 
+/* ---------------------------- Reseñas (Doctoralia) ------------------- */
+.reviews-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: var(--s2);
+  font-family: var(--font-mono);
+  font-size: var(--t-small);
+  color: #dfe4f0;
+}
+.reviews-summary strong {
+  color: #fff;
+  font-size: 1.05rem;
+}
+.review-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #f5a623;
+}
+.review-stars svg {
+  width: 18px;
+  height: 18px;
+}
+.reviews-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s3);
+  margin-top: var(--s5);
+}
+.review-card {
+  flex: 1 1 300px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  background: var(--papel);
+  border-radius: var(--radius);
+  padding: var(--s3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+}
+.review-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2);
+}
+.review-card__head .review-stars svg {
+  width: 16px;
+  height: 16px;
+}
+.review-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #1a9d6b;
+  white-space: nowrap;
+}
+.review-verified .icon {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.4;
+}
+.review-card__text {
+  color: var(--tinta-70);
+  font-size: 0.97rem;
+  line-height: 1.6;
+  flex: 1;
+}
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-top: var(--s2);
+  border-top: 1px solid var(--linea);
+}
+.review-card__avatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--tinta);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+.review-card:nth-child(2) .review-card__avatar { background: var(--polen); }
+.review-card:nth-child(3) .review-card__avatar { background: #1a9d6b; }
+.review-card:nth-child(4) .review-card__avatar { background: #7a5cc4; }
+.review-card:nth-child(5) .review-card__avatar { background: var(--roncha); }
+.review-card__name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--tinta);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
 /* ------------------------------ Blog cards -------------------------- */
 .blog-card {
   display: flex;
