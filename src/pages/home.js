@@ -340,7 +340,7 @@ ${C.ctaBand(
     </div>
     <div class="grid grid-2" style="margin-top:2.5rem">
       <article class="blog-card reveal">
-        <div class="blog-card__media">${C.media("Alergias y calidad de vida", "ph")}</div>
+        <div class="blog-card__media">${C.media("Alergias y calidad de vida", null, "/assets/images/blog/alergias-calidad-de-vida.jpg")}</div>
         <div class="blog-card__body">
           <span class="tag">Alergias y bienestar</span>
           <h3>Alergias y calidad de vida</h3>
@@ -349,7 +349,7 @@ ${C.ctaBand(
         </div>
       </article>
       <article class="blog-card reveal">
-        <div class="blog-card__media">${C.media("Rinitis: causas, síntomas y tratamientos", "ph")}</div>
+        <div class="blog-card__media">${C.media("Rinitis: causas, síntomas y tratamientos", null, "/assets/images/blog/rinitis.jpg")}</div>
         <div class="blog-card__body">
           <span class="tag">Alergias respiratorias</span>
           <h3>Rinitis: causas, síntomas y tratamientos efectivos</h3>

@@ -2154,7 +2154,9 @@ strong {
   .page-hero__grid {
     grid-template-columns: 1fr;
   }
-  .page-hero__media {
+  /* En móvil mostramos las fotos reales del hero, pero ocultamos los
+     recuadros que todavía son placeholder (blog). */
+  .page-hero__media:has(.ph) {
     display: none;
   }
 }

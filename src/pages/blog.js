@@ -12,6 +12,7 @@ const posts = [
     date: "11 de mayo de 2026",
     dateIso: "2026-05-11",
     h: "Alergias y calidad de vida",
+    img: "/assets/images/blog/alergias-calidad-de-vida.jpg",
     excerpt:
       "Las alergias pueden afectar el sueño, la concentración, el rendimiento y las actividades cotidianas. Conoce por qué una valoración adecuada puede ayudarte a recuperar bienestar.",
   },
@@ -21,6 +22,7 @@ const posts = [
     date: "11 de mayo de 2026",
     dateIso: "2026-05-11",
     h: "Rinitis: causas, síntomas y tratamientos efectivos para mejorar tu calidad de vida",
+    img: "/assets/images/blog/rinitis.jpg",
     excerpt:
       "La rinitis puede confundirse con un resfriado, pero sus síntomas pueden mantenerse durante semanas o repetirse a lo largo del año. Conoce sus principales causas y opciones de manejo.",
   },
@@ -46,7 +48,7 @@ const body = `
       ${posts
         .map(
           (p) => `<article class="blog-card reveal">
-        <a href="${p.href}" aria-label="${p.h}" class="blog-card__media">${C.media(p.h, "ph")}</a>
+        <a href="${p.href}" aria-label="${p.h}" class="blog-card__media">${C.media(p.h, null, p.img)}</a>
         <div class="blog-card__body">
           <span class="tag">${p.tag}</span>
           <h3><a href="${p.href}" style="color:inherit">${p.h}</a></h3>
