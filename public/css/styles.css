@@ -551,7 +551,7 @@ strong {
   grid-template-areas:
     "text  aside"
     "panel aside"
-    "cta   aside";
+    "cta   cta";
   column-gap: clamp(2rem, 5vw, 4rem);
   row-gap: var(--s3);
   align-items: start;
