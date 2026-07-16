@@ -75,7 +75,8 @@ impacto— y las voy conectando conforme lleguen.
 
 ## Otras carpetas de `assets/`
 
-- `assets/favicon.svg` — ícono del sitio, ya generado.
+- `assets/favicon-32.png`, `assets/favicon-48.png`, `assets/apple-touch-icon.png`
+  — ícono del sitio (mark de la marca), generados desde el favicon subido.
 - `assets/og-default.png` — imagen para compartir en redes (1200×630), ya generada.
 - Si más adelante quieres una imagen OG distinta por página (por ejemplo,
   para cada padecimiento), avísame y la agregamos.
