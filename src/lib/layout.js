@@ -102,6 +102,18 @@ function layout(page) {
 
   const bcNav = breadcrumbs ? C.breadcrumbs(breadcrumbs) : "";
 
+  // Modo "bare": página autocontenida (p. ej. tarjeta digital), sin el
+  // header, footer, barra móvil ni el JS global del sitio.
+  const bare = page.bare === true;
+  const chromeTop = bare
+    ? ""
+    : `<a href="#main" class="skip-link">Saltar al contenido</a>
+<div class="scroll-sentinel" aria-hidden="true"></div>
+${C.header(active)}`;
+  const chromeBottom = bare ? "" : `${C.footer()}
+${C.mobileCta()}`;
+  const globalScript = bare ? "" : `<script src="/js/main.js" defer></script>`;
+
   return `<!DOCTYPE html>
 <html lang="es-MX">
 <head>
@@ -133,17 +145,14 @@ ${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robo
 <link rel="stylesheet" href="/css/styles.css">
 ${jsonLdScript}
 </head>
-<body>
-<a href="#main" class="skip-link">Saltar al contenido</a>
-<div class="scroll-sentinel" aria-hidden="true"></div>
-${C.header(active)}
+<body${bare ? ' class="bare"' : ""}>
+${chromeTop}
 <main id="main">
-${bcNav}
+${bare ? "" : bcNav}
 ${body}
 </main>
-${C.footer()}
-${C.mobileCta()}
-<script src="/js/main.js" defer></script>
+${chromeBottom}
+${globalScript}
 </body>
 </html>`;
 }

@@ -63,6 +63,7 @@ const ICONS = {
     '<path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-6.5A8 8 0 1 1 21 12z"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   home: '<path d="M3 11l9-8 9 8M5 10v10h14V10"/>',
+  download: '<path d="M12 3v12M8 11l4 4 4-4M5 21h14"/>',
 };
 
 function icon(name, cls) {

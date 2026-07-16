@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Vázquez García;María de Jesús;;Dra.;
+FN:Dra. María de Jesús Vázquez García
+TITLE:Alergóloga e inmunóloga pediatra
+ORG:Alergia Balance Center
+TEL;TYPE=CELL,VOICE:+525527556281
+EMAIL;TYPE=INTERNET:mariajvazquez.alergia@gmail.com
+ADR;TYPE=WORK:;;Sinaloa 106 consultorio 701, Colonia Roma Norte;Ciudad de México;CDMX;06700;México
+ADR;TYPE=WORK:;;Lacandones 256, Colonia Monraz;Guadalajara;Jalisco;;México
+URL:https://alergiabalance.com/
+NOTE:Alergología e Inmunología Clínica · Niños y adultos
+END:VCARD
