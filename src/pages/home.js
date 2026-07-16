@@ -112,7 +112,7 @@ const body = `
       </div>
       <div class="hero__aside">
         <div class="hero__media intro-hide">
-          ${C.media("Dra. María de Jesús Vázquez García en consulta con una paciente y su hijo", null, "/assets/images/doctora/dra-consulta.jpg")}
+          ${C.media("Dra. María de Jesús Vázquez García, alergóloga e inmunóloga", null, "/assets/images/doctora/dra-hero.jpg")}
         </div>
         <ul class="trust-badges intro-hide">
           <li>Más de 20 años de experiencia</li>
@@ -145,7 +145,7 @@ const body = `
 <section class="section">
   <div class="container">
     <div class="feature">
-      <div class="feature__media reveal">${C.media("Consulta de valoración en Alergia Balance Center", "ph")}</div>
+      <div class="feature__media reveal">${C.media("Consulta de valoración en Alergia Balance Center", null, "/assets/images/doctora/dra-consulta.jpg")}</div>
       <div class="reveal">
         <span class="eyebrow">Atención integral</span>
         <h2>De la evaluación al seguimiento</h2>
