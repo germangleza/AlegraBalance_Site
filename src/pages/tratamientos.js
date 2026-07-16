@@ -44,8 +44,8 @@ const body = `
   <div class="container">
     <div class="section-head"><span class="eyebrow">Tratamiento de fondo</span><h2>Inmunoterapia para alergias</h2><p>La inmunoterapia administra cantidades controladas de determinados alérgenos para modificar progresivamente la respuesta del sistema inmunológico. No está indicada para todas las personas ni para todos los tipos de alergia. La decisión depende del diagnóstico, los síntomas y la valoración médica.</p></div>
     <div class="grid grid-2" style="margin-top:2rem">
-      <article class="card reveal"><div class="card__icon">${C.icon("pill")}</div><h3>Inmunoterapia sublingual</h3><p>Se administra debajo de la lengua siguiendo un esquema personalizado y con seguimiento médico.</p></article>
-      <article class="card reveal"><div class="card__icon">${C.icon("syringe")}</div><h3>Inmunoterapia subcutánea</h3><p>Se aplica mediante inyecciones en dosis programadas y requiere control de la respuesta del paciente.</p></article>
+      <article class="card reveal"><div class="card__media">${C.media("Inmunoterapia sublingual", null, "/assets/images/tratamientos/sublingual.jpg")}</div><h3>Inmunoterapia sublingual</h3><p>Se administra debajo de la lengua siguiendo un esquema personalizado y con seguimiento médico.</p></article>
+      <article class="card reveal"><div class="card__media">${C.media("Inmunoterapia subcutánea", null, "/assets/images/tratamientos/subcutanea.jpg")}</div><h3>Inmunoterapia subcutánea</h3><p>Se aplica mediante inyecciones en dosis programadas y requiere control de la respuesta del paciente.</p></article>
     </div>
     <div class="card reveal" style="margin-top:1.4rem">
       <h3>Objetivos posibles</h3>
@@ -62,7 +62,7 @@ const body = `
 <section class="section bg-papel">
   <div class="container">
     <div class="feature reverse">
-      <div class="feature__media reveal">${C.media("Terapias biotecnológicas de alta especialidad", "ph")}</div>
+      <div class="feature__media reveal">${C.media("Terapias biotecnológicas de alta especialidad", null, "/assets/images/tratamientos/biotecnologicas.jpg")}</div>
       <div class="reveal">
         <span class="eyebrow">Alta especialidad</span>
         <h2>Terapias biotecnológicas y tratamientos de alta especialidad</h2>
