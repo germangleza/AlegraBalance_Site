@@ -53,7 +53,7 @@ const site = {
         locality: "Ciudad de México",
         region: "CDMX",
         postalCode: "06700",
-        maps: "https://www.google.com/maps/search/?api=1&query=Sinaloa+106+Roma+Norte+CDMX",
+        maps: "https://share.google/fVrQr63X8LxuD9otu",
         availability: "Consultorio permanente",
         hours: [
           { days: "Martes a viernes", time: "12:00 a 19:00" },
