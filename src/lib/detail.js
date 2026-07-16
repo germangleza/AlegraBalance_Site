@@ -32,7 +32,7 @@ function renderCondition(d) {
   const body = `
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero__grid">
+    <div class="page-hero__grid${d.img ? "" : " page-hero__grid--single"}">
       <div>
         <span class="eyebrow">${d.eyebrow || "Padecimiento que atendemos"}</span>
         <h1>${d.title}</h1>
@@ -42,7 +42,7 @@ function renderCondition(d) {
           ${d.article ? C.ghostLink(d.article, "Leer artículo relacionado") : ""}
         </div>
       </div>
-      <div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>
+      ${d.img ? `<div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>` : ""}
     </div>
   </div>
 </section>
@@ -162,14 +162,14 @@ function renderTest(d) {
   const body = `
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero__grid">
+    <div class="page-hero__grid${d.img ? "" : " page-hero__grid--single"}">
       <div>
         <span class="eyebrow">Evaluación especializada</span>
         <h1>${d.title}</h1>
         <p>${d.summary}</p>
         ${C.scheduleBtn({ loc: "detalle-" + d.id })}
       </div>
-      <div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>
+      ${d.img ? `<div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>` : ""}
     </div>
   </div>
 </section>
@@ -270,14 +270,14 @@ function renderTreatment(d) {
   const body = `
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero__grid">
+    <div class="page-hero__grid${d.img ? "" : " page-hero__grid--single"}">
       <div>
         <span class="eyebrow">Manejo individualizado</span>
         <h1>${d.title}</h1>
         <p>${d.summary}</p>
         ${C.scheduleBtn({ loc: "detalle-" + d.id })}
       </div>
-      <div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>
+      ${d.img ? `<div class="page-hero__media">${C.media(d.image || d.title, null, d.img)}</div>` : ""}
     </div>
   </div>
 </section>

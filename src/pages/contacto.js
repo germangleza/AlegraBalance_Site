@@ -12,14 +12,13 @@ const mapEmbed =
 const body = `
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero__grid">
+    <div class="page-hero__grid page-hero__grid--single">
       <div>
         <span class="eyebrow">Estamos para ayudarte</span>
         <h1>Agenda una consulta</h1>
         <p>Solicita una valoración para ti o para tu hijo. El equipo de Alergia Balance Center te ayudará a confirmar disponibilidad y las indicaciones previas a tu cita.</p>
         <div class="btn-row">${C.whatsappBtn({ loc: "contacto-hero" })}${C.callBtn({ loc: "contacto-hero" })}</div>
       </div>
-      <div class="page-hero__media">${C.media("Recepción de Alergia Balance Center", "ph")}</div>
     </div>
   </div>
 </section>

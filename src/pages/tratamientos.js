@@ -8,7 +8,7 @@ const bc = [
 const body = `
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero__grid">
+    <div class="page-hero__grid page-hero__grid--single">
       <div>
         <span class="eyebrow">Manejo individualizado</span>
         <h1>Tratamientos personalizados para alergias</h1>
@@ -16,7 +16,6 @@ const body = `
         <p class="text-muted">En Alergia Balance Center el plan se define después de una valoración médica y puede incluir medidas de prevención, tratamiento farmacológico, inmunoterapia, terapias de alta especialidad y seguimiento.</p>
         ${C.scheduleBtn({ loc: "tratamientos-hero" })}
       </div>
-      <div class="page-hero__media">${C.media("Plan de tratamiento personalizado", "ph")}</div>
     </div>
   </div>
 </section>

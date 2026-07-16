@@ -23,7 +23,7 @@ const body = `
         <p>Las alergias pueden manifestarse en la nariz, los pulmones, la piel, los ojos y el sistema digestivo. En Alergia Balance Center realizamos una evaluación integral para comprender los síntomas, identificar posibles desencadenantes y definir un plan de atención personalizado.</p>
         ${C.scheduleBtn({ loc: "padecimientos-hero" })}
       </div>
-      <div class="page-hero__media">${C.media("Consultorio de alergología en Roma Norte", "ph")}</div>
+      <div class="page-hero__media">${C.media("Síntomas frecuentes de alergia: ocular, cutánea y respiratoria", null, "/assets/images/padecimientos/sintomas-alergia.jpg")}</div>
     </div>
   </div>
 </section>
@@ -89,7 +89,7 @@ const body = `
 <section class="section bg-papel" id="pediatrica">
   <div class="container">
     <div class="feature">
-      <div class="feature__media reveal">${C.media("Atención pediátrica de alergias", "ph")}</div>
+      <div class="feature__media reveal">${C.media("Atención pediátrica de alergias", null, "/assets/images/padecimientos/atencion-pediatrica.jpg")}</div>
       <div class="reveal">
         <span class="eyebrow">Atención pediátrica</span>
         <h2>Alergias en bebés, niños y adolescentes</h2>

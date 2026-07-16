@@ -2143,6 +2143,13 @@ strong {
   align-items: center;
   padding-block: clamp(2.5rem, 5vw, 4rem);
 }
+/* Hero sin imagen: una sola columna con ancho de lectura. */
+.page-hero__grid--single {
+  grid-template-columns: 1fr;
+}
+.page-hero__grid--single > * {
+  max-width: 780px;
+}
 @media (max-width: 860px) {
   .page-hero__grid {
     grid-template-columns: 1fr;
