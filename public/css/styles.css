@@ -206,7 +206,7 @@ strong {
   display: inline-block;
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: var(--t-mono);
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--polen);
