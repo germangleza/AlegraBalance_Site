@@ -103,7 +103,6 @@ const body = `
     <ul class="check-list reveal" style="margin-top:1.6rem;max-width:820px">
       ${credentials.map((c) => `<li>${c}</li>`).join("")}
     </ul>
-    <p class="text-muted" style="margin-top:1.5rem;max-width:820px;font-size:.9rem">Los nombres oficiales de instituciones, cédulas profesionales y la vigencia de certificaciones se confirman antes de su publicación, de acuerdo con la autorización de la doctora.</p>
   </div>
 </section>
 

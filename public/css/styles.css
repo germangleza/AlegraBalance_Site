@@ -1368,6 +1368,12 @@ strong {
   font-size: var(--t-h3);
   margin: 2rem 0 0.7rem;
 }
+/* El CTA band dentro de un artículo conserva su centrado y tamaño propios
+   (los estilos de .article h2 no deben pisarlo). */
+.article .cta-band h2 {
+  font-size: var(--t-h2);
+  margin: 0 auto var(--s2);
+}
 .article h3 {
   font-size: 1.15rem;
   margin: 1.4rem 0 0.5rem;
