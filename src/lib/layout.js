@@ -17,23 +17,74 @@ function postalAddress(loc) {
   return pa;
 }
 
+const ORG_ID = site.baseUrl + "/#clinica";
+const DOCTOR_ID = site.baseUrl + "/#doctora";
+
+function offerCatalog() {
+  const s = site.services;
+  const offer = (item) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": item.type || "MedicalProcedure",
+      name: item.name,
+      ...(item.url ? { url: site.baseUrl + item.url } : {}),
+    },
+  });
+  return {
+    "@type": "OfferCatalog",
+    name: "Servicios de alergia e inmunología",
+    itemListElement: [
+      {
+        "@type": "OfferCatalog",
+        name: "Pruebas y diagnóstico",
+        itemListElement: s.pruebas.map(offer),
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "Tratamientos",
+        itemListElement: s.tratamientos.map(offer),
+      },
+    ],
+  };
+}
+
 function jsonLdBase() {
   const locs = site.contact.locations;
+  const cdmx = site.contact.address;
+
+  const physician = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "@id": DOCTOR_ID,
+    name: site.doctor.name,
+    jobTitle: site.doctor.shortDescriptor,
+    description: `${site.doctor.shortDescriptor} con ${site.doctor.experience}.`,
+    medicalSpecialty: ["Allergology", "Immunology"],
+    url: site.baseUrl + "/clinica-y-doctora/",
+    image: site.baseUrl + "/assets/images/doctora/dra-hero.jpg",
+    worksFor: { "@id": ORG_ID },
+  };
+
   const org = {
     "@context": "https://schema.org",
-    "@type": "MedicalClinic",
+    "@type": ["MedicalClinic", "LocalBusiness"],
+    "@id": ORG_ID,
     name: site.brand.name,
+    alternateName: site.brand.shortName,
+    description: site.brand.description,
+    slogan: site.brand.tagline,
     url: site.baseUrl + "/",
+    logo: site.baseUrl + "/assets/logo.png",
+    image: site.baseUrl + "/assets/og-default.png",
     telephone: "+" + site.contact.phoneDigits,
     email: site.contact.email,
-    image: site.baseUrl + "/assets/og-default.png",
-    // La sede principal (CDMX) va como address; Guadalajara es atención por
-    // visitas, se declara como areaServed para no simular una sede permanente.
-    address: postalAddress(site.contact.address),
-    areaServed: locs.map((l) => ({
-      "@type": "City",
-      name: l.locality,
-    })),
+    priceRange: "$$",
+    currenciesAccepted: "MXN",
+    paymentAccepted: "Efectivo, Tarjeta de crédito, Tarjeta de débito, Transferencia",
+    address: postalAddress(cdmx),
+    hasMap: cdmx.maps,
+    areaServed: locs.map((l) => ({ "@type": "City", name: l.locality })),
+    availableLanguage: ["es", "en"],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -49,15 +100,32 @@ function jsonLdBase() {
       },
     ],
     medicalSpecialty: ["Allergology", "Immunology", "Pediatric"],
+    founder: { "@id": DOCTOR_ID },
+    employee: { "@id": DOCTOR_ID },
+    hasOfferCatalog: offerCatalog(),
+    knowsAbout: [
+      "Alergia",
+      "Asma",
+      "Inmunología clínica",
+      "Rinitis alérgica",
+      "Dermatitis atópica",
+      "Urticaria",
+      "Alergias alimentarias",
+      "Inmunoterapia",
+    ],
+    sameAs: site.seo.sameAs,
   };
+
   const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": site.baseUrl + "/#website",
     name: site.brand.name,
     url: site.baseUrl + "/",
     inLanguage: "es-MX",
+    publisher: { "@id": ORG_ID },
   };
-  return [org, website];
+  return [org, physician, website];
 }
 
 function breadcrumbJsonLd(trail) {
@@ -121,8 +189,12 @@ ${C.mobileCta()}`;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
 <meta name="description" content="${description}">
-${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow">'}
+${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">'}
 <link rel="canonical" href="${canonical}">
+<meta name="author" content="${site.doctor.name}">
+<meta name="publisher" content="${site.brand.name}">
+<meta name="geo.region" content="MX-CMX">
+<meta name="geo.placename" content="Roma Norte, Ciudad de México">
 <meta property="og:type" content="${ogType}">
 <meta property="og:site_name" content="${site.brand.name}">
 <meta property="og:locale" content="es_MX">
@@ -130,7 +202,10 @@ ${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robo
 <meta property="og:description" content="${description}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${ogImage}">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image:alt" content="${site.brand.name} — ${site.brand.tagline}">
+${page.ogImage ? "" : `<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+`}<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">
 <meta name="twitter:image" content="${ogImage}">

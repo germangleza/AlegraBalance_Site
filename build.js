@@ -59,13 +59,22 @@ for (const file of pageFiles) {
   }
 }
 
-// sitemap.xml
+// sitemap.xml — con lastmod, priority y changefreq por tipo de página.
+const today = new Date().toISOString().slice(0, 10);
+function sitemapMeta(slug) {
+  const depth = slug.replace(/^\/|\/$/g, "").split("/").filter(Boolean).length;
+  if (slug === "/") return { priority: "1.0", changefreq: "weekly" };
+  if (slug === "/blog/") return { priority: "0.7", changefreq: "weekly" };
+  if (depth === 1) return { priority: "0.9", changefreq: "monthly" };
+  if (slug === "/aviso-de-privacidad/") return { priority: "0.2", changefreq: "yearly" };
+  return { priority: "0.7", changefreq: "monthly" };
+}
 const urls = built
   .filter((b) => !b.noindex && b.slug !== "/404/")
-  .map(
-    (b) =>
-      `  <url><loc>${site.baseUrl}${b.slug}</loc><changefreq>monthly</changefreq><priority>${b.slug === "/" ? "1.0" : "0.8"}</priority></url>`
-  )
+  .map((b) => {
+    const m = sitemapMeta(b.slug);
+    return `  <url>\n    <loc>${site.baseUrl}${b.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${m.changefreq}</changefreq>\n    <priority>${m.priority}</priority>\n  </url>`;
+  })
   .join("\n");
 fs.writeFileSync(
   path.join(DIST, "sitemap.xml"),
@@ -73,11 +82,48 @@ fs.writeFileSync(
 );
 console.log("   ✓ sitemap.xml");
 
-// robots.txt
-fs.writeFileSync(
-  path.join(DIST, "robots.txt"),
-  `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`
-);
+// robots.txt — abierto a buscadores y a motores de IA (GEO), con sitemap.
+const aiBots = [
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-Web",
+  "anthropic-ai",
+  "PerplexityBot",
+  "Perplexity-User",
+  "Google-Extended",
+  "Applebot",
+  "Applebot-Extended",
+  "CCBot",
+  "Amazonbot",
+  "Bytespider",
+  "Meta-ExternalAgent",
+  "cohere-ai",
+  "YouBot",
+  "DuckAssistBot",
+];
+const robots = [
+  "# robots.txt — Alergia Balance Center",
+  "# Acceso abierto para buscadores y motores de IA (GEO).",
+  "",
+  "User-agent: *",
+  "Allow: /",
+  "",
+  "# Buscadores tradicionales",
+  "User-agent: Googlebot",
+  "Allow: /",
+  "",
+  "User-agent: Bingbot",
+  "Allow: /",
+  "",
+  "# Motores de IA / respuestas generativas (permitidos explícitamente)",
+  ...aiBots.flatMap((bot) => [`User-agent: ${bot}`, "Allow: /", ""]),
+  `# Contexto para asistentes de IA: ${site.baseUrl}/llms.txt`,
+  `Sitemap: ${site.baseUrl}/sitemap.xml`,
+  "",
+].join("\n");
+fs.writeFileSync(path.join(DIST, "robots.txt"), robots);
 console.log("   ✓ robots.txt");
 
 // 404 en la raíz para hosts que lo esperan

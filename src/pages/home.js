@@ -379,6 +379,30 @@ module.exports = {
         acceptedAnswer: { "@type": "Answer", text: f.a },
       })),
     },
+    // Calificación agregada + opiniones verificadas (Doctoralia), ligadas a la
+    // clínica por @id. Se declaran en Inicio, donde las reseñas son visibles.
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "@id": site.baseUrl + "/#clinica",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: site.seo.rating.value,
+        reviewCount: String(site.seo.rating.count),
+        bestRating: site.seo.rating.best,
+      },
+      review: reviews.map((r) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: r.name },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+        },
+        reviewBody: r.text,
+        publisher: { "@type": "Organization", name: "Doctoralia" },
+      })),
+    },
   ],
   body,
 };

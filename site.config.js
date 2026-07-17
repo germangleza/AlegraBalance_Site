@@ -97,6 +97,38 @@ const site = {
     whatsapp: "Escribir por WhatsApp",
     call: "Llamar",
   },
+
+  // GEO / SEO: perfiles externos (sameAs) y calificación agregada.
+  seo: {
+    // Perfiles verificables del negocio. Agrega aquí Doctoralia, Instagram,
+    // Facebook, etc. conforme estén disponibles.
+    sameAs: ["https://share.google/fVrQr63X8LxuD9otu"],
+    // Calificación agregada de las opiniones verificadas mostradas (Doctoralia).
+    rating: { value: "5.0", count: 5, best: "5" },
+  },
+
+  // Catálogo de servicios (para hasOfferCatalog en JSON-LD y llms.txt).
+  services: {
+    pruebas: [
+      { name: "Pruebas cutáneas (Prick)", type: "MedicalTest", url: "/pruebas-y-diagnostico/pruebas-cutaneas/" },
+      { name: "Pruebas de parche", type: "MedicalTest", url: "/pruebas-y-diagnostico/#parche" },
+      { name: "Espirometría", type: "MedicalTest", url: "/pruebas-y-diagnostico/#espirometria" },
+      { name: "Prueba de broncodilatación", type: "MedicalTest", url: "/pruebas-y-diagnostico/#broncodilatacion" },
+    ],
+    tratamientos: [
+      { name: "Inmunoterapia sublingual", type: "MedicalTherapy", url: "/tratamientos/inmunoterapia/" },
+      { name: "Inmunoterapia subcutánea", type: "MedicalTherapy", url: "/tratamientos/inmunoterapia/" },
+      { name: "Terapias biotecnológicas y anticuerpos monoclonales", type: "MedicalTherapy", url: "/tratamientos/#biotecnologicas" },
+    ],
+    padecimientos: [
+      { name: "Rinitis alérgica", url: "/padecimientos/rinitis-alergica/" },
+      { name: "Asma", url: "/padecimientos/asma/" },
+      { name: "Dermatitis atópica", url: "/padecimientos/dermatitis-atopica/" },
+      { name: "Urticaria", url: "/padecimientos/urticaria/" },
+      { name: "Alergias alimentarias", url: "/padecimientos/alergias-alimentarias/" },
+      { name: "Alergias a medicamentos", url: "/padecimientos/alergias-a-medicamentos/" },
+    ],
+  },
 };
 
 // Alias de compatibilidad: gran parte del sitio referencia site.contact.address
