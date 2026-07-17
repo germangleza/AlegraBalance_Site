@@ -27,6 +27,9 @@ const site = {
     specialty: "Alergología e Inmunología Clínica Pediátrica",
     shortDescriptor: "Alergóloga e inmunóloga pediatra",
     experience: "más de 20 años de experiencia",
+    sameAs: [
+      "https://www.doctoralia.com.mx/maria-de-jesus-vazquez-g/alergologo",
+    ],
   },
 
   contact: {
