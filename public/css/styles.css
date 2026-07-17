@@ -1838,6 +1838,21 @@ strong {
   flex-wrap: wrap;
   gap: 1.2rem;
 }
+.footer__credit {
+  margin-top: var(--s3);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: #7e8bb8;
+}
+.footer__credit a {
+  color: #fff;
+  font-weight: 700;
+}
+.footer__credit a:hover {
+  color: var(--polen);
+}
 
 /* --------------------------- Skip link ------------------------------ */
 .skip-link {

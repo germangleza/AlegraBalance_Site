@@ -193,6 +193,7 @@ function footer() {
         <a href="/aviso-de-privacidad/">Aviso de privacidad</a>
       </nav>
     </div>
+    <p class="footer__credit">Creada por <a href="https://magueystudio.mx" target="_blank" rel="noopener">Maguey Studio</a></p>
   </div>
 </footer>`;
 }
