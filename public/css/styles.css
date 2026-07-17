@@ -595,6 +595,7 @@ strong {
   line-height: 0.98;
   letter-spacing: -0.02em;
   margin-bottom: var(--s3);
+  text-wrap: balance;
 }
 .hero__text h1 .line {
   display: block;
@@ -625,6 +626,27 @@ strong {
    vertical del hero. */
 .hero__media .media-img {
   object-position: 50% 35%;
+}
+/* Atribución de las credenciales: encabezado discreto con el nombre de la
+   doctora sobre los bullets, para que las credenciales tengan sujeto. */
+.trust-attrib {
+  margin-bottom: var(--s2);
+}
+.trust-attrib__name {
+  font-family: var(--font-heading, var(--font-body));
+  font-size: 1.05rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+  margin: 0;
+}
+.trust-attrib__role {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--tinta-70);
+  margin: 0.3rem 0 0;
 }
 .trust-badges {
   display: flex;
@@ -1914,22 +1936,31 @@ strong {
   background: var(--papel);
   padding: var(--s3);
 }
-.prick-panel__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+.prick-panel__title {
   font-family: var(--font-mono);
   font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1.35;
   letter-spacing: 0.06em;
   color: var(--polen);
   text-transform: uppercase;
-  margin-bottom: var(--s4);
+  margin: 0 0 var(--s4);
 }
 .prick-panel__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--s3) var(--s1);
   text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.prick-point__item {
+  list-style: none;
+  display: flex;
+}
+.prick-point__item > .prick-point {
+  flex: 1;
 }
 .prick-point {
   display: flex;
@@ -1997,10 +2028,12 @@ strong {
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--tinta-70);
+  margin: 0;
 }
-.prick-panel__count strong {
-  color: var(--tinta);
-  font-weight: 500;
+/* El texto del conteo se emite vía content para que no quede como texto
+   plano indexable (optimización GEO); permanece visible sin cambiar el diseño. */
+.prick-panel__count::after {
+  content: attr(data-count);
 }
 @media (max-width: 520px) {
   .prick-panel__grid {
@@ -2023,6 +2056,7 @@ strong {
   transform: translateY(100%);
 }
 .js .hero__cta.intro-hide,
+.js .trust-attrib.intro-hide,
 .js .trust-badges.intro-hide {
   transform: translateY(12px);
 }
@@ -2047,8 +2081,11 @@ strong {
 .js.intro-play .hero__cta {
   animation: intro-fade-up 500ms var(--ease-salida) 480ms both;
 }
+.js.intro-play .trust-attrib {
+  animation: intro-fade-up 500ms var(--ease-salida) 520ms both;
+}
 .js.intro-play .trust-badges {
-  animation: intro-fade-up 500ms var(--ease-salida) 560ms both;
+  animation: intro-fade-up 500ms var(--ease-salida) 600ms both;
 }
 .js.intro-play .hero__media .media-frame {
   animation: intro-media var(--d-lento) var(--ease-salida) 600ms both;

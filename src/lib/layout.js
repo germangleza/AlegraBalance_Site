@@ -63,6 +63,9 @@ function jsonLdBase() {
     url: site.baseUrl + "/clinica-y-doctora/",
     image: site.baseUrl + "/assets/images/doctora/dra-hero.jpg",
     worksFor: { "@id": ORG_ID },
+    ...(site.doctor.sameAs && site.doctor.sameAs.length
+      ? { sameAs: site.doctor.sameAs }
+      : {}),
   };
 
   const org = {

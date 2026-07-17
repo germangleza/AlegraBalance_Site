@@ -102,19 +102,17 @@ function card(c, i) {
 function prickPanel() {
   const points = prickPoints
     .map(
-      (p, i) => `<a class="prick-point${p.positive ? " is-positive" : ""}" href="${p.href}" style="--i:${i}">
+      (p, i) => `<li class="prick-point__item"><a class="prick-point${p.positive ? " is-positive" : ""}" href="${p.href}" style="--i:${i}">
         <span class="prick-point__dot"><span class="prick-point__habon"></span></span>
         <span class="prick-point__label">${p.label}</span>
-      </a>`
+      </a></li>`
     )
     .join("");
   return `<div class="prick-panel">
-    <div class="prick-panel__head">
-      <span>Panel 01 · Lectura a 15 min</span>
-    </div>
-    <div class="prick-panel__grid">${points}</div>
-    <hr class="prick-panel__divider">
-    <p class="prick-panel__count">Positivo: <strong>${prickPositiveCount} de ${prickPoints.length}</strong></p>
+    <h2 class="prick-panel__title">Alérgenos que evaluamos en consulta</h2>
+    <ul class="prick-panel__grid">${points}</ul>
+    <hr class="prick-panel__divider" aria-hidden="true">
+    <p class="prick-panel__count" aria-hidden="true" data-count="Positivo: ${prickPositiveCount} de ${prickPoints.length}"></p>
   </div>`;
 }
 
@@ -123,12 +121,12 @@ const body = `
   <div class="container">
     <div class="hero__grid">
       <div class="hero__text">
-        <span class="eyebrow hero__eyebrow intro-hide">Alergia · Asma · Inmunología</span>
+        <span class="eyebrow hero__eyebrow intro-hide">Encontrar la causa es la mitad del tratamiento</span>
         <h1>
-          <span class="line"><span style="--i:0">Encontrar la causa</span></span>
-          <span class="line"><span style="--i:1">es la mitad del tratamiento</span></span>
+          <span class="line"><span style="--i:0">Clínica de alergia e inmunología</span></span>
+          <span class="line"><span style="--i:1">en Roma Norte, CDMX</span></span>
         </h1>
-        <p>Atención especializada para niños y adultos con enfermedades alérgicas respiratorias y dermatológicas. Combinamos evaluación clínica, pruebas diagnósticas y tratamiento personalizado.</p>
+        <p>Atención especializada para niños y adultos con rinitis, asma, dermatitis y urticaria. La Dra. María de Jesús Vázquez García, alergóloga e inmunóloga pediatra certificada por CONICA, atiende en Roma Norte, CDMX, con más de 20 años de experiencia.</p>
       </div>
       <div class="hero__panel">
         ${prickPanel()}
@@ -140,6 +138,10 @@ const body = `
       <div class="hero__aside">
         <div class="hero__media intro-hide">
           ${C.media("Dra. María de Jesús Vázquez García, alergóloga e inmunóloga", null, "/assets/images/doctora/dra-hero.jpg")}
+        </div>
+        <div class="trust-attrib intro-hide">
+          <h2 class="trust-attrib__name">Dra. María de Jesús Vázquez García</h2>
+          <p class="trust-attrib__role">Alergóloga e inmunóloga pediatra</p>
         </div>
         <ul class="trust-badges intro-hide">
           <li>Más de 20 años de experiencia</li>
