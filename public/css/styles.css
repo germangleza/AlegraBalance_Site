@@ -158,6 +158,23 @@ strong {
   background-size: 100% 2px;
 }
 
+/* Enlaces internos dentro del cuerpo de artículos y bloques de respuesta */
+.article p a,
+.article li a,
+.answer-block a {
+  color: var(--polen);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: text-decoration-thickness var(--d-rapido) var(--ease-suave);
+}
+.article p a:hover,
+.article li a:hover,
+.answer-block a:hover {
+  text-decoration-thickness: 2px;
+}
+
 /* --------------------------- Utilidades ----------------------------- */
 .container {
   width: 100%;

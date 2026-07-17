@@ -112,7 +112,7 @@ const article1 = articlePage({
       <li>Tos, silbidos al respirar o sensación de falta de aire</li>
       <li>Ronchas y dermatitis</li>
       <li>Lagrimeo y enrojecimiento ocular</li>
-      <li>Reacciones después de consumir un alimento o utilizar un medicamento</li>
+      <li>Reacciones después de consumir un <a href="/padecimientos/alergias-alimentarias/">alimento</a> o utilizar un <a href="/padecimientos/alergias-a-medicamentos/">medicamento</a></li>
     </ul>
     <p>Aunque algunos síntomas parezcan leves, su repetición puede generar cansancio, irritabilidad y preocupación constante.</p>
 
@@ -121,7 +121,7 @@ const article1 = articlePage({
     <p>En niños, el mal descanso también puede manifestarse como irritabilidad, somnolencia o dificultad para mantener la atención.</p>
 
     <h2>Impacto en la escuela y el trabajo</h2>
-    <p>Una persona que tiene síntomas constantes puede necesitar interrumpir sus actividades, ausentarse o evitar ciertos espacios. La rinitis, el asma, la dermatitis y otras enfermedades alérgicas pueden afectar la concentración, la participación en actividades físicas, la confianza personal, la convivencia social, la productividad y la asistencia a clases o al trabajo.</p>
+    <p>Una persona que tiene síntomas constantes puede necesitar interrumpir sus actividades, ausentarse o evitar ciertos espacios. La <a href="/padecimientos/rinitis-alergica/">rinitis</a>, el <a href="/padecimientos/asma/">asma</a>, la <a href="/padecimientos/dermatitis-atopica/">dermatitis</a> y otras enfermedades alérgicas pueden afectar la concentración, la participación en actividades físicas, la confianza personal, la convivencia social, la productividad y la asistencia a clases o al trabajo.</p>
     <p>El objetivo del tratamiento no debe limitarse a reducir un síntoma aislado. También debe buscar que el paciente pueda retomar sus actividades con mayor seguridad y tranquilidad.</p>
 
     <h2>El efecto en la familia</h2>
@@ -129,7 +129,7 @@ const article1 = articlePage({
     <p>En adultos, las alergias también pueden generar preocupación por reacciones inesperadas, uso frecuente de medicamentos o dificultad para identificar los desencadenantes.</p>
 
     <h2>¿Por qué es importante un diagnóstico adecuado?</h2>
-    <p>Los síntomas alérgicos pueden confundirse con infecciones, intolerancias, irritación u otros padecimientos. El diagnóstico comienza con una historia clínica completa. En algunos casos, la doctora puede indicar pruebas cutáneas, pruebas de parche, estudios de función pulmonar u otros análisis.</p>
+    <p>Los síntomas alérgicos pueden confundirse con infecciones, intolerancias, irritación u otros padecimientos. El diagnóstico comienza con una historia clínica completa. En algunos casos, la doctora puede indicar <a href="/pruebas-y-diagnostico/pruebas-cutaneas/">pruebas cutáneas</a>, <a href="/pruebas-y-diagnostico/#parche">pruebas de parche</a>, <a href="/pruebas-y-diagnostico/#espirometria">estudios de función pulmonar</a> u otros <a href="/pruebas-y-diagnostico/">análisis</a>.</p>
     <p>Las pruebas no deben interpretarse de forma aislada. Sus resultados deben relacionarse con los síntomas y antecedentes del paciente.</p>
 
     <h2>Tratamiento personalizado</h2>
@@ -138,8 +138,8 @@ const article1 = articlePage({
       <li>Medidas para reducir la exposición a desencadenantes relevantes</li>
       <li>Tratamientos para controlar síntomas</li>
       <li>Planes de acción y orientación para casa o escuela</li>
-      <li>Inmunoterapia cuando está indicada</li>
-      <li>Terapias de alta especialidad en casos seleccionados</li>
+      <li><a href="/tratamientos/inmunoterapia/">Inmunoterapia</a> cuando está indicada</li>
+      <li><a href="/tratamientos/#biotecnologicas">Terapias de alta especialidad</a> en casos seleccionados</li>
       <li>Consultas de seguimiento</li>
     </ul>
     <p>No todas las personas necesitan el mismo tratamiento.</p>
@@ -150,7 +150,7 @@ const article1 = articlePage({
 
     <h2>Vivir mejor con alergias</h2>
     <p>Una enfermedad alérgica no debe definir la vida de una persona. Con información clara, un diagnóstico adecuado y seguimiento médico, es posible reducir el impacto de los síntomas y tomar decisiones con mayor confianza.</p>
-    <p>En Alergia Balance Center brindamos atención para niños y adultos con un enfoque personalizado y orientado a mejorar la calidad de vida.</p>
+    <p>En <a href="/clinica-y-doctora/">Alergia Balance Center</a> brindamos <a href="/padecimientos/">atención para niños y adultos</a> con un enfoque personalizado y orientado a mejorar la calidad de vida.</p>
   `,
 });
 
@@ -194,7 +194,7 @@ const article2 = articlePage({
     <p>También puede relacionarse con fatiga, ronquidos, respiración por la boca, irritabilidad y dificultad para dormir.</p>
 
     <h2>Rinitis alérgica</h2>
-    <p>La rinitis alérgica ocurre cuando el sistema inmunológico reacciona frente a determinados alérgenos. Entre los desencadenantes frecuentes se encuentran los ácaros del polvo, el polen, la caspa o partículas de animales, los hongos y otros alérgenos presentes en el ambiente.</p>
+    <p>La <a href="/padecimientos/rinitis-alergica/">rinitis alérgica</a> ocurre cuando el sistema inmunológico reacciona frente a determinados alérgenos. Entre los desencadenantes frecuentes se encuentran los ácaros del polvo, el polen, la caspa o partículas de animales, los hongos y otros alérgenos presentes en el ambiente.</p>
     <h3>Rinitis estacional</h3>
     <p>Los síntomas aparecen principalmente en determinadas épocas del año.</p>
     <h3>Rinitis perenne</h3>
@@ -212,7 +212,7 @@ const article2 = articlePage({
 
     <h2>Cómo se diagnostica</h2>
     <p>El diagnóstico comienza con preguntas sobre la duración de los síntomas, las épocas o lugares en que aparecen, el contacto con polvo, mascotas, humedad o polen, los antecedentes familiares, los tratamientos utilizados y la presencia de asma, dermatitis u otras alergias.</p>
-    <p>Cuando es necesario, la doctora puede indicar pruebas cutáneas u otros estudios. Un resultado positivo debe interpretarse junto con la historia clínica: no significa por sí solo que un alérgeno sea responsable de todos los síntomas.</p>
+    <p>Cuando es necesario, la doctora puede indicar <a href="/pruebas-y-diagnostico/pruebas-cutaneas/">pruebas cutáneas</a> u otros <a href="/pruebas-y-diagnostico/">estudios</a>. Un resultado positivo debe interpretarse junto con la historia clínica: no significa por sí solo que un alérgeno sea responsable de todos los síntomas.</p>
 
     <h2>Tratamiento</h2>
     <p>El tratamiento depende del tipo de rinitis, la intensidad de los síntomas y las necesidades de cada paciente. Puede incluir:</p>
@@ -223,13 +223,13 @@ const article2 = articlePage({
     <h3>Medicamentos</h3>
     <p>El médico puede indicar tratamientos para disminuir la inflamación, la comezón, los estornudos o la congestión. No se recomienda utilizar descongestionantes nasales durante periodos prolongados sin supervisión.</p>
     <h3>Inmunoterapia</h3>
-    <p>En pacientes seleccionados con rinitis alérgica, la inmunoterapia puede ayudar a disminuir la sensibilidad frente a determinados alérgenos.</p>
+    <p>En pacientes seleccionados con rinitis alérgica, la <a href="/tratamientos/inmunoterapia/">inmunoterapia</a> puede ayudar a disminuir la sensibilidad frente a determinados alérgenos.</p>
 
     <h2>Rinitis en niños</h2>
     <p>En niños puede manifestarse con estornudos frecuentes, congestión, respiración por la boca, ojeras, sueño inquieto, irritabilidad y dificultad para concentrarse. Cuando los síntomas son persistentes, es importante evaluar su impacto en el sueño, el crecimiento y el rendimiento escolar.</p>
 
     <h2>Relación entre rinitis y asma</h2>
-    <p>La nariz y los pulmones forman parte de las vías respiratorias. Algunas personas con rinitis también presentan asma. La presencia de tos, silbidos, opresión en el pecho o falta de aire debe comentarse durante la consulta.</p>
+    <p>La nariz y los pulmones forman parte de las vías respiratorias. Algunas personas con rinitis también presentan <a href="/padecimientos/asma/">asma</a>. La presencia de tos, silbidos, opresión en el pecho o falta de aire debe comentarse durante la consulta.</p>
 
     <h2>Cuándo consultar</h2>
     <p>Solicita una valoración cuando los síntomas duran varias semanas, la congestión afecta el sueño, los síntomas aparecen durante gran parte del año, los medicamentos de venta libre no ofrecen control, existe tos persistente o dificultad para respirar, un niño respira por la boca de forma frecuente, o se sospecha relación con mascotas, polvo, humedad o temporadas de polen.</p>
