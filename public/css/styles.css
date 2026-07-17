@@ -459,6 +459,7 @@ strong {
   color: var(--tinta-70);
   padding: 0.5rem 0.7rem;
   position: relative;
+  white-space: nowrap;
 }
 .nav a:hover {
   color: var(--tinta);
@@ -509,7 +510,7 @@ strong {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1180px) {
   .nav,
   .header__actions .btn {
     display: none;
@@ -976,6 +977,8 @@ strong {
   gap: var(--s2);
 }
 .steps--pasos .step {
+  display: flex;
+  flex-direction: column;
   padding: var(--s3);
   border: 1px solid var(--linea);
   border-radius: var(--radius);
@@ -1011,7 +1014,9 @@ strong {
   margin: 0;
 }
 .steps--pasos .step .btn--ghost {
-  margin-top: 0.8rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  align-self: flex-start;
 }
 /* Versión sobre fondo navy (p. ej. "Tu atención en cuatro pasos") */
 .bg-tinta .steps--pasos .step {
@@ -1563,7 +1568,16 @@ strong {
   box-shadow: var(--shadow-hover);
 }
 .blog-card__media {
+  position: relative;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+/* El marco/imagen se posicionan en absoluto para que el aspect-ratio 16/9
+   mande siempre: así todas las imágenes del blog miden igual, sin importar
+   las dimensiones nativas del archivo (antes la del perro forzaba más alto). */
+.blog-card__media .media-frame {
+  position: absolute;
+  inset: 0;
 }
 .blog-card__body {
   padding: var(--s3);
