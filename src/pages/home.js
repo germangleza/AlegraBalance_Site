@@ -123,7 +123,7 @@ const body = `
       <div class="hero__text">
         <span class="eyebrow hero__eyebrow intro-hide">Encontrar la causa es la mitad del tratamiento</span>
         <h1>
-          <span class="line"><span style="--i:0">Clínica de alergia e inmunología</span></span>
+          <span class="line"><span style="--i:0">Clínica integral de alergia e inmunología</span></span>
           <span class="line"><span style="--i:1">en Roma Norte, CDMX</span></span>
         </h1>
         <p>Atención especializada para niños y adultos con rinitis, asma, dermatitis y urticaria. La Dra. María de Jesús Vázquez García, alergóloga e inmunóloga pediatra certificada por CONICA, atiende en Roma Norte, CDMX, con más de 20 años de experiencia.</p>
