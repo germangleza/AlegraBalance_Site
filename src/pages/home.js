@@ -121,7 +121,7 @@ const body = `
   <div class="container">
     <div class="hero__grid">
       <div class="hero__text">
-        <span class="eyebrow hero__eyebrow intro-hide">Encontrar la causa es la mitad del tratamiento</span>
+        <span class="eyebrow hero__eyebrow intro-hide">Menos síntomas, mejor calidad de vida</span>
         <h1>
           <span class="line"><span style="--i:0">Clínica integral de alergia e inmunología</span></span>
         </h1>
