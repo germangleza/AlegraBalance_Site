@@ -46,7 +46,7 @@ const faqs = [
   { q: "¿Las pruebas de alergia se realizan el mismo día?", a: "Depende del tipo de prueba, la preparación requerida, la disponibilidad y la valoración médica. El equipo confirmará las indicaciones correspondientes al agendar." },
   { q: "¿Debo suspender medicamentos antes de una prueba?", a: "Algunos medicamentos pueden interferir con determinados estudios. No suspendas ningún tratamiento por tu cuenta. Solicita instrucciones al equipo antes de tu cita." },
   { q: "¿Necesito llevar estudios anteriores?", a: "Es recomendable llevar resultados de laboratorio, estudios, recetas y una lista de los medicamentos que utilizas actualmente." },
-  { q: "¿Cómo puedo agendar?", a: "Puedes solicitar una cita por WhatsApp, teléfono o mediante el formulario del sitio." },
+  { q: "¿Cómo puedo agendar?", a: "Puedes solicitar una cita por WhatsApp, teléfono o Doctoralia." },
 ];
 
 /* Opiniones reales de pacientes (Doctoralia). */
