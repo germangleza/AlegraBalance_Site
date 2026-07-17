@@ -86,7 +86,7 @@ function scheduleBtn(opts = {}) {
   const size = opts.lg ? " btn--lg" : "";
   const label = opts.label || site.cta.schedule;
   const loc = opts.loc || "";
-  return `<a href="/contacto/" class="${cls}${size}" data-track="click_schedule" data-track-loc="${loc}">${icon("calendar")}<span>${label}</span></a>`;
+  return `<a href="${site.contact.whatsapp}" class="${cls}${size}" target="_blank" rel="noopener" data-track="click_schedule" data-track-loc="${loc}">${icon("calendar")}<span>${label}</span></a>`;
 }
 function whatsappBtn(opts = {}) {
   const size = opts.lg ? " btn--lg" : "";
@@ -143,8 +143,7 @@ function header(active) {
 /* Oculta hasta que el hero sale del viewport (ver main.js). Dos acciones. */
 function mobileCta() {
   return `<nav class="mobile-cta" aria-label="Acciones rápidas">
-    <a href="${site.contact.whatsapp}" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-loc="mobile-cta">${icon("whatsapp")}<span>WhatsApp</span></a>
-    <a href="/contacto/" class="primary" data-track="click_schedule" data-track-loc="mobile-cta">${icon("calendar")}<span>Agendar consulta</span></a>
+    <a href="${site.contact.whatsapp}" class="primary" target="_blank" rel="noopener" data-track="click_schedule" data-track-loc="mobile-cta">${icon("calendar")}<span>Agendar consulta</span></a>
   </nav>`;
 }
 
@@ -274,7 +273,6 @@ function ctaBand(h2, text, opts = {}) {
     ${text ? `<p>${text}</p>` : ""}
     <div class="btn-row">
       ${scheduleBtn({ lg: true, loc: opts.loc || "cta-band" })}
-      ${opts.hideWhatsapp ? "" : whatsappBtn({ lg: true, secondary: true, loc: opts.loc || "cta-band" })}
     </div>
   </div></div></section>`;
 }

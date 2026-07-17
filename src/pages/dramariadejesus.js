@@ -144,9 +144,8 @@ const body = `
       </div>
 
       <div class="vcard__actions">
-        ${actionBtn(site.contact.whatsapp, "vc-btn--wa", "whatsapp", "Agendar por WhatsApp", 'target="_blank" rel="noopener"')}
+        ${actionBtn(site.contact.whatsapp, "vc-btn--primary", "calendar", "Agendar consulta", 'target="_blank" rel="noopener"')}
         ${actionBtn(site.contact.phoneHref, "vc-btn--line", "phone", "Llamar")}
-        ${actionBtn("/contacto/", "vc-btn--primary", "calendar", "Agendar consulta")}
         ${actionBtn("mailto:" + site.contact.email, "vc-btn--line", "mail", "Enviar correo")}
       </div>
 

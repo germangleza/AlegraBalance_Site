@@ -2331,7 +2331,7 @@ strong {
 @media (max-width: 780px) {
   .mobile-cta {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   body {
     padding-bottom: 60px;

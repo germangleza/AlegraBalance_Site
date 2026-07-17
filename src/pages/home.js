@@ -132,7 +132,6 @@ const body = `
       </div>
       <div class="hero__cta btn-row intro-hide">
         ${C.scheduleBtn({ lg: true, loc: "hero" })}
-        ${C.whatsappBtn({ lg: true, secondary: true, loc: "hero" })}
       </div>
       <div class="hero__aside">
         <div class="hero__media intro-hide">
@@ -168,7 +167,6 @@ const body = `
       <p>Antes de una consulta completa puedes tomar una llamada breve de orientación, una opción más accesible para saber si necesitas una valoración.</p>
       <div class="btn-row" style="justify-content:center">
         <a href="${site.contact.whatsapp}" class="btn btn--primary" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-loc="sintomas">${C.icon("whatsapp")}<span>Solicitar llamada por WhatsApp</span></a>
-        ${C.scheduleBtn({ secondary: true, loc: "sintomas" })}
       </div>
     </div>
   </div>
@@ -187,6 +185,7 @@ const body = `
           <div class="step reveal reveal-left" style="--i:1"><span class="step__num"></span><h3>Pruebas y diagnóstico</h3><p>Cuando son necesarias, realizamos estudios para orientar el diagnóstico con precisión.</p>${C.ghostLink("/pruebas-y-diagnostico/", "Conocer nuestras pruebas")}</div>
           <div class="step reveal reveal-left" style="--i:2"><span class="step__num"></span><h3>Tratamiento personalizado</h3><p>Diseñamos un plan para controlar síntomas, reducir riesgos y facilitar tu día a día.</p>${C.ghostLink("/tratamientos/", "Conocer nuestros tratamientos")}</div>
         </div>
+        <div class="btn-row" style="margin-top:1.5rem">${C.scheduleBtn({ loc: "atencion-integral" })}</div>
       </div>
     </div>
   </div>
@@ -286,6 +285,7 @@ const body = `
       <div class="step reveal reveal-left" style="--i:2"><span class="step__num"></span><h3>Estudios de diagnóstico</h3></div>
       <div class="step reveal reveal-left" style="--i:3"><span class="step__num"></span><h3>Tratamiento y seguimiento</h3></div>
     </div>
+    <div class="btn-row" style="justify-content:center;margin-top:var(--s4)">${C.scheduleBtn({ lg: true, secondary: true, loc: "cuatro-pasos" })}</div>
   </div>
 </section>
 

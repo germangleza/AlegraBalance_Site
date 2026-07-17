@@ -35,7 +35,7 @@ function articlePage(a) {
         <div class="cta-band">
           <h2>${a.ctaH}</h2>
           <p>${a.ctaText}</p>
-          <div class="btn-row">${C.scheduleBtn({ lg: true, loc: "articulo-" + a.crumb })}${C.whatsappBtn({ lg: true, secondary: true, loc: "articulo-" + a.crumb })}</div>
+          <div class="btn-row">${C.scheduleBtn({ lg: true, loc: "articulo-" + a.crumb })}</div>
         </div>
       </div>
 
