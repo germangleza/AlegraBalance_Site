@@ -27,6 +27,7 @@ function articlePage(a) {
   <div class="section section--tight bg-papel" style="padding-top:0">
     <div class="container">
       <div class="article">
+        ${a.img ? `<figure class="article__hero">${C.media(a.imgAlt || a.h1, null, a.img)}</figure>` : ""}
         ${a.body}
       </div>
 
@@ -62,6 +63,7 @@ function articlePage(a) {
         author: { "@type": "Person", name: site.doctor.name },
         reviewedBy: { "@type": "Person", name: site.doctor.name },
         publisher: { "@type": "MedicalClinic", name: site.brand.name },
+        ...(a.img ? { image: site.baseUrl + a.img } : {}),
         mainEntityOfPage: site.baseUrl + a.slug,
       },
       a.faq
@@ -89,6 +91,8 @@ const article1 = articlePage({
   description:
     "Conoce cómo las alergias pueden afectar el sueño, la concentración, el rendimiento y el bienestar, y cuándo conviene consultar a un especialista.",
   h1: "Alergias y calidad de vida",
+  img: "/assets/images/blog/alergias-calidad-de-vida.jpg",
+  imgAlt: "Niña sonriente junto a un perro en un jardín, sin síntomas de alergia",
   published: "11 de mayo de 2026",
   publishedIso: "2026-05-11",
   updated: "11 de mayo de 2026",
@@ -171,6 +175,8 @@ const article2 = articlePage({
   description:
     "Conoce qué es la rinitis, sus síntomas, causas, relación con las alergias y cuándo consultar a un especialista en alergología.",
   h1: "Rinitis: causas, síntomas y tratamientos efectivos para mejorar tu calidad de vida",
+  img: "/assets/images/blog/rinitis.jpg",
+  imgAlt: "Niño con pañuelo por síntomas de rinitis alérgica al aire libre",
   published: "11 de mayo de 2026",
   publishedIso: "2026-05-11",
   updated: "11 de mayo de 2026",

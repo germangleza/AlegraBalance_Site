@@ -1313,11 +1313,17 @@ strong {
   padding: var(--s3) var(--s4);
   text-align: center;
 }
-.callout p {
-  font-weight: 700;
+.callout h3 {
+  font-size: 1.25rem;
   color: var(--tinta);
-  font-size: 1.1rem;
-  margin-bottom: var(--s2);
+  margin-bottom: 0.5rem;
+}
+.callout p {
+  font-weight: 500;
+  color: var(--tinta-70);
+  font-size: 1rem;
+  max-width: 60ch;
+  margin: 0 auto var(--s2);
 }
 
 /* --------------------------- Breadcrumbs ---------------------------- */
@@ -1390,6 +1396,18 @@ strong {
 .article {
   max-width: var(--prose-max);
   margin-inline: auto;
+}
+/* Imagen destacada dentro del artículo (misma que el preview del blog). */
+.article__hero {
+  position: relative;
+  margin: 0 0 var(--s4);
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.article__hero .media-frame {
+  position: absolute;
+  inset: 0;
 }
 .article h2 {
   font-size: var(--t-h3);

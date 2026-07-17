@@ -31,13 +31,12 @@ const posts = [
 const body = `
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero__grid">
+    <div class="page-hero__grid page-hero__grid--single">
       <div>
         <span class="eyebrow">Blog de alergia e inmunología</span>
         <h1>Información para comprender mejor las alergias</h1>
         <p>Artículos educativos para pacientes y familias sobre síntomas, prevención, diagnóstico y opciones de atención.</p>
       </div>
-      <div class="page-hero__media">${C.media("Información sobre alergias e inmunología", "ph")}</div>
     </div>
   </div>
 </section>

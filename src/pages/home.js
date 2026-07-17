@@ -164,8 +164,12 @@ const body = `
       ${symptomCards.map(card).join("")}
     </div>
     <div class="callout reveal" style="margin-top:2rem">
-      <p>No necesitas saber qué tipo de alergia tienes para solicitar una valoración.</p>
-      ${C.scheduleBtn({ loc: "sintomas" })}
+      <h3>¿No sabes si es alergia u otra cosa?</h3>
+      <p>Antes de una consulta completa puedes tomar una llamada breve de orientación, una opción más accesible para saber si necesitas una valoración.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a href="${site.contact.whatsapp}" class="btn btn--primary" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-loc="sintomas">${C.icon("whatsapp")}<span>Solicitar llamada por WhatsApp</span></a>
+        ${C.scheduleBtn({ secondary: true, loc: "sintomas" })}
+      </div>
     </div>
   </div>
 </section>
