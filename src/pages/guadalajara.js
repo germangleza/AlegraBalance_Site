@@ -36,7 +36,7 @@ const body = `
       <div>
         <span class="eyebrow">Alergia e inmunología en Guadalajara</span>
         <h1>La Dra. María de Jesús Vázquez García ahora atiende en Guadalajara</h1>
-        <p>Atención especializada en alergia e inmunología para niños y adultos, en fechas programadas y <strong>únicamente con cita previa</strong>. La doctora viaja periódicamente a Guadalajara desde su consultorio en Roma Norte, CDMX.</p>
+        <p>Atención especializada en alergia e inmunología para niños y adultos, en fechas programadas y <strong>únicamente con cita previa</strong>.</p>
         <div class="btn-row">${agendarGdl(true)}</div>
         <p class="text-muted" style="margin-top:1rem;font-size:.9rem">Cupo limitado por visita · la disponibilidad se confirma por WhatsApp.</p>
       </div>
