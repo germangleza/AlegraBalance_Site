@@ -1318,6 +1318,47 @@ strong {
   color: var(--tinta);
   margin-bottom: 0.5rem;
 }
+/* Banner "Próxima visita" (landing de Guadalajara). */
+.visit-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+  background: var(--gasa);
+  border: 1px solid var(--linea);
+  border-radius: var(--radius);
+  padding: var(--s4);
+}
+.visit-banner__label {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--polen);
+}
+.visit-banner__date {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  line-height: 1.05;
+  color: var(--tinta);
+  margin: 0.3rem 0 0;
+}
+.visit-banner__note {
+  color: var(--tinta-70);
+  font-size: 0.95rem;
+  margin: 0.5rem 0 0;
+}
+/* Lista de padecimientos a dos columnas en la landing de Guadalajara. */
+.check-list--2col {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 2rem;
+}
+@media (max-width: 600px) {
+  .check-list--2col {
+    grid-template-columns: 1fr;
+  }
+}
 .callout p {
   font-weight: 500;
   color: var(--tinta-70);
