@@ -21,6 +21,8 @@ const credentials = [
   "Certificada por el Consejo Nacional de Inmunología Clínica y Alergia (CONICA).",
   "Académica en la Universidad Nacional Autónoma de México.",
   "Miembro de la Academia Mexicana de Pediatría.",
+  "Miembro de la Sociedad Latinoamericana de Alergia e Inmunología (SLAAI).",
+  "Miembro de la European Academy of Allergy and Clinical Immunology (EAACI).",
   "Asesora médico-científica para compañías farmacéuticas transnacionales en terapias de alta especialidad.",
   "Miembro de asociaciones y colegios relacionados con Alergia e Inmunología.",
 ];
