@@ -1,0 +1,9 @@
+---
+import { site } from "../../site.config.js";
+import Icon from "./Icon.astro";
+const { lg } = Astro.props;
+const waGdl = `https://wa.me/${site.contact.phoneDigits}?text=${encodeURIComponent(
+  "Hola, me gustaría agendar una cita en la próxima visita de la Dra. María de Jesús Vázquez a Guadalajara. ¿Me comparten la disponibilidad?"
+)}`;
+---
+<a href={waGdl} class={`btn btn--primary${lg ? " btn--lg" : ""}`} target="_blank" rel="noopener" data-track="click_schedule" data-track-loc="guadalajara"><Icon name="calendar" /><span>Agendar por WhatsApp</span></a>
