@@ -1,0 +1,42 @@
+---
+import Icon from "./Icon.astro";
+import Media from "./Media.astro";
+import ScheduleButton from "./ScheduleButton.astro";
+import Reviewer from "./Reviewer.astro";
+import { site } from "../../site.config.js";
+const { a } = Astro.props;
+---
+<article>
+  <header class="section section--tight bg-papel">
+    <div class="container">
+      <div class="article">
+        <span class="tag">{a.category}</span>
+        <h1 style="margin:.9rem 0 1rem">{a.h1}</h1>
+        <div class="article__meta">
+          <span><Icon name="stethoscope" /> {site.doctor.name}</span>
+          <span>Publicado: {a.published}</span>
+          <span>Actualizado: {a.updated}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="section section--tight bg-papel" style="padding-top:0">
+    <div class="container">
+      <div class="article">
+        {a.img && <figure class="article__hero"><Media label={a.imgAlt || a.h1} src={a.img} /></figure>}
+        <Fragment set:html={a.body} />
+      </div>
+
+      <div class="article" style="margin-top:2.5rem">
+        <div class="cta-band">
+          <h2>{a.ctaH}</h2>
+          <p>{a.ctaText}</p>
+          <div class="btn-row"><ScheduleButton lg loc={"articulo-" + a.crumb} /></div>
+        </div>
+      </div>
+
+      <div class="article" style="margin-top:2rem"><Reviewer /></div>
+    </div>
+  </div>
+</article>

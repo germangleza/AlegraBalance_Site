@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ArticleBody from "../components/ArticleBody.astro";
+import { articulos } from "../data/articulos.js";
+import { articleJsonLd } from "../lib/articleSchema.js";
+export function getStaticPaths() {
+  return articulos.map((a) => ({
+    params: { articulo: a.slug.replace(/^\/|\/$/g, "") },
+    props: { a },
+  }));
+}
+const { a } = Astro.props;
+const bc = [
+  { label: "Inicio", href: "/" },
+  { label: "Blog", href: "/blog/" },
+  { label: a.crumb, href: a.slug },
+];
+---
+<Layout slug={a.slug} active="/blog/" title={a.title} description={a.description} breadcrumbs={bc} jsonLd={articleJsonLd(a)} ogType="article">
+  <ArticleBody a={a} />
+</Layout>
