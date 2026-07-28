@@ -1,0 +1,189 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../../site.config.js";
+import Icon from "../components/Icon.astro";
+import Logo from "../components/Logo.astro";
+import LocationCard from "../components/LocationCard.astro";
+
+const photo = "/assets/images/doctora/dra-maria-vazquez.jpg";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    name: site.doctor.name,
+    image: site.baseUrl + photo,
+    jobTitle: site.doctor.shortDescriptor,
+    medicalSpecialty: ["Allergology", "Pediatric Immunology"],
+    worksFor: { "@type": "MedicalClinic", name: site.brand.name },
+    telephone: "+" + site.contact.phoneDigits,
+    email: site.contact.email,
+    url: site.baseUrl + "/dramariadejesus/",
+    address: site.contact.locations.map((l) => ({
+      "@type": "PostalAddress",
+      streetAddress: l.street,
+      addressLocality: l.locality,
+      addressRegion: l.region,
+      addressCountry: "MX",
+    })),
+  },
+];
+---
+<Layout
+  slug="/dramariadejesus/"
+  title="Dra. María de Jesús Vázquez García | Tarjeta de contacto"
+  description="Tarjeta de contacto de la Dra. María de Jesús Vázquez García, alergóloga e inmunóloga pediatra. WhatsApp, teléfono, correo y ubicaciones en CDMX y Guadalajara."
+  bare
+  ogType="profile"
+  ogImage={site.baseUrl + photo}
+  jsonLd={jsonLd}
+>
+  <style is:inline>
+    body.bare { background: var(--tinta); }
+    /* Sin JS global en modo bare: mostrar los .reveal (p. ej. location-card). */
+    body.bare .reveal { opacity: 1; transform: none; }
+    .vcard-wrap {
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(0px, 4vw, 48px);
+      background:
+        radial-gradient(120% 60% at 50% 0%, rgba(197, 115, 18, 0.16), transparent 60%),
+        var(--tinta);
+    }
+    .vcard {
+      width: 100%;
+      max-width: 460px;
+      background: var(--papel);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+    .vcard__cover {
+      height: 132px;
+      background:
+        radial-gradient(90% 140% at 82% -20%, rgba(197, 115, 18, 0.5), transparent 55%),
+        linear-gradient(135deg, var(--tinta), #0b2f7a);
+    }
+    .vcard__body { padding: 0 clamp(20px, 6vw, 34px) clamp(24px, 6vw, 34px); }
+    .vcard__avatar {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 22%;
+      border: 5px solid var(--papel);
+      margin: -76px auto 0;
+      display: block;
+      box-shadow: 0 6px 18px rgba(7, 30, 85, 0.18);
+    }
+    .vcard__head { text-align: center; margin-top: var(--s2); }
+    .vcard__head .eyebrow { margin-bottom: 0.6rem; }
+    .vcard__name {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 1.15;
+      color: var(--tinta);
+      letter-spacing: -0.01em;
+    }
+    .vcard__role {
+      color: var(--tinta-70);
+      font-size: 0.98rem;
+      margin-top: 0.5rem;
+    }
+    .vcard__org {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: var(--s3);
+      padding-top: var(--s3);
+      border-top: 1px solid var(--linea);
+    }
+    .vcard__org img { height: 30px; width: auto; }
+    .vcard__actions {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: var(--s3);
+    }
+    .vc-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      min-height: 52px;
+      padding: 0.8rem 1.2rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      border: 1.5px solid transparent;
+      transition: transform 80ms var(--ease-suave), background var(--d-rapido) var(--ease-suave),
+        color var(--d-rapido) var(--ease-suave), border-color var(--d-rapido) var(--ease-suave);
+    }
+    .vc-btn:hover { transform: translateY(-1px); }
+    .vc-btn .icon { width: 1.25em; height: 1.25em; flex: none; }
+    .vc-btn--wa { background: #25d366; color: #08331b; }
+    .vc-btn--primary { background: var(--tinta); color: #fff; }
+    .vc-btn--line { background: var(--papel); color: var(--tinta); border-color: var(--tinta); }
+    .vc-btn--line:hover { background: var(--tinta); color: #fff; }
+    .vcard__section-label {
+      font-family: var(--font-mono);
+      font-size: var(--t-mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--polen);
+      margin: var(--s4) 0 var(--s2);
+    }
+    .vcard__locations { display: grid; gap: var(--s2); }
+    .vcard__locations .location-card { height: auto; }
+    .vcard__foot {
+      text-align: center;
+      margin-top: var(--s4);
+      font-size: 0.85rem;
+      color: var(--tinta-70);
+    }
+    .vcard__foot a { color: var(--tinta); font-weight: 700; }
+    @media (prefers-color-scheme: dark) {
+      /* La tarjeta se mantiene clara a propósito para legibilidad al compartir. */
+    }
+  </style>
+  <div class="vcard-wrap">
+    <article class="vcard">
+      <div class="vcard__cover"></div>
+      <div class="vcard__body">
+        <img class="vcard__avatar" src={photo} alt="Dra. María de Jesús Vázquez García" width="132" height="132" />
+        <div class="vcard__head">
+          <span class="eyebrow">Alergología e Inmunología</span>
+          <h1 class="vcard__name">Dra. María de Jesús Vázquez García</h1>
+          <p class="vcard__role">{site.doctor.shortDescriptor} · {site.doctor.experience}</p>
+          <div class="vcard__org">
+            <Logo />
+          </div>
+        </div>
+
+        <div class="vcard__actions">
+          <a href={site.contact.whatsapp} class="vc-btn vc-btn--primary" target="_blank" rel="noopener"><Icon name="calendar" /><span>Agendar consulta</span></a>
+          <a href={site.contact.phoneHref} class="vc-btn vc-btn--line"><Icon name="phone" /><span>Llamar</span></a>
+          <a href={`mailto:${site.contact.email}`} class="vc-btn vc-btn--line"><Icon name="mail" /><span>Enviar correo</span></a>
+        </div>
+
+        <p class="vcard__section-label">Dónde te atiende</p>
+        <div class="vcard__locations">
+          {site.contact.locations.map((l) => <LocationCard loc={l} trackLoc="vcard" />)}
+        </div>
+
+        <div class="vcard__actions" style="margin-top:var(--s3)">
+          <a href="/assets/dra-maria-vazquez.vcf" class="vc-btn vc-btn--line" download><Icon name="download" /><span>Guardar contacto</span></a>
+        </div>
+
+        <p class="vcard__foot">
+          <a href="/">Conoce Alergia Balance Center →</a>
+        </p>
+      </div>
+    </article>
+  </div>
+</Layout>
