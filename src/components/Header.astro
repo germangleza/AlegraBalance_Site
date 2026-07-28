@@ -1,0 +1,27 @@
+---
+import { site } from "../../site.config.js";
+import Topbar from "./Topbar.astro";
+import Logo from "./Logo.astro";
+import ScheduleButton from "./ScheduleButton.astro";
+const { active } = Astro.props;
+---
+<Topbar />
+<header class="header">
+  <div class="container header__inner">
+    <a href="/" class="logo" aria-label="Alergia Balance Center — Inicio"><Logo /></a>
+    <nav class="nav" id="primary-nav" aria-label="Navegación principal">
+      {site.nav.map((n) => (
+        <a href={n.href} aria-current={n.href === active ? "page" : undefined}>{n.label}</a>
+      ))}
+      <ScheduleButton loc="header-mobile" />
+    </nav>
+    <div class="header__actions">
+      <ScheduleButton loc="header" />
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="header__hairline" aria-hidden="true"></div>
+  <div class="scrim" aria-hidden="true"></div>
+</header>

@@ -1,0 +1,7 @@
+---
+import { site } from "../../site.config.js";
+import Icon from "./Icon.astro";
+const { label, loc = "" } = Astro.props;
+const text = label || site.cta.call;
+---
+<a href={site.contact.phoneHref} class="btn btn--secondary" data-track="click_call" data-track-loc={loc}><Icon name="phone" /><span>{text}</span></a>

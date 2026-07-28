@@ -1,0 +1,11 @@
+---
+import ScheduleButton from "./ScheduleButton.astro";
+const { h2, text, loc = "cta-band" } = Astro.props;
+---
+<section class="section"><div class="container"><div class="cta-band reveal">
+  <h2>{h2}</h2>
+  {text && <p>{text}</p>}
+  <div class="btn-row">
+    <ScheduleButton lg loc={loc} />
+  </div>
+</div></div></section>

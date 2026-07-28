@@ -1,0 +1,6 @@
+---
+import Icon from "./Icon.astro";
+const { text } = Astro.props;
+const t = text || "Ante una emergencia médica —dificultad intensa para respirar, inflamación de lengua o garganta, desmayo o una reacción rápidamente progresiva— llama al <strong>911</strong> o acude al servicio de urgencias más cercano.";
+---
+<div class="notice"><Icon name="alert" /><div set:html={t} /></div>

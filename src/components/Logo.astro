@@ -1,0 +1,5 @@
+---
+const { variant } = Astro.props;
+const src = variant === "light" ? "/assets/logo-reversed.png" : "/assets/logo.png";
+---
+<img src={src} alt="Alergia Balance Center" width="197" height="51" loading="eager" decoding="async" />

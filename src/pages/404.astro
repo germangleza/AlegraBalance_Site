@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import ScheduleButton from "../components/ScheduleButton.astro";
+---
+<Layout
+  slug="/404/"
+  active="/"
+  noindex
+  title="Página no encontrada | Alergia Balance Center"
+  description="No encontramos esta página."
+>
+  <section class="section bg-papel">
+    <div class="container center" style="max-width:640px">
+      <p class="eyebrow">Error 404</p>
+      <h1 style="margin-bottom:1rem">No encontramos esta página</h1>
+      <p class="lead">Es posible que el contenido haya cambiado de ubicación o que la dirección no sea correcta.</p>
+      <div class="btn-row" style="justify-content:center;margin-top:2rem">
+        <a href="/" class="btn btn--primary"><Icon name="home" /><span>Volver al inicio</span></a>
+        <a href="/padecimientos/" class="btn btn--secondary">Ver padecimientos</a>
+        <ScheduleButton loc="404" />
+      </div>
+    </div>
+  </section>
+</Layout>

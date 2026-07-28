@@ -1,0 +1,44 @@
+---
+import { site } from "../../site.config.js";
+import Logo from "./Logo.astro";
+const a = site.contact.address;
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo"><Logo variant="light" /></div>
+        <p>Atención especializada en alergia e inmunología para niños y adultos.</p>
+      </div>
+      <div>
+        <h4>Explora</h4>
+        <ul>{site.nav.map((n) => <li><a href={n.href}>{n.label}</a></li>)}</ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href={site.contact.phoneHref} data-track="click_call" data-track-loc="footer">{site.contact.phoneDisplay}</a></li>
+          <li><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sedes</h4>
+        <ul>
+          <li>{a.street}, Roma Norte, CDMX</li>
+          <li>Guadalajara, Jalisco <span style="white-space:nowrap">· con cita previa</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horarios</h4>
+        <ul>{site.contact.hours.map((h) => <li>{h.days}: {h.time}</li>)}</ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Alergia Balance Center. Todos los derechos reservados.</span>
+      <nav aria-label="Enlaces legales">
+        <a href="/aviso-de-privacidad/">Aviso de privacidad</a>
+      </nav>
+    </div>
+    <p class="footer__credit">Creada por <a href="https://magueystudio.mx" target="_blank" rel="noopener">Maguey Studio</a></p>
+  </div>
+</footer>

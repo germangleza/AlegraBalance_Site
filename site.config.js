@@ -141,4 +141,4 @@ const primaryLocation =
 site.contact.address = primaryLocation;
 site.contact.hours = primaryLocation.hours;
 
-module.exports = { site };
+export { site };

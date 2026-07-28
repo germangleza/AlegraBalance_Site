@@ -1,0 +1,10 @@
+---
+import { Fragment } from "astro/jsx-runtime";
+const { label, class: cls, src } = Astro.props;
+const frame = cls || "media-frame";
+---
+{src ? (
+  <div class={frame}><img src={src} alt={label} class="media-img" loading="lazy" decoding="async" /></div>
+) : (
+  <div class={frame}><div class="ph"><span>{label}</span></div></div>
+)}

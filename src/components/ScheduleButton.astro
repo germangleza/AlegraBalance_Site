@@ -1,0 +1,9 @@
+---
+import { site } from "../../site.config.js";
+import Icon from "./Icon.astro";
+const { secondary, lg, label, loc = "" } = Astro.props;
+const cls = secondary ? "btn btn--secondary" : "btn btn--primary";
+const size = lg ? " btn--lg" : "";
+const text = label || site.cta.schedule;
+---
+<a href={site.contact.whatsapp} class={`${cls}${size}`} target="_blank" rel="noopener" data-track="click_schedule" data-track-loc={loc}><Icon name="calendar" /><span>{text}</span></a>

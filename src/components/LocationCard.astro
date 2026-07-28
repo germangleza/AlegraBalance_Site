@@ -1,0 +1,18 @@
+---
+import Icon from "./Icon.astro";
+const { loc, trackLoc = "" } = Astro.props;
+const hasHours = loc.hours && loc.hours.length;
+---
+<article class="card location-card reveal">
+  <span class="tag">{loc.byAppointment ? "Con cita previa" : "Consultorio permanente"}</span>
+  <h3>{loc.city}</h3>
+  <ul class="info-list" style="margin:1rem 0 1.4rem">
+    <li><Icon name="pin" /><div><strong>{loc.street}</strong><br />{loc.neighborhood}<br />{loc.postal}</div></li>
+    {hasHours ? (
+      <li><Icon name="clock" /><div>{loc.hours.map((h) => `${h.days} ${h.time}`).join(" · ")}</div></li>
+    ) : (
+      <li><Icon name="calendar" /><div><strong>Con cita previa.</strong> La doctora atiende en fechas programadas; confirma disponibilidad por WhatsApp o teléfono.</div></li>
+    )}
+  </ul>
+  <a href={loc.maps} target="_blank" rel="noopener" class="btn btn--secondary" data-track="click_directions" data-track-loc={trackLoc}><Icon name="route" /><span>Cómo llegar</span></a>
+</article>
