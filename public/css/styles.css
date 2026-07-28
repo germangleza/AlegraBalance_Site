@@ -758,6 +758,32 @@ strong {
 .card:hover {
   border-color: var(--tinta);
 }
+/* Tarjeta que es un enlace: toda la tarjeta es clicable. */
+.card--link {
+  color: inherit;
+  text-decoration: none;
+  transition: border-color var(--d-rapido) var(--ease-suave),
+    transform var(--d-rapido) var(--ease-suave),
+    box-shadow var(--d-rapido) var(--ease-suave);
+}
+.card--link:hover {
+  border-color: var(--tinta);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+.card__cue {
+  margin-top: auto;
+  padding-top: var(--s2);
+  color: var(--polen);
+}
+.card__cue .icon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--d-rapido) var(--ease-suave);
+}
+.card--link:hover .card__cue .icon {
+  transform: translateX(4px);
+}
 .card__icon {
   width: 44px;
   height: 44px;

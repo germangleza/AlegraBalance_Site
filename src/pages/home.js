@@ -33,10 +33,10 @@ const symptomCards = [
 ];
 
 const tests = [
-  { icon: "test", h: "Pruebas cutáneas", p: "Ayudan a evaluar la sensibilidad frente a diferentes alérgenos y se interpretan junto con los síntomas y antecedentes del paciente." },
-  { icon: "patch", h: "Pruebas de parche", p: "Se utilizan para investigar posibles causas de dermatitis de contacto y reacciones tardías en la piel." },
-  { icon: "spiro", h: "Espirometría", p: "Permite valorar la función pulmonar en pacientes con asma, tos persistente o dificultad respiratoria." },
-  { icon: "syringe", h: "Inmunoterapia", p: "Tratamiento que puede ayudar a disminuir progresivamente la sensibilidad a determinados alérgenos cuando existe indicación médica." },
+  { icon: "test", h: "Pruebas cutáneas", p: "Ayudan a evaluar la sensibilidad frente a diferentes alérgenos y se interpretan junto con los síntomas y antecedentes del paciente.", href: "/pruebas-y-diagnostico/pruebas-cutaneas/" },
+  { icon: "patch", h: "Pruebas de parche", p: "Se utilizan para investigar posibles causas de dermatitis de contacto y reacciones tardías en la piel.", href: "/pruebas-y-diagnostico/#parche" },
+  { icon: "spiro", h: "Espirometría", p: "Permite valorar la función pulmonar en pacientes con asma, tos persistente o dificultad respiratoria.", href: "/pruebas-y-diagnostico/#espirometria" },
+  { icon: "syringe", h: "Inmunoterapia", p: "Tratamiento que puede ayudar a disminuir progresivamente la sensibilidad a determinados alérgenos cuando existe indicación médica.", href: "/tratamientos/inmunoterapia/" },
 ];
 
 const faqs = [
@@ -262,10 +262,11 @@ const body = `
     <div class="grid grid-4" style="margin-top:2.5rem">
       ${tests
         .map(
-          (t, i) => `<article class="card reveal" style="--i:${i}">
+          (t, i) => `<a class="card card--link reveal" href="${t.href}" style="--i:${i}">
         <div class="card__icon">${C.icon(t.icon)}</div>
         <h3>${t.h}</h3><p>${t.p}</p>
-      </article>`
+        <span class="card__cue" aria-hidden="true">${C.icon("arrow")}</span>
+      </a>`
         )
         .join("")}
     </div>
