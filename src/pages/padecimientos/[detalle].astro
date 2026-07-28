@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ConditionBody from "../../components/ConditionBody.astro";
+import { conditions } from "../../data/detalles.js";
+import { conditionJsonLd } from "../../lib/detailSchema.js";
+export function getStaticPaths() {
+  return conditions.map((d) => ({
+    params: { detalle: d.slug.replace(/^\/padecimientos\/|\/$/g, "") },
+    props: { d },
+  }));
+}
+const { d } = Astro.props;
+const bc = [
+  { label: "Inicio", href: "/" },
+  { label: "Padecimientos", href: "/padecimientos/" },
+  { label: d.crumb || d.title, href: d.slug },
+];
+---
+<Layout slug={d.slug} active="/padecimientos/" title={d.seoTitle} description={d.seoDescription} breadcrumbs={bc} jsonLd={conditionJsonLd(d)}>
+  <ConditionBody d={d} />
+</Layout>

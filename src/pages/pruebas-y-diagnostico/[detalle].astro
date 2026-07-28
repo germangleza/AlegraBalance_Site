@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TestBody from "../../components/TestBody.astro";
+import { tests } from "../../data/detalles.js";
+import { testJsonLd } from "../../lib/detailSchema.js";
+export function getStaticPaths() {
+  return tests.map((d) => ({
+    params: { detalle: d.slug.replace(/^\/pruebas-y-diagnostico\/|\/$/g, "") },
+    props: { d },
+  }));
+}
+const { d } = Astro.props;
+const bc = [
+  { label: "Inicio", href: "/" },
+  { label: "Pruebas y diagnóstico", href: "/pruebas-y-diagnostico/" },
+  { label: d.crumb || d.title, href: d.slug },
+];
+---
+<Layout slug={d.slug} active="/pruebas-y-diagnostico/" title={d.seoTitle} description={d.seoDescription} breadcrumbs={bc} jsonLd={testJsonLd(d)}>
+  <TestBody d={d} />
+</Layout>

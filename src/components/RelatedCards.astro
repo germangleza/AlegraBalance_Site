@@ -1,0 +1,10 @@
+---
+import Icon from "./Icon.astro";
+const { items } = Astro.props;
+---
+<div class="grid grid-3">{items.map((r) => (
+  <a class="mini-card reveal" href={r.href} style="display:block">
+    <h3><Icon name={r.icon || "arrow"} />{r.label}</h3>
+    {r.text && <p>{r.text}</p>}
+  </a>
+))}</div>

@@ -1,0 +1,21 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TreatmentBody from "../../components/TreatmentBody.astro";
+import { treatments } from "../../data/detalles.js";
+import { treatmentJsonLd } from "../../lib/detailSchema.js";
+export function getStaticPaths() {
+  return treatments.map((d) => ({
+    params: { detalle: d.slug.replace(/^\/tratamientos\/|\/$/g, "") },
+    props: { d },
+  }));
+}
+const { d } = Astro.props;
+const bc = [
+  { label: "Inicio", href: "/" },
+  { label: "Tratamientos", href: "/tratamientos/" },
+  { label: d.crumb || d.title, href: d.slug },
+];
+---
+<Layout slug={d.slug} active="/tratamientos/" title={d.seoTitle} description={d.seoDescription} breadcrumbs={bc} jsonLd={treatmentJsonLd(d)}>
+  <TreatmentBody d={d} />
+</Layout>
