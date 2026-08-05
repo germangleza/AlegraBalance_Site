@@ -192,6 +192,7 @@ function footer() {
         <a href="/aviso-de-privacidad/">Aviso de privacidad</a>
       </nav>
     </div>
+    <p class="footer__legal">Dra. María de Jesús Vázquez García · Ced. Prof. 2026577 · Ced. Esp. Pediatría 4111292 · Ced. Esp. Alergia 0033188 · Aviso de Publicidad COFEPRIS No. 2609152002A00452</p>
     <p class="footer__credit">Creada por <a href="https://magueystudio.mx" target="_blank" rel="noopener">Maguey Studio</a></p>
   </div>
 </footer>`;
