@@ -98,17 +98,17 @@ const body = `
       </form>
 
       <div class="reveal">
+        <h3 style="font-size:1.05rem;margin:0 0 1rem">Nuestras sedes</h3>
+        <div class="grid" style="gap:1.4rem;margin-bottom:1.4rem">
+          ${site.contact.locations.map((l) => C.locationCard(l, { loc: "contacto" })).join("")}
+        </div>
+
         <div class="card" style="margin-bottom:1.4rem">
           <h2 style="font-size:var(--t-h3);margin-bottom:1rem">Alergia Balance Center</h2>
           <ul class="info-list">
             <li>${C.icon("phone")}<a href="${site.contact.phoneHref}">${site.contact.phoneDisplay}</a></li>
             <li>${C.icon("mail")}<a href="mailto:${site.contact.email}">${site.contact.email}</a></li>
           </ul>
-        </div>
-
-        <h3 style="font-size:1.05rem;margin:0 0 1rem">Nuestras sedes</h3>
-        <div class="grid" style="gap:1.4rem;margin-bottom:1.4rem">
-          ${site.contact.locations.map((l) => C.locationCard(l, { loc: "contacto" })).join("")}
         </div>
 
         <div class="map-block" role="group" aria-label="Mapa de ubicación">
