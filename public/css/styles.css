@@ -1965,9 +1965,10 @@ strong {
   flex-wrap: wrap;
   gap: 1.2rem;
 }
-/* Línea legal: cédulas profesionales y aviso de publicidad COFEPRIS. */
+/* Línea legal: cédulas profesionales y aviso de publicidad COFEPRIS.
+   Va después de las columnas del footer (Horarios) y antes del copyright. */
 .footer__legal {
-  margin-top: var(--s2);
+  margin-top: var(--s4);
   text-align: center;
   font-family: var(--font-mono);
   font-size: 0.825rem;
@@ -1982,6 +1983,10 @@ strong {
   font-size: 0.7rem;
   letter-spacing: 0.02em;
   color: #7e8bb8;
+}
+/* "Aviso de privacidad" al mismo tamaño que la línea legal. */
+.footer .footer__bottom a {
+  font-size: 0.825rem;
 }
 /* El enlace hereda tamaño, peso y color del texto para no destacar. */
 .footer .footer__credit a {
