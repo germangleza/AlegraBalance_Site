@@ -39,7 +39,7 @@ const { d } = Astro.props;
 <section class="section bg-gasa">
   <div class="container">
     <div class="feature" style="align-items:start">
-      <div class="reveal"><span class="eyebrow">¿Cómo se realiza?</span><h2>El procedimiento</h2><p class="text-muted">{d.howItIsDone}</p></div>
+      <div class="reveal"><span class="eyebrow">¿Cómo se realiza?</span><h2>El procedimiento</h2><p class="text-muted">{d.howItIsDone}</p>{d.img2 && <figure class="detail-media"><Media label={d.img2Alt || d.title} src={d.img2} /></figure>}</div>
       <div class="reveal">
         <span class="eyebrow">Preparación</span>
         <h2>Antes de la prueba</h2>
