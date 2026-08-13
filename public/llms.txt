@@ -14,7 +14,7 @@ Alergia Balance Center es un consultorio médico especializado en el diagnóstic
 La clínica realiza una valoración integral para identificar la causa de los síntomas y define un plan de tratamiento personalizado. Su enfoque es "encontrar la causa es la mitad del tratamiento".
 
 Pruebas y diagnóstico:
-- Pruebas cutáneas (Prick) para alérgenos ambientales, respiratorios y alimentarios
+- Pruebas cutáneas (Prick): panel de 40 alérgenos ambientales, respiratorios y alimentarios en una sola aplicación
 - Pruebas de parche (dermatitis de contacto)
 - Espirometría (función pulmonar)
 - Prueba de broncodilatación
