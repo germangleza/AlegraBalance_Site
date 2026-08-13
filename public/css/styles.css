@@ -2052,6 +2052,14 @@ strong {
   background: var(--papel);
   padding: var(--s3);
 }
+.prick-panel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--s4);
+}
 .prick-panel__title {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -2060,7 +2068,19 @@ strong {
   letter-spacing: 0.06em;
   color: var(--polen);
   text-transform: uppercase;
-  margin: 0 0 var(--s4);
+  margin: 0;
+}
+.prick-panel__badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--polen);
+  border: 1px solid var(--polen);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.7rem;
+  white-space: nowrap;
 }
 .prick-panel__grid {
   display: grid;
@@ -2146,10 +2166,9 @@ strong {
   color: var(--tinta-70);
   margin: 0;
 }
-/* El texto del conteo se emite vía content para que no quede como texto
-   plano indexable (optimización GEO); permanece visible sin cambiar el diseño. */
-.prick-panel__count::after {
-  content: attr(data-count);
+.prick-panel__count strong {
+  color: var(--tinta);
+  font-weight: 500;
 }
 @media (max-width: 520px) {
   .prick-panel__grid {

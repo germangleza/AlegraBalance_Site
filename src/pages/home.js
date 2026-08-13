@@ -109,10 +109,13 @@ function prickPanel() {
     )
     .join("");
   return `<div class="prick-panel">
-    <h2 class="prick-panel__title">Alérgenos que evaluamos en consulta</h2>
+    <div class="prick-panel__head">
+      <h2 class="prick-panel__title">Alérgenos que evaluamos en consulta</h2>
+      <span class="prick-panel__badge">Panel de 40</span>
+    </div>
     <ul class="prick-panel__grid">${points}</ul>
     <hr class="prick-panel__divider" aria-hidden="true">
-    <p class="prick-panel__count" aria-hidden="true" data-count="Positivo: ${prickPositiveCount} de ${prickPoints.length}"></p>
+    <p class="prick-panel__count">Muestra de 8 · el panel completo evalúa <strong>40 alérgenos</strong></p>
   </div>`;
 }
 
