@@ -192,7 +192,7 @@ function renderTest(d) {
 <section class="section bg-gasa">
   <div class="container">
     <div class="feature" style="align-items:start">
-      ${block("¿Cómo se realiza?", "El procedimiento", `<p class="text-muted">${d.howItIsDone}</p>`)}
+      ${block("¿Cómo se realiza?", "El procedimiento", `<p class="text-muted">${d.howItIsDone}</p>${d.img2 ? `<figure class="detail-media">${C.media(d.img2Alt || d.title, null, d.img2)}</figure>` : ""}`)}
       <div class="reveal">
         <span class="eyebrow">Preparación</span>
         <h2>Antes de la prueba</h2>

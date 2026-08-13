@@ -272,6 +272,8 @@ const tests = [
     title: "Pruebas cutáneas Prick",
     image: "Pruebas cutáneas de alergia",
     img: "/assets/images/pruebas/prick-cutaneas.jpg",
+    img2: "/assets/images/pruebas/prick-panel-40.jpg",
+    img2Alt: "Aplicación real de la prueba cutánea: plantilla con los 40 alérgenos numerados sobre los antebrazos",
     summary:
       "Las pruebas cutáneas Prick evalúan la respuesta de la piel frente a un panel de <strong>40 alérgenos</strong>, para tener una visión amplia de lo que puede estar causando la alergia. Se interpretan siempre junto con los síntomas y antecedentes del paciente.",
     answer:

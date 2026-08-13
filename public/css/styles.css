@@ -2387,6 +2387,21 @@ strong {
   aspect-ratio: 4 / 3;
 }
 
+/* Imagen secundaria en páginas de detalle (p. ej. procedimiento de la
+   prueba). Marco cuadrado con recorte centrado, mismo radio del sitio. */
+.detail-media {
+  position: relative;
+  margin: 1.4rem 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow-hover);
+}
+.detail-media .media-frame {
+  position: absolute;
+  inset: 0;
+}
+
 /* Definition-style condition blocks */
 .def-block {
   border-left: 2px solid var(--linea);
