@@ -268,9 +268,9 @@ const tests = [
     image: "Pruebas cutáneas de alergia",
     img: "/assets/images/pruebas/prick-cutaneas.jpg",
     summary:
-      "Las pruebas cutáneas Prick evalúan la respuesta de la piel frente a un panel de 40 alérgenos, para tener una visión amplia de lo que puede estar causando la alergia. Se interpretan siempre junto con los síntomas y antecedentes del paciente.",
+      "Las pruebas cutáneas Prick evalúan la respuesta de la piel frente a un panel de <strong>40 alérgenos</strong>, para tener una visión amplia de lo que puede estar causando la alergia. Se interpretan siempre junto con los síntomas y antecedentes del paciente.",
     answer:
-      "Las pruebas cutáneas Prick ayudan a investigar la sensibilidad a alérgenos ambientales, respiratorios o alimentarios de acuerdo con la sospecha clínica. El panel evalúa 40 alérgenos en una sola aplicación. Un resultado positivo no significa por sí solo que una sustancia sea la causa de todos los síntomas.",
+      "Las pruebas cutáneas Prick ayudan a investigar la sensibilidad a alérgenos ambientales, respiratorios o alimentarios de acuerdo con la sospecha clínica. El panel evalúa <strong>40 alérgenos</strong> en una sola aplicación. Un resultado positivo no significa por sí solo que una sustancia sea la causa de todos los síntomas.",
     whatIsIt:
       "Son estudios realizados sobre la piel en los que se colocan pequeñas cantidades de alérgenos seleccionados para observar la respuesta bajo supervisión médica.",
     whatIsItFor:
@@ -288,7 +288,7 @@ const tests = [
       "Las indicaciones pueden cambiar según la edad, el tipo de prueba y la historia clínica. El equipo confirmará la preparación adecuada al agendar.",
     related: [R.rinitis, R.asma, R.alimentarias],
     faq: [
-      { q: "¿Cuántos alérgenos evalúa la prueba?", a: "El panel evalúa 40 alérgenos en una sola aplicación, lo que permite una visión amplia de los posibles desencadenantes." },
+      { q: "¿Cuántos alérgenos evalúa la prueba?", a: "El panel evalúa <strong>40 alérgenos</strong> en una sola aplicación, lo que permite una visión amplia de los posibles desencadenantes." },
       { q: "¿Son dolorosas?", a: "Suelen ser molestas más que dolorosas: la punción es superficial. Puede aparecer comezón temporal en las zonas positivas." },
       { q: "¿Se realizan el mismo día de la consulta?", a: "Depende de la preparación requerida, la disponibilidad y la valoración médica. El equipo confirmará las indicaciones al agendar." },
       { q: "¿Un resultado positivo confirma la alergia?", a: "No por sí solo. El resultado debe interpretarse junto con los síntomas y antecedentes del paciente." },
